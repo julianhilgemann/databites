@@ -8,7 +8,7 @@ To navigate the knowledge base, start with the **[Index](_INDEX.md)**.
 
 ## Topics Covered
 
-- Interview Prep & Strategy
+- Core Strategy & Preparation
 - Architecture & Data Modeling
 - Modern Engineering Stack (Fabric/[[git|Git]])
 - Power Query & SQL

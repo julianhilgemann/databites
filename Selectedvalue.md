@@ -24,7 +24,7 @@ Title Measure =
 *   If user selects "Berlin" $\to$ "Sales Report for: Berlin"
 *   If user selects nothing (or 2 cities) $\to$ "Sales Report for: All Cities"
 
-**Interview Trap:**
+**Warning:**
 
 *   **Q:** "What does `SELECTEDVALUE` return if the column is filtered to 2 items?"
 *   **A:** "It returns BLANK (or the alternate result you provided). It only works if **one single distinct value** is visible."
@@ -98,7 +98,7 @@ IF( ISINSCOPE(Product[Name]), [MyMeasure], BLANK() )
 
 ---
 
-### Summary Cheat Sheet for Interviews
+### Summary Cheat Sheet
 
 | Function | What it asks | Best Use Case |
 | :--- | :--- | :--- |
@@ -108,7 +108,7 @@ IF( ISINSCOPE(Product[Name]), [MyMeasure], BLANK() )
 | **`ISCROSSFILTERED`**| "Is this table filtered by *anything*?" | Performance tuning, checking if a table is reduced. |
 | **`HASONEVALUE`** | "Is there only 1 item in the list?" | Calculating specific logic for a single item (mostly replaced by `SELECTEDVALUE` and `ISINSCOPE` now). |
 
-### A "Parameter Harvesting" Example (Interview Gold)
+### A "Parameter Harvesting" Example (Best Practice)
 
 If they ask: **"How do you make a measure change based on a user selection?"** (e.g., Switch between "Revenue" and "Profit").
 

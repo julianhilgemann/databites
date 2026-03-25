@@ -36,7 +36,7 @@ CALCULATE(
 
 ---
 
-### 3. The Top 3 Use Cases (Interview Gold)
+### 3. The Top 3 Use Cases (Best Practice)
 
 #### Case A: Standard [[Time Intelligence]]
 Instead of writing `Sales YTD`, `Sales LY`, `Sales YoY`, you create a "Time Intel" group.
@@ -56,7 +56,7 @@ This is the **Superpower** of Calculation Groups. They can change the **Format S
 *   **Item: USD** $\to$ `SELECTEDMEASURE()` (Format: `$#,0.00`)
 *   **Item: EUR** $\to$ `SELECTEDMEASURE() * [ExchangeRate]` (Format: `#,0.00 €`)
 
-*   **Interview Hook:** *"I use Calculation Groups for currency because it allows me to not only convert the number but also change the axis symbol from $ to € automatically, which standard measures cannot do."*
+*   **Pro Tip:** *"I use Calculation Groups for currency because it allows me to not only convert the number but also change the axis symbol from $ to € automatically, which standard measures cannot do."*
 
 #### Case C: "Toggle" Metrics (Variable Axis)
 You want a chart where the user can switch between "Revenue" and "Units Sold" without bookmarks.
@@ -121,7 +121,7 @@ Calculation Groups apply to **everything** in the visual, including Tooltips. So
 
 ---
 
-### Summary Checklist for the Interview
+### Summary Checklist
 
 1.  **"I use them for DRY."**
     (Don't Repeat Yourself. I reduce measure count by 80%).

@@ -10,7 +10,7 @@ dbt does **not** extract or load data. It assumes the raw data is already in you
 
 ### 2. Materializations (How data is saved)
 
-This is the **#1 dbt Interview Topic**. You define these in the `dbt_project.yml` or the specific model config.
+This is the **#1 Core dbt Topic**. You define these in the `dbt_project.yml` or the specific model config.
 
 | Materialization | SQL Equivalent | Behavior | Best Use Case |
 | :--- | :--- | :--- | :--- |
@@ -117,7 +117,7 @@ Jinja is the templating language `{ ... }` inside SQL.
 
 ---
 
-### Summary Checklist for the Interview
+### Summary Checklist
 
 If they ask: **"How do you ensure data quality in your pipeline?"**
 **Answer:** "I use dbt **Generic Tests** (Unique, Not_Null) on my Staging models to catch errors early. I use **Relationship Tests** on my Marts to ensure Referential Integrity for the Star Schema. I run these tests in my CI/CD pipeline before merging code."

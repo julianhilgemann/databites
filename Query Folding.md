@@ -79,7 +79,7 @@ Every time a user clicks a slicer, Power BI generates a SQL query. If your M tra
 
 ---
 
-### Summary Checklist for the Interview
+### Summary Checklist
 
 1.  **"Folding is not binary."**
     (It can fold for the first 5 steps and break on step 6. I always push the "Folding Killers" to the very end of the script).

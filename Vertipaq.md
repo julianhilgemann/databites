@@ -33,7 +33,7 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
     *   *Action:* VertiPaq stores: `(Red, 4), (Blue, 2)`.
     *   *Impact:* **Sort Order Matters.** If your data is sorted well, RLE compresses millions of rows into bytes. This is why Star Schemas are faster than Flat [[Tables]]—dimension IDs repeat often (high RLE potential).
 
-### 3. VertiPaq vs. SQL (The Interview Answer)
+### 3. VertiPaq vs. SQL (The Definitive Answer)
 | Feature | SQL (Row Store) | VertiPaq (Column Store) |
 | :--- | :--- | :--- |
 | **Primary Goal** | Transactional integrity (ACID), retrieving records. | Analytical speed (Aggregations, Filtering). |
@@ -59,7 +59,7 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
     *   **Server Timings:** Shows exactly how long the Formula Engine (DAX) vs. Storage Engine (VertiPaq) took.
     *   **Formatting:** One-click "Format DAX" to clean up messy code.
     *   **Export:** Extracting large datasets to CSV faster than Power BI native export.
-*   *Interview Drop:* "I use DAX Studio to check for 'Callback DataID' errors to ensure my measures aren't falling back to the slow Formula engine."
+*   *Pro Tip:* "I use DAX Studio to check for 'Callback DataID' errors to ensure my measures aren't falling back to the slow Formula engine."
 
 ### 2. Tabular Editor 2 (Free) / 3 (Paid) (The Architect)
 *   **What it is:** A tool to edit the metadata (model.bim) directly without loading the data.
@@ -67,14 +67,14 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
     *   **[[Calculation Groups]]:** The only way to create them (e.g., a "[[Time Intelligence]]" switch that applies YTD/YoY to *any* measure).
     *   **Batch Editing:** Rename 50 measures or change formatting strings in 2 seconds using C# scripts.
     *   **Version Control:** Easier to integrate with [[git|Git]].
-*   *Interview Drop:* "I use Tabular Editor to manage Calculation Groups and to script repetitive measure creation."
+*   *Pro Tip:* "I use Tabular Editor to manage Calculation Groups and to script repetitive measure creation."
 
 ### 3. Measure Killer (The Janitor)
 *   **What it is:** Scans your report and model to find **unused** columns and measures.
 *   **Why use it:**
     *   Cleaning up "Technical Debt" before deployment.
     *   Reducing model size by deleting columns that no visual uses.
-*   *Interview Drop:* "Before prod deployment, I run Measure Killer to trim the fat and keep the model lean."
+*   *Pro Tip:* "Before prod deployment, I run Measure Killer to trim the fat and keep the model lean."
 
 ### 4. Bravo for Power BI (The Swiss Army Knife)
 *   **What it is:** A user-friendly toolkit by the SQLBI guys.
@@ -88,11 +88,11 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
 *   **Why use it:**
     *   When standard Power BI charts (Bar/Line) aren't enough.
     *   Creating super-custom, layered, or complex visualizations without buying expensive custom visuals.
-*   *Interview Drop:* "If the standard visuals hit a wall, I’m comfortable using Deneb to build bespoke charts."
+*   *Pro Tip:* "If the standard visuals hit a wall, I’m comfortable using Deneb to build bespoke charts."
 
 ### 6. ALM Toolkit (The Governor)
 *   **What it is:** A schema compare tool (Diff tool).
 *   **Why use it:**
     *   **Deployments:** Comparing the "Dev" file to the "Prod" dataset and pushing *only* the changes (e.g., just the new measure, not the data).
     *   Prevents overwriting incremental refresh partitions.
-*   *Interview Drop:* "I use ALM Toolkit to perform safe metadata-only deployments to production."
+*   *Pro Tip:* "I use ALM Toolkit to perform safe metadata-only deployments to production."

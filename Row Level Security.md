@@ -96,7 +96,7 @@ This is the standard architectural pattern you should describe.
 
 ---
 
-### 7. Pitfalls & Best Practices (Interview Checklist)
+### 7. Pitfalls & Best Practices (Checklist)
 
 #### A. Security Groups vs. Individuals
 

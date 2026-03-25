@@ -113,7 +113,7 @@ Moving from "Descriptive" to "Prescriptive".
 
 ### Summary Checklist: The Senior Viz Audit
 
-If you are asked to critique a visualization in an interview, use this checklist:
+If you are asked to critique a visualization in a professional setting, use this checklist:
 
 1.  **Question:** Does this chart answer the business question immediately?
 2.  **Cognitive Load:** Can I remove any ink (grids, borders, backgrounds) without losing meaning?

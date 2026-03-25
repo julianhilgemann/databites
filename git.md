@@ -76,7 +76,7 @@ git push origin main
 #### `git clone <url>`
 Downloads a repository for the first time. You only do this once per project.
 
-#### `git fetch` vs `git pull` (Interview Question)
+#### `git fetch` vs `git pull` (Common Question)
 *   **`git fetch`**: "Go to the internet and **look** at what changed. Download the info, but **do not touch my files**." (Safe).
 *   **`git pull`**: "Go to the internet, download changes, and **immediately overwrite** my files with them." (Fetch + Merge).
 
@@ -162,7 +162,7 @@ Git pauses and says: **"CONFLICT"**. It cannot decide who is right.
 
 ---
 
-### Summary Checklist for the Interview
+### Summary Checklist
 
 1.  **"I commit often."** (Small, atomic commits are easier to debug than one massive commit).
 2.  **"I use Branches."** (I never commit directly to Main).

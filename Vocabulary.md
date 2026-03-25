@@ -1,7 +1,7 @@
 
 ### 1. Data Modeling & [[Kimball]] (The Architecture)
 
-| Term | The "Specialist" Definition | The Interview Hook (Why it matters) |
+| Term | The "Specialist" Definition | The Pro Tip (Why it matters) |
 | :--- | :--- | :--- |
 | **Grain** | What a single row represents (e.g., "One line per order"). | "I always define the Grain first. If the grain mixes (Header vs Line), measures will double-count." |
 | **[[Star Schema]]** | Fact table in center, Dimensions surrounding. | "I prefer Star over Snowflake because the **[[Vertipaq|VertiPaq]]** engine is optimized for single-hop [[Relationships|relationships]]." |
@@ -18,7 +18,7 @@
 
 ### 2. Power BI Engine & DAX (The Mechanics)
 
-| Term | The "Specialist" Definition | The Interview Hook (Why it matters) |
+| Term | The "Specialist" Definition | The Pro Tip (Why it matters) |
 | :--- | :--- | :--- |
 | **Evaluation [[Context]]** | The environment a formula runs in (Row vs. Filter). | "Understanding this is the difference between a Junior and a Senior dev." |
 | **Row Context** | "The Finger." Iterating line-by-line. | "It iterates, it doesn't filter. Unless we use `CALCULATE` ([[Context Transition]])." |
@@ -35,7 +35,7 @@
 
 ### 3. SQL / Backend / dbt (The Pipeline)
 
-| Term | The "Specialist" Definition | The Interview Hook (Why it matters) |
+| Term | The "Specialist" Definition | The Pro Tip (Why it matters) |
 | :--- | :--- | :--- |
 | **Execution Order** | The logic flow: FROM $\to$ WHERE $\to$ GROUP $\to$ SELECT. | "I know I can't filter by a SELECT Alias in the WHERE clause because the Alias hasn't been created yet." |
 | **CTE** | Common Table Expression (`WITH...`). | "I use CTEs over nested subqueries for readability, similar to using `VAR` in DAX." |
@@ -49,7 +49,7 @@
 
 ### 4. Data Viz, Dashboard & UI/UX (The Front End)
 
-| Term | The "Specialist" Definition | The Interview Hook (Why it matters) |
+| Term | The "Specialist" Definition | The Pro Tip (Why it matters) |
 | :--- | :--- | :--- |
 | **Preattentive Attributes** | Visual cues (Color, Size) processed instantly by the brain. | "I use color sparingly as a preattentive attribute to highlight 'Bad' performance, not for decoration." |
 | **Z-Pattern / F-Pattern** | The eye's natural scanning route. | "I place the most critical **BANs** (Big Angry Numbers) in the top-left, following the user's scanning pattern." |
@@ -63,7 +63,7 @@
 
 ### 5. Governance & Modern Engineering (The Ecosystem)
 
-| Term | The "Specialist" Definition | The Interview Hook (Why it matters) |
+| Term | The "Specialist" Definition | The Pro Tip (Why it matters) |
 | :--- | :--- | :--- |
 | **[[TMDL]]** | Tabular Model Definition Language (Text-based). | "I use TMDL to enable code-first development. It makes solving **[[git|Git]] Merge Conflicts** actually possible." |
 | **PBIP** | Power BI Project (Folder structure). | "I save as PBIP so I can track changes in individual files, rather than committing a binary blob (.pbix) to Git." |

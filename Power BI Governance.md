@@ -22,7 +22,7 @@ How do you slice your tenant?
 | **By User** | `John's Workspace` | **Forbidden.** Never put production content in "My Workspace." If John leaves, the content dies. |
 | **By Function** | `Data Engineering`, `Reporting` | **Bad.** Promotes silos. Power BI works best when Data and Viz live close (or connected) to the subject matter. |
 
-#### B. The "Kitchen vs. Restaurant" Analogy (Crucial Interview Concept)
+#### B. The "Kitchen vs. Restaurant" Analogy (Crucial Concept)
 
 Explain this to stakeholders to define where they belong.
 
@@ -40,7 +40,7 @@ Explain this to stakeholders to define where they belong.
 
 ### 3. Workspace Roles (The 4 Musketeers)
 
-Knowing exactly what each role does is a mandatory exam question and interview topic.
+Knowing exactly what each role does is a mandatory exam question and discussion point.
 
 | Role | Capabilities | Who gets this? |
 | :--- | :--- | :--- |
@@ -92,7 +92,7 @@ How does a user know which dataset is the "truth"?
     *   *Who:* Any content creator.
 3.  **Certified:** "IT / Governance Council has vetted this."
     *   *Who:* Restricted to a specific security group (defined in Tenant Settings).
-    *   *Interview Tip:* "I always limit Certification rights to the Center of Excellence (CoE) team to maintain trust."
+    *   *Tip:* "I always limit Certification rights to the Center of Excellence (CoE) team to maintain trust."
 
 ---
 

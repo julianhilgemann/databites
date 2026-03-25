@@ -36,7 +36,7 @@
 
 **The Concept:** Saving the **State** of the report (Filters, Visibility, Sort Order).
 
-**The Interview Trap:** "All Visuals" vs. "Selected Visuals."
+**The Warning:** "All Visuals" vs. "Selected Visuals."
 
 *   **Scenario:** You make a bookmark to swap a Bar Chart for a Table.
 *   **The Bug:** You select "All Visuals" and "Data" (default). A user filters to "Year=2024," then clicks your bookmark. The bookmark **resets** the filter back to what it was when you created it (e.g., "All Years"). The user hates this.
@@ -44,7 +44,7 @@
     1.  Select the specific visuals involved in the swap.
     2.  Update Bookmark setting to **"Selected Visuals"** only.
     3.  Uncheck **"Data"** (so it doesn't touch filters).
-*   **Interview Hook:** *"I master the Bookmark pane to create 'App-like' behavior, like Toggles and Pop-ups, but I am extremely careful with the 'Data' property to ensure I don't overwrite user slicer selections."*
+*   **Pro Tip:** *"I master the Bookmark pane to create 'App-like' behavior, like Toggles and Pop-ups, but I am extremely careful with the 'Data' property to ensure I don't overwrite user slicer selections."*
 
 ---
 
@@ -81,7 +81,7 @@
 *   **Setup:** Enable "Personalize Visuals" in the Report Settings.
 *   **The UX:** User sees a small icon on the chart header. They can swap "Bar Chart" to "Table" or change "Sales" to "Profit."
 *   **Governance:** You can use **Perspectives** (in [[TMDL]]) to limit *what* fields they can see when they personalize. (e.g., Don't let them see the raw cost columns).
-*   **Interview Hook:** *"I enable Personalize Visuals to reduce 'Ad-Hoc' change requests. If a manager wants to see a chart as a table, they can do it themselves, and I can focus on new features."*
+*   **Pro Tip:** *"I enable Personalize Visuals to reduce 'Ad-Hoc' change requests. If a manager wants to see a chart as a table, they can do it themselves, and I can focus on new features."*
 
 ---
 

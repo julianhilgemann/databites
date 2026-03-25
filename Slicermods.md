@@ -20,7 +20,7 @@ Here is the hierarchy of [[Context]] Modifiers, from "Nuclear" to "Surgical."
     ```dax
     Grand Total = CALCULATE( [Total Sales], ALL(Sales) )
     ```
-*   **Interview Trap:** `ALL(Sales)` ignores filters on *Sales*, but if you filter a separate *Date* table, that filter still works (unless Sales is the Fact table and Date propagates to it).
+*   **Warning:** `ALL(Sales)` ignores filters on *Sales*, but if you filter a separate *Date* table, that filter still works (unless Sales is the Fact table and Date propagates to it).
 
 #### B. `ALL(Column)`
 
@@ -107,7 +107,7 @@ This is a critical performance distinction.
 *   **Context:** By default, `CALCULATE` is a bully. If you say `Color="Red"`, it overwrites any existing color filter.
 *   **Behavior:** `KEEPFILTERS` tells `CALCULATE` to respect the existing filter and find the **overlap** (AND logic).
 
-**The Interview Scenario:**
+**The Real-world Scenario:**
 *   Slicer: `Color = "Blue"`
 *   **Measure A (Standard):** `CALCULATE( [Sales], Product[Color]="Red" )`
     *   *Result:* **Shows Red Sales.** (The bully overwrites Blue with Red).
@@ -150,7 +150,7 @@ This is a critical performance distinction.
 | **REMOVEFILTERS**| Remover | "Just clear filters. Don't give me a table." | Readable alias for ALL(). |
 | **CROSSFILTER**| Modifier | "Change the arrow direction on the diagram." | Counting rows in Dimension based on Fact. |
 
-### Technical Best Practice (Interview Gold)
+### Technical Best Practice (Best Practice)
 > "When removing filters, I prefer **`REMOVEFILTERS`** over `ALL` because it expresses intent clearly.
 > When adding complex filters, I filter on **columns** (`ALL(Column)`) rather than [[Tables|tables]] to minimize memory usage.
 > I use **`KEEPFILTERS`** inside `CALCULATE` when I want to ensure my measure respects the user's slicers rather than overriding them."

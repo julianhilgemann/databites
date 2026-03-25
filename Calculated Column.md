@@ -1,5 +1,5 @@
 
-The "Golden Rule" for Calculated Columns in an interview:
+The "Golden Rule" for Calculated Columns in a professional setting:
 
 > **"Calculated Columns are computed during Data Refresh and stored in RAM. Measures are computed at Query Time (CPU). Therefore, I only use Calculated Columns when I need to SLICE by the result (Axis, Slicer, Filter)."**
 
@@ -26,7 +26,7 @@ SWITCH( TRUE(),
 )
 ```
 *   **Why:** Readability. The engine evaluates top-to-bottom and stops at the first match.
-*   **Interview Tip:** "I always include a 'Default' result to catch data quality issues (like negative numbers)."
+*   **Tip:** "I always include a 'Default' result to catch data quality issues (like negative numbers)."
 
 ---
 
@@ -73,7 +73,7 @@ Is High Value = Sales[Amount] > 1000
 2.  **Column 2 (Int):** `PrioritySort = 3`
 3.  **Action:** Select `Priority` $\to$ Sort by Column $\to$ `PrioritySort`.
 
-*   **Interview Warning:** "Circular Dependency."
+*   **Warning:** "Circular Dependency."
     *   If Column A relies on Column B to calculate, and you try to Sort B by A, the engine crashes. You cannot have A calculate from B while B sorts by A.
 
 ---
@@ -128,11 +128,11 @@ RETURN
 ```dax
 Days To Ship = DATEDIFF( Sales[OrderDate], Sales[ShipDate], DAY )
 ```
-*   **Interview Tip:** "I use `DATEDIFF` with the `SECOND` or `MINUTE` granularity carefully, as it produces high cardinality integers (millions of unique values), which hurts model size."
+*   **Tip:** "I use `DATEDIFF` with the `SECOND` or `MINUTE` granularity carefully, as it produces high cardinality integers (millions of unique values), which hurts model size."
 
 ---
 
-### Summary Table for Interviews
+### Summary Table
 
 | Feature | Bad Practice | Best Practice | Why? |
 | :--- | :--- | :--- | :--- |

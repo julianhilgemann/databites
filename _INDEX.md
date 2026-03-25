@@ -1,12 +1,12 @@
 
 
-## 1. Interview Prep & Strategy (The Meta Layer)
-*Tools to help you study and perform during the interview.*
+## 1. Core Strategy & Preparation (The Meta Layer)
+*Tools to help you study and perform in practice.*
 
 - [ ] **The "Cheat Sheet"**: [[Playbook]] (Emergency Field Guide).
 - [ ] **Study Methods**: [[Rapid Encoding Toolkit]] (Feynman, Notepad, Anki).
 - [ ] **Language**: [[Vocabulary]] (Senior vs Junior terminology).
-- [ ] **Scenario Practice**: [[Simulation]] (Mock Interview Q&A).
+- [ ] **Scenario Practice**: [[Simulation]] (Practice Q&A).
 - [ ] **Scope**: [[Full Curriculum]] & [[Priority]] (What to focus on first).
 - [ ] **Visual Map**: [[Map.canvas]] (Spatial view of concepts).
 

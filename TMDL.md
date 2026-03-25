@@ -85,7 +85,7 @@ measure 'Total Sales' = SUM('Sales'[Amount])
     formatString: "$#,0.00"
 ```
 
-**Interview Talking Point:**
+**Key Talking Point:**
 
 > "JSON was designed for machines to read. TMDL is designed for humans to read and edit. It removes the syntactic noise so I can focus on the logic."
 
@@ -167,7 +167,7 @@ role 'Europe Users'
 
 ---
 
-### 7. Summary: Interview "Power Moves"
+### 7. Summary: Expert "Power Moves"
 
 If asked about **TMDL**, hit these points to sound like an expert:
 

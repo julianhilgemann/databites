@@ -36,7 +36,7 @@ You must be able to draw this on a whiteboard.
 
 ---
 
-### 3. The "Double Counting" Trap (Interview Gold)
+### 3. The "Double Counting" Trap (Best Practice)
 
 This is the most common follow-up question.
 
@@ -108,7 +108,7 @@ CALCULATE(
 
 ---
 
-### Summary Checklist for the Interview
+### Summary Checklist
 
 1.  **"I model Bridges in the ETL."**
     (Don't try to create them using DAX Calculated Tables. Do it in SQL).

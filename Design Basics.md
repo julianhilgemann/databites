@@ -98,7 +98,7 @@ Standard guidelines (WCAG) to ensure everyone can use your tool.
 
 ---
 
-### 5. Summary Cheat Sheet for Interviews
+### 5. Summary Cheat Sheet
 
 If asked about your **Design Process**, use this flow:
 

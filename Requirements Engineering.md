@@ -85,7 +85,7 @@ Write your tickets (Jira/DevOps) using the Agile Syntax.
 
 ---
 
-# Phase 5: Handling Difficult Stakeholders (Interview Gold)
+# Phase 5: Handling Difficult Stakeholders (Best Practice)
 
 **Scenario:** Stakeholder asks for something technically bad (e.g., "I want a 50-column table export").
 
@@ -99,7 +99,7 @@ Write your tickets (Jira/DevOps) using the Agile Syntax.
 
 ---
 
-# Summary Checklist for the Interview
+# Summary Checklist
 
 If they ask: **"How do you gather requirements?"**
 

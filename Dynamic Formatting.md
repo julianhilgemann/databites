@@ -28,7 +28,7 @@ RETURN
         CONCATENATEX( VALUES('Dim_Geography'[City]), 'Dim_Geography'[City], ", " )
     )
 ```
-**Interview Hook:** *"I prioritize context in my reports. If a user prints a PDF, the slicers might not be visible. The Dynamic Title ensures the context is baked into the visual."*
+**Pro Tip:** *"I prioritize context in my reports. If a user prints a PDF, the slicers might not be visible. The Dynamic Title ensures the context is baked into the visual."*
 
 ---
 
@@ -82,7 +82,7 @@ Parameter = {
 #### Senior Best Practice: Grouping/Hierarchies
 You can add columns to the Field Parameter table to group options (e.g., "Financial Measures" vs "Operational Measures").
 
-**Interview Hook:** *"I use Field Parameters to reduce report bloat. Instead of building 5 duplicate charts (Sales by City, Sales by Country, etc.), I build one chart and give the user a Field Parameter to swap the view. This improves performance and maintainability."*
+**Pro Tip:** *"I use Field Parameters to reduce report bloat. Instead of building 5 duplicate charts (Sales by City, Sales by Country, etc.), I build one chart and give the user a Field Parameter to swap the view. This improves performance and maintainability."*
 
 ---
 
@@ -110,11 +110,11 @@ RETURN
 2.  Style = **Field Value**.
 3.  Select `[CF Sales Color]`.
 
-**Interview Hook:** *"I centralize my color logic. I create dedicated CF (Conditional Formatting) measures returning Hex codes. This way, if Marketing updates the branding, I update one DAX measure, and the entire dashboard updates instantly."*
+**Pro Tip:** *"I centralize my color logic. I create dedicated CF (Conditional Formatting) measures returning Hex codes. This way, if Marketing updates the branding, I update one DAX measure, and the entire dashboard updates instantly."*
 
 ---
 
-### Summary Table for the Interview
+### Summary Table
 
 | Feature | The Old Way | The Senior/Specialist Way | Why? |
 | :--- | :--- | :--- | :--- |

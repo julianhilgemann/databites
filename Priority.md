@@ -55,7 +55,7 @@
 
 ### 📝 Your "Cheat Code" Storyline
 
-When they ask about your workflow, memorize this sentence. It covers 80% of the interview requirements:
+When they ask about your workflow, memorize this sentence. It covers 80% of the core requirements:
 
 > "My philosophy is to push the heavy transformation logic upstream into **SQL/dbt** to build a clean **Kimball Star Schema**.
 >

@@ -19,7 +19,7 @@ RETURN
         [@CustSales]                 -- 4. Average the result
     )
 ```
-**Interview Hook:** *"I always use `ADDCOLUMNS(VALUES(...))` instead of `SUMMARIZE` for these patterns. `SUMMARIZE` works for grouping, but adding calculations inside it creates inefficient query plans (clustering issues). `ADDCOLUMNS` is faster."*
+**Pro Tip:** *"I always use `ADDCOLUMNS(VALUES(...))` instead of `SUMMARIZE` for these patterns. `SUMMARIZE` works for grouping, but adding calculations inside it creates inefficient query plans (clustering issues). `ADDCOLUMNS` is faster."*
 
 ---
 
@@ -55,7 +55,7 @@ VAR FilteredCustomers =
 RETURN
     COUNTROWS( FilteredCustomers )
 ```
-**Interview Hook:** *"I use the 'Disconnected Table' pattern to solve Dynamic Binning problems. It allows the user to re-classify data on the fly without reloading the model."*
+**Pro Tip:** *"I use the 'Disconnected Table' pattern to solve Dynamic Binning problems. It allows the user to re-classify data on the fly without reloading the model."*
 
 ---
 
@@ -78,7 +78,7 @@ IF(
 )
 ```
 
-**Interview Hook:** *"I always prefer `Dense` ranking over `Skip` ranking because business users get confused when Rank #3 disappears due to a tie at #2."*
+**Pro Tip:** *"I always prefer `Dense` ranking over `Skip` ranking because business users get confused when Rank #3 disappears due to a tie at #2."*
 
 ---
 
@@ -117,7 +117,7 @@ CALCULATE(
     )
 )
 ```
-**Interview Hook:** *"I’ve migrated my Running Totals to use `WINDOW` functions. They reduce the complexity from Quadratic ($N^2$) to Linear ($N$), which fixed our performance issues on the 5-year trend charts."*
+**Pro Tip:** *"I’ve migrated my Running Totals to use `WINDOW` functions. They reduce the complexity from Quadratic ($N^2$) to Linear ($N$), which fixed our performance issues on the 5-year trend charts."*
 
 ---
 
@@ -140,7 +140,7 @@ CALCULATE(
     )
 )
 ```
-**Interview Hook:** *"I use `TREATAS` to handle mismatched granularities, like comparing Daily Sales vs Monthly Targets, without creating messy Many-to-Many physical relationships."*
+**Pro Tip:** *"I use `TREATAS` to handle mismatched granularities, like comparing Daily Sales vs Monthly Targets, without creating messy Many-to-Many physical relationships."*
 
 ---
 
@@ -165,7 +165,7 @@ SUMX(
 
 ---
 
-### Summary Table for Interviews
+### Summary Table
 
 | Pattern | Usage | The "Pro" Move |
 | :--- | :--- | :--- |

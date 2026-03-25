@@ -11,7 +11,7 @@ Row context is the ability of the engine to know "which row I am currently looki
 **The Hard Rule:**
 > **Row Context does NOT filter the data model.**
 
-**The Interview Trap:**
+**The Warning:**
 *   **Scenario:** You are in a [[Calculated Column]] in the `Product` table. You write `SUM(Sales[Amount])`.
 *   **Result:** You get the **Grand Total** of all sales repeated on every single row.
 *   **Why?** You have a *Row Context* (you are on the "Red Hat" row), but you have no *Filter Context*. The `Sales` table doesn't know you want to filter by "Red Hat". It just sees "Sum everything."
@@ -41,7 +41,7 @@ Context Transition is the process of transforming the **Row Context** (current r
 **The Trigger:**
 The function **`CALCULATE`** (and `CALCULATETABLE`).
 
-**Revisiting the Interview Trap:**
+**Revisiting the Warning:**
 *   **Scenario:** You are in a Calculated Column in `Product`.
 *   **Code:** `CALCULATE( SUM(Sales[Amount]) )`.
 *   **Result:** You get the correct sales amount **for that specific product**.
@@ -66,7 +66,7 @@ Usually end in **X**. (`SUMX`, `AVERAGEX`, `MINX`, `MAXX`, `CONCATENATEX`).
 **The Standard Pattern:**
 `Function( <Table to Loop Over>, <Expression to Run on Each Row> )`
 
-**Interview Question:** "Why use `SUMX` instead of `SUM`?"
+**Common Question:** "Why use `SUMX` instead of `SUM`?"
 *   **Answer:** `SUM` aggregates a single column. `SUMX` allows for row-by-row logic *before* the aggregation.
 *   **Example:**
     *   `SUM(Sales[Amount])` $\to$ Adds up the column.
@@ -85,7 +85,7 @@ Usually end in **X**. (`SUMX`, `AVERAGEX`, `MINX`, `MAXX`, `CONCATENATEX`).
 
 ---
 
-### The "Must-Know" Interview Scenarios
+### The "Must-Know" Real-world Scenarios
 
 #### 1. The "Maximum Value" Logic
 
@@ -122,7 +122,7 @@ RETURN
 
 ---
 
-### Mnemonics for the Interview
+### Mnemonics for practical application
 
 1.  **"Row Context is blind to Neighbors."**
     (It sees its own row, but it doesn't filter the other table unless you use `CALCULATE`).

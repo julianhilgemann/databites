@@ -1,7 +1,7 @@
 
 # 1. The Logical Order of Operations (Execution Order)
 
-This is the **#1 SQL Interview Question**.
+This is the **#1 SQL Common Question**.
 You write SQL from top to bottom (`SELECT` first), but the database engine executes it in a completely different order.
 
 ### The Order
@@ -14,7 +14,7 @@ You write SQL from top to bottom (`SELECT` first), but the database engine execu
 7.  **ORDER BY** (Sort)
 8.  **LIMIT / TOP** (Cut off results)
 
-### The "Alias Paradox" (Interview Trap)
+### The "Alias Paradox" (Warning)
 **Question:** "Why does this query fail?"
 ```sql
 SELECT TotalAmount * 0.1 AS Tax

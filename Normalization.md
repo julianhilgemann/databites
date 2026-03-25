@@ -53,7 +53,7 @@ Imagine a messy spreadsheet: **Orders Table**
 
 ### 3. Normalization in Power BI (The Twist)
 
-In a technical interview, you must distinguish between **Application Design (OLTP)** and **Power BI Design (OLAP)**.
+In a professional setting, you must distinguish between **Application Design (OLTP)** and **Power BI Design (OLAP)**.
 
 | Feature | [[SQL]] / App Development (OLTP) | Power BI / Analytics (OLAP) |
 | :--- | :--- | :--- |
@@ -78,10 +78,10 @@ You take the 3NF data and "Denormalize" the Dimensions.
 
 ---
 
-### 4. Summary: What to say in an Interview
+### 4. Summary: What to say in a professional setting
 
 **The Scenario:**
-Interviewer: *"Our source database is highly normalized. How do you handle that in Power BI?"*
+Stakeholder: *"Our source database is highly normalized. How do you handle that in Power BI?"*
 
 **The Best Practice Answer:**
 1.  **"I respect normalization in the Fact Table."**

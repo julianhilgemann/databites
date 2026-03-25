@@ -50,7 +50,7 @@ When I write or debug [[DAX]], I run this 4-step [[Simulation|simulation]] in my
 
 ---
 
-# 🔥 The "Interview Hook"
+# 🔥 The "Pro Tip"
 
 When they ask **"How do you troubleshoot complex DAX?"** or **"How do you write measures?"**, use this script. It frames you as an Architect who thinks before typing.
 

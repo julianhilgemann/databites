@@ -118,6 +118,6 @@ A design principle borrowed from graphic design.
 *   **A - Alignment:** Use the grid. Nothing acts as an island.
 *   **P - Proximity:** Group related things together (e.g., Filter next to the chart it affects).
 
-### Final Interview Tip
+### Final Tip
 
 > "My design process begins with **prototyping** (Figma or Excalidraw) and **user interviews** to define the 'User Stories.' I don't open Power BI until I know exactly what questions the user needs to answer. I prioritize **low cognitive load** and **performance** over flashy custom visuals."

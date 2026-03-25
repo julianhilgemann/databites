@@ -54,7 +54,7 @@ Formula: `Col = CALCULATE( SUM(Sales[Amount]) )`
 
 ---
 
-# Part 3: The "Iterator" Trap (Interview Gold)
+# Part 3: The "Iterator" Trap (Best Practice)
 
 This is the most common test of Senior DAX knowledge.
 
@@ -103,7 +103,7 @@ This is a specific issue with Context Transition in **Calculated Columns**.
 
 ---
 
-# Part 5: Interview Q&A [[Simulation]]
+# Part 5: Practice Q&A [[Simulation]]
 
 **Q: Does Context Transition happen automatically?**
 

@@ -97,7 +97,7 @@ These tools sit alongside Power BI to enable "Write-back" and Automation.
 | **Dataverse** | Transactional DB | The Filing Cabinet. |
 | **Flow** | Action | The Messenger. |
 
-### Interview "Gotcha" Question
+### "Gotcha" Question
 **Q: "What is the difference between a Report and a Dashboard?"**
 
 *   **Wrong Answer:** "They are the same."

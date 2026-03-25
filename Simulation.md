@@ -1,6 +1,6 @@
-Here is an extensive **Interview Simulation Suite**.
+Here is an extensive **Skill Assessment & Practice Suite**.
 
-These questions are categorized by domain and graded by difficulty. Use this to simulate the pressure of a live interview. I have included the **"Specialist Answer Key"** based on the curriculum we built.
+These questions are categorized by domain and graded by difficulty. Use this to simulate the pressure of a practical assessment. I have included the **"Specialist Answer Key"** based on the curriculum we built.
 
 ---
 

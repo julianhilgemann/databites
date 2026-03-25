@@ -149,7 +149,7 @@ These are the most important functions in the language.
 
 ---
 
-### Mnemonic Strategy for the Interview
+### Mnemonic Strategy for practical application
 
 If you get stuck, remember **"C.A.L.M."**:
 *   **C**alculate (Do I need to change filters?)

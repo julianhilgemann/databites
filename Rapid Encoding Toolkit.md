@@ -22,7 +22,7 @@
 
 ### 3. The "Pseudo-Code" Pivot (Your Safety Net)
 
-*   **The Adjustment:** This is a new tool specifically for the interview. It trains you to think in "Prompt Logic" but deliver it as "Engineering Logic."
+*   **The Adjustment:** This is a new tool specifically for practical application. It trains you to think in "Prompt Logic" but deliver it as "Engineering Logic."
 *   **Why:** If you blank on syntax during a live coding test, you fall back to this. It shows you know *what* to do, even if you forgot the comma.
 *   **The Method:**
     1.  Take a complex problem (e.g., "Rolling 12 Month Average").
@@ -33,7 +33,7 @@
         // 3. Calculate Sales over that range
         ```
     3.  **Step 2:** Fill in the code below it.
-    4.  **The Benefit:** In an interview, if you write the comments first, the interviewer sees you thinking. If you mess up the syntax later, they usually forgive you because the logic was sound.
+    4.  **The Benefit:** in a professional setting, if you write the comments first, your stakeholders see your process. If you mess up the syntax later, they usually forgive you because the logic was sound.
 
 ### 4. The "Full Stack" Canvas (Visualizing the Pipeline)
 
@@ -54,7 +54,7 @@
     3.  **Phase 1 (20 mins):** Write it manually in Notepad. Struggle with it.
     4.  **Phase 2 (5 mins):** Paste it into ChatGPT. Prompt: *"Act as a Senior Principal Engineer. Code Review this DAX. Do not rewrite it, just point out potential performance flaws or context risks."*
     5.  **Phase 3 (5 mins):** Fix your own code based on the feedback.
-    6.  *This mimics the answer you will give in the interview: "I write the logic, then use AI to audit for edge cases."*
+    6.  *This mimics the explanation you will give to stakeholders: "I write the logic, then use AI to audit for edge cases."*
 
 ### 6. Anki "Senior Vocab" Deck
 

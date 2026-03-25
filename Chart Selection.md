@@ -35,7 +35,7 @@ There are only 5 jobs data usually does:
     *   *Context:* Enable the "Analytics Pane" features to show a trend line or a forecast confidence interval.
 *   **The Specialist Move:** **Deneb / Vega-Lite.**
     *   *Scenario:* You need highly customized Step-Charts or "Slope Charts" (Start vs End only) that Power BI native visuals struggle with.
-    *   *Interview Hook:* "For complex time-series where I need specific annotations or conditional markers, I use **Deneb** to write custom JSON specifications."
+    *   *Pro Tip:* "For complex time-series where I need specific annotations or conditional markers, I use **Deneb** to write custom JSON specifications."
 
 #### C. Composition (Part-to-Whole)
 *Goal: How much does X contribute to the total?*
@@ -70,7 +70,7 @@ There are only 5 jobs data usually does:
 
 ### 3. The "Anti-Patterns" (What to avoid)
 
-In a senior interview, aggressively denounce these:
+In a professional setting, aggressively denounce these:
 
 1.  **3D Charts:** They distort data perspective. Never use them.
 2.  **Dual Y-Axis (with different scales):**
@@ -91,7 +91,7 @@ Power BI released the **"New Card Visual"** (multi-card). It is a game changer.
 *   **New Way:** One visual container holding 5 measures.
     *   **Features:** Built-in images, accent bars, sub-labels, and specific conditional formatting per metric.
     *   **Performance:** It renders **1 query** instead of **5 queries**.
-    *   **Interview Hook:** "I strictly use the New Card visual to consolidate KPIs. It reduces the DOM elements on the page, improving rendering performance by 20-30%."
+    *   **Pro Tip:** "I strictly use the New Card visual to consolidate KPIs. It reduces the DOM elements on the page, improving rendering performance by 20-30%."
 
 ---
 

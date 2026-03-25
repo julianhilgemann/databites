@@ -125,7 +125,7 @@ If Developer A changes `ProductKey` datatype and Developer B adds a Description 
 
 ---
 
-### 7. Summary Checklist for the Interview
+### 7. Summary Checklist
 
 If asked about **Git integration in Power BI**, hit these points:
 

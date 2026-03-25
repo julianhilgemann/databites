@@ -53,6 +53,6 @@
 ---
 
 ### 💡 The "One-Liner" Drop
-If you want to sound like an insider during the interview, drop this line:
+If you want to sound like an insider in practice, drop this line:
 
 > *"I treat **Kimball's** Toolkit as the blueprint for the architecture, and **Russo & Ferrari's** Definitive Guide as the manual for the engine. I don't guess with the model; I follow the standard."*

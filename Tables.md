@@ -20,7 +20,7 @@ You should generally avoid Calculated Tables and prefer Power Query (M) or [[SQL
     ```
 4.  **Debugging:** Great for testing a complex Virtual Table script to see what it actually returns.
 
-### The Interview Trap
+### The Warning
 
 **Q:** "Can I create a Calculated Table that changes based on the user's Slicer selection?"
 **A:** "No. Calculated Tables are computed at **Process Time** (Refresh), not **Query Time**. To do dynamic table logic, you must use **Virtual Tables** inside a Measure."
@@ -57,7 +57,7 @@ ADDCOLUMNS(
 
 *   **[[Context]]:** This is the function Power BI generates natively when you drag visuals onto the canvas. It is faster and more efficient.
 *   **Limitation:** Historically, it had issues inside complex **Context Transitions** (measures).
-*   **Interview Verdict:** "For querying (DAX Query View), I use `SUMMARIZECOLUMNS`. For complex measure logic inside `CALCULATE`, I prefer the robustness of `ADDCOLUMNS(SUMMARIZE(...))`."
+*   **Final Verdict:** "For querying (DAX Query View), I use `SUMMARIZECOLUMNS`. For complex measure logic inside `CALCULATE`, I prefer the robustness of `ADDCOLUMNS(SUMMARIZE(...))`."
 
 ---
 
@@ -111,7 +111,7 @@ RETURN
 
 ---
 
-# Summary Checklist for the Interview
+# Summary Checklist
 
 1.  **"Calculated Tables are Static."**
     (I try to do this upstream in SQL/[[dbt]]. I only use DAX tables for Date tables or Parameter generation).

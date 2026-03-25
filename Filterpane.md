@@ -25,7 +25,7 @@ Here are the specific interactions to be aware of:
 
 **The Interaction:**
 *   If you apply a Visual-Level filter in the Pane (e.g., "Exclude Unknowns"), and your measure uses `ALL(Table)`, **that filter is ignored**.
-*   **Interview Insight:** This often causes "Data Quality" tickets.
+*   **Insight:** This often causes "Data Quality" tickets.
     *   *User:* "I filtered out the NULLs in the Filter Pane for this chart!"
     *   *Developer:* "My measure calculates `% of Grand Total` using `ALL(Sales)`, so it put the NULLs back in the denominator."
     *   *Solution:* You need to be specific about *which columns* you are removing filters from (`ALL(Column)`), or apply the data cleaning upstream in Power Query so you don't rely on the Filter Pane to hide bad data.
@@ -61,7 +61,7 @@ You can drag a **Measure** into the Filter Pane (e.g., "Show items where [Total 
 *   **Performance Warning:** This is extremely expensive (slow).
 *   **DAX Interaction:** If your DAX measure inside the visual *also* does complex Context Transition, having a Measure Filter in the pane adds a second layer of iteration. This is a common cause of "Resource Exceeded" errors.
 
-### Summary Checklist for the Interview
+### Summary Checklist
 
 If asked about the **Filter Pane**:
 

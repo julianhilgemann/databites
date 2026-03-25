@@ -86,7 +86,7 @@ Data should flow logically.
 
 Power BI's native visuals struggle to be 100% IBCS compliant (e.g., it's hard to make "Outlined" bars for Budget without hacks).
 
-**How to sound like an Expert in the Interview:**
+**How to sound like an Expert to Stakeholders:**
 
 1.  **The "Workaround" Answer:**
     > "I implement IBCS principles using native visuals by enforcing a strict Color Theme (Black for Actuals, Grey for PY) and using Error Bars to represent Budgets/Targets efficiently."

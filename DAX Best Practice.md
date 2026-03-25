@@ -30,7 +30,7 @@ RETURN
 
 ### 2. Strict Naming Conventions (The "Pro" Signifier)
 
-This is a visual cue that tells an interviewer you are experienced.
+This is a visual cue that tells a stakeholder you are experienced.
 
 *   **Measures:** Always use brackets only. `[Total Sales]`
 *   **Columns:** Always include the table name. `Sales[Amount]`
@@ -45,7 +45,7 @@ This is a visual cue that tells an interviewer you are experienced.
 **The Rule:** Always use the `DIVIDE()` function.
 **Why:** The `/` operator crashes (throws an error) if the denominator is zero. `DIVIDE` handles divide-by-zero gracefully (returns BLANK by default, or an alternate result).
 
-**Interview Line:** *"I use DIVIDE to ensure the visual doesn't throw 'Infinity' errors or crashes during data quality issues."*
+**Pro Tip:** *"I use DIVIDE to ensure the visual doesn't throw 'Infinity' errors or crashes during data quality issues."*
 
 ---
 
@@ -84,7 +84,7 @@ CALCULATE( [Total Sales], KEEPFILTERS( Sales[Color] = "Red" ) )
 ### 7. [[Time Intelligence]]: Auto vs. Custom
 
 **The Rule:** Never use "Auto Date/Time."
-**The Interview Line:** *"I disable Auto Date/Time immediately to prevent model bloat (hidden tables) and ensure I can use a standard 4-4-5 or Fiscal calendar using a dedicated Date Dimension."*
+**The Pro Tip:** *"I disable Auto Date/Time immediately to prevent model bloat (hidden tables) and ensure I can use a standard 4-4-5 or Fiscal calendar using a dedicated Date Dimension."*
 
 ---
 
@@ -116,7 +116,7 @@ IF(
 
 ---
 
-### Summary Checklist for the Interview
+### Summary Checklist
 
 If they ask: **"How do you optimize a slow report?"**
 Your answer should be this workflow:

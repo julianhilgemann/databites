@@ -71,7 +71,7 @@ RETURN
         'Date'[ISO_Week_Index] = CurrentWeekIndex - 52
     )
 ```
-*   **Interview Hook:** *"For Retail clients, I ignore standard Time Intelligence. I implement a **Week Offset** logic to ensure holidays and weekends align perfectly year-over-year."*
+*   **Pro Tip:** *"For Retail clients, I ignore standard Time Intelligence. I implement a **Week Offset** logic to ensure holidays and weekends align perfectly year-over-year."*
 
 ---
 
@@ -154,7 +154,7 @@ CALCULATE(
 
 ---
 
-### Summary Table for the Interview
+### Summary Table
 
 | Scenario | Pattern | Why? |
 | :--- | :--- | :--- |

@@ -69,7 +69,7 @@ CALCULATE(
 
 ### 3. The Grand Unification (Math + Audio + DAX)
 
-Here is how you synthesize this for the interview to show you are a master of both sides.
+Here is how you synthesize this for practical application to show you are a master of both sides.
 
 **The Explanation:**
 
