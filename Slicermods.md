@@ -4,7 +4,7 @@ Think of `CALCULATE` as a room. Before you enter, you have filters on your cloth
 
 These functions determine **what clothes you take off or put on** before you step into the room to do the math.
 
-Here is the hierarchy of Context Modifiers, from "Nuclear" to "Surgical."
+Here is the hierarchy of [[Context]] Modifiers, from "Nuclear" to "Surgical."
 
 ---
 
@@ -152,5 +152,5 @@ This is a critical performance distinction.
 
 ### Technical Best Practice (Interview Gold)
 > "When removing filters, I prefer **`REMOVEFILTERS`** over `ALL` because it expresses intent clearly.
-> When adding complex filters, I filter on **columns** (`ALL(Column)`) rather than tables to minimize memory usage.
+> When adding complex filters, I filter on **columns** (`ALL(Column)`) rather than [[Tables|tables]] to minimize memory usage.
 > I use **`KEEPFILTERS`** inside `CALCULATE` when I want to ensure my measure respects the user's slicers rather than overriding them."

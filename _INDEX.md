@@ -11,14 +11,14 @@
 - [ ] **Visual Map**: [[Map.canvas]] (Spatial view of concepts).
 
 ## 2. Architecture & Data Modeling
-*The structural foundation. If this is wrong, the DAX will fail.*
+*The structural foundation. If this is wrong, the [[DAX]] will fail.*
 
 - [ ] **Core Theory**: [[Kimball]] (The Bible) & [[Star Schema]] (Fact vs Dim).
 - [ ] **Database Basics**: [[Normalization]] (3NF vs Star) & [[Engineering Basics]].
 - [ ] **Connections**: [[Relationships]] (1:N, 1:1) & [[Bridge Tables]] (Handling Many-to-Many).
 - [ ] **Identity**: [[The Anatomy of Keys]] (Surrogate vs Natural) & [[Cardinality]] (Optimization).
 
-## 3. The Modern Engineering Stack (Fabric/Git)
+## 3. The Modern Engineering Stack (Fabric/[[git|Git]])
 *The "Code-First" approach distinguishing you as a specialist.*
 
 - [ ] **Version Control**: [[PowerBI Git]] (PBIP) & [[TMDL]] (The new language).
@@ -26,7 +26,7 @@
 - [ ] **Updates**: [[Current Developments]] (Latest features in 2024/2025).
 - [ ] **Transformation**: [[dbt]] (Staging, Marts, Snapshots).
 
-## 4. Power Query & SQL
+## 4. Power Query & [[SQL]]
 *Upstream data preparation.*
 
 - [ ] **Performance**: [[Query Folding]] (The #1 concept).
@@ -35,9 +35,9 @@
 ## 5. DAX & The Semantic Engine
 *The mechanics of the calculation engine.*
 
-- [ ] **Context Theory**: [[Context]] & [[Filter Propagation]] (The Waterfall).
+- [ ] **[[Context]] Theory**: [[Context]] & [[Filter Propagation]] (The Waterfall).
 - [ ] **The Engine**: [[Vertipaq]] (Storage) & [[CALCULATE Function]].
-- [ ] **Table Logic**: [[Tables]] (Calculated vs Virtual Tables).
+- [ ] **Table Logic**: [[Tables]] (Calculated vs Virtual [[Tables]]).
 - [ ] **Core Functions**: [[DAX]] (General) & [[Selectedvalue]] (Harvesting params).
 - [ ] **Time**: [[Time Intelligence]] (Standard vs Custom).
 - [ ] **Complexity**: [[Advanced DAX Patterns]] (RankX, Windowing).

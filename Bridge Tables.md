@@ -62,7 +62,7 @@ Commission Amount = SUMX( Bridge, Bridge[Weight] * RELATED(Fact[Amount]) )
 
 ### 4. Native Many-to-Many vs. Bridge Table
 
-Power BI allows you to just drag a line between two "Many" tables.
+Power BI allows you to just drag a line between two "Many" [[Tables|tables]].
 
 | Feature | Native M2M (Lazy) | Physical Bridge (Senior) |
 | :--- | :--- | :--- |
@@ -73,7 +73,7 @@ Power BI allows you to just drag a line between two "Many" tables.
 
 **The Specialist Stance:**
 
-> "I strictly avoid Native Many-to-Many relationships. They obscure the data lineage. I always materialize a **Physical Bridge Table** in dbt/SQL. This allows me to handle weighting logic, audit the connections, and ensure the model remains transparent to other developers."
+> "I strictly avoid Native Many-to-Many [[Relationships|relationships]]. They obscure the data lineage. I always materialize a **Physical Bridge Table** in [[dbt]]/[[SQL]]. This allows me to handle weighting logic, audit the connections, and ensure the model remains transparent to other developers."
 
 ---
 
@@ -83,7 +83,7 @@ Bi-Directional relationships are expensive (they disable ambiguity checks and ca
 
 **Best Practice:**
 1.  Keep the relationship between Bridge and Fact as **Single Direction** (Fact $\to$ Bridge) in the Model View.
-2.  Use DAX to activate the "Upstream" filter **only** for the specific measures that need it.
+2.  Use [[DAX]] to activate the "Upstream" filter **only** for the specific measures that need it.
 
 ```dax
 Sales by Person = 

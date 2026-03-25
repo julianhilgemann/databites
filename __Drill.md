@@ -26,7 +26,7 @@ If you know these cold, you pass. If you get asked anything else, you pivot to l
 
 
 The Holy Trinity**
-*   **Concept:** `CALCULATE` changes context. `ALL` removes context. `DIVIDE` prevents errors.
+*   **Concept:** `CALCULATE` changes [[Context|context]]. `ALL` removes context. `DIVIDE` prevents errors.
 *   **The Drill:** Write this pattern on paper 10 times until you stop hesitating.
 
 ```dax
@@ -40,7 +40,7 @@ RETURN
 
 **Logic & Lookup**
 *   **Concept:** `RELATED` pulls data from the "One" side to the "Many" side. `SWITCH` is cleaner than IF.
-*   **The Drill:** Write a calculated column logic pattern.
+*   **The Drill:** Write a [[Calculated Column|calculated column]] logic pattern.
 
 ```dax
 -- Pattern: Segmentation / Logic
@@ -54,7 +54,7 @@ SWITCH( TRUE(),
 
 ---
 
-###  Time Intelligence
+###  [[Time Intelligence]]
 
 
 **Hour 1: The Basics**
@@ -111,4 +111,4 @@ Title = "Report for: " & SELECTEDVALUE( 'Date'[Year], "All Years" )
 *   **Practice the Pivot:** *"I use `CALCULATE` with `DATESINPERIOD`. I grab the date column, start at the MAX date visible, and look back minus 12 MONTHs."*
 
 **Hour 3: Rest / Light Review**
-*   Do not code. Look at your cheat sheets. Visualize the Star Schema.
+*   Do not code. Look at your cheat sheets. Visualize the [[Star Schema]].

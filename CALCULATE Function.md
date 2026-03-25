@@ -1,17 +1,17 @@
-This is the **Heart of DAX**. If you master this, you master the language.
+This is the **Heart of [[DAX]]**. If you master this, you master the language.
 
 # Part 1: The Anatomy of `CALCULATE`
 
 ### The Definition
 
-`CALCULATE` evaluates an expression in a **modified Filter Context**.
+`CALCULATE` evaluates an expression in a **modified Filter [[Context]]**.
 
 ### The Execution Order (The Algorithm)
 
 When the engine sees `CALCULATE( [Sales], Filter1, Filter2 )`, it follows this strict 4-step process. **Memorize this.**
 
 1.  **Snapshot:** It takes a snapshot of the *existing* Filter Context (from slicers/visuals).
-2.  **Transition:** If a **Row Context** exists (e.g., inside `SUMX` or a Calculated Column), it creates a new Filter Context from the current row (Context Transition).
+2.  **Transition:** If a **Row Context** exists (e.g., inside `SUMX` or a [[Calculated Column]]), it creates a new Filter Context from the current row ([[Context Transition]]).
 3.  **Modification:** It evaluates the Modifier functions (`ALL`, `REMOVEFILTERS`, `KEEPFILTERS`, `USERELATIONSHIP`).
     *   *Crucial:* These remove or alter filters *before* new ones are added.
 4.  **Overwrite/Merge:** It evaluates the explicit filters (`Color = "Red"`).
@@ -103,7 +103,7 @@ This is a specific issue with Context Transition in **Calculated Columns**.
 
 ---
 
-# Part 5: Interview Q&A Simulation
+# Part 5: Interview Q&A [[Simulation]]
 
 **Q: Does Context Transition happen automatically?**
 

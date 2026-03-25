@@ -26,7 +26,7 @@ A Primary Key derived from *multiple* columns required to make a row unique.
 ### 4. Candidate Key
 
 Any column that *could* theoretically qualify as a Primary Key (is unique and not null).
-*   **Context:** A table might have an `Employee_ID` (Integer) and an `Email` (String). Both are Candidate Keys. You should choose the `Employee_ID` as the actual PK for performance.
+*   **[[Context]]:** A table might have an `Employee_ID` (Integer) and an `Email` (String). Both are Candidate Keys. You should choose the `Employee_ID` as the actual PK for performance.
 
 ---
 
@@ -52,7 +52,7 @@ If you have a Composite Key (e.g., `Region` + `Product` + `Date`), you might cre
 
 ## Part 3: The Engine Room (How Power BI "Thinks")
 
-To understand why Integers are best, you must understand how the **VertiPaq Engine** handles connections.
+To understand why Integers are best, you must understand how the **[[Vertipaq|VertiPaq]] Engine** handles connections.
 
 ### 1. Dictionary Encoding
 When Power BI loads a column (e.g., a Foreign Key in a Fact table):
@@ -81,7 +81,7 @@ When you create a relationship (Join) between Table A and Table B:
 
 ## Part 4: The Best Practice Pipeline (ETL Strategy)
 
-If your source system gives you GUIDs or Composite Keys, do not just load them into Power BI. Use your ETL process (SQL, Databricks, dbt) to transform them.
+If your source system gives you GUIDs or Composite Keys, do not just load them into Power BI. Use your ETL process ([[SQL]], Databricks, [[dbt]]) to transform them.
 
 ### The "Surrogate Key Mapping" Technique
 **Scenario:** You have a `Sales` table and a `Customer` table linked by `Customer_GUID`.
@@ -109,7 +109,7 @@ If your source system gives you GUIDs or Composite Keys, do not just load them i
 | Key Type | Engineering Name | Example | Power BI Performance | Recommendation |
 | :--- | :--- | :--- | :--- | :--- |
 | **Integer** | Surrogate Key | `1024` | **Excellent** (Native/Fastest) | **Always use this.** Generate it in ETL if needed. |
-| **Short Text** | Natural Key | `US-NY` | **Good** | Acceptable for low-cardinality dims (e.g., 50 states). |
+| **Short Text** | Natural Key | `US-NY` | **Good** | Acceptable for low-[[Cardinality|cardinality]] dims (e.g., 50 states). |
 | **Long Text** | Natural Key | `PROD-2023-X-VAR-99` | **Poor** | Dictionary size bloats. Convert to Integer SK. |
 | **Composite** | Composite Key | Col A + Col B | **Impossible** (Directly) | Must be concatenated or hashed. Prefer Integer SK. |
 | **GUID / UUID** | Unique Identifier | `a1b2-c3d4...` | **Terrible** | High cardinality, high memory, slow joins. **Avoid as relationship keys.** |
@@ -119,4 +119,4 @@ If your source system gives you GUIDs or Composite Keys, do not just load them i
 ### Final "Rule of Thumb"
 
 > **"Strings are for reading. Numbers are for joining."**
-> Never force the Power BI engine to perform math (relationships) on text strings (GUIDs) if you can avoid it.
+> Never force the Power BI engine to perform math ([[Relationships|relationships]]) on text strings (GUIDs) if you can avoid it.

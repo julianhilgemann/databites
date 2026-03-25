@@ -21,7 +21,7 @@ There are only 5 jobs data usually does:
 *   **The Standard:** **Bar Chart** (Horizontal).
     *   *Why Horizontal?* It accommodates long category labels (e.g., "Product Names") without tiling your head.
 *   **The "Pro" Move:** **Bar Chart + Error Bars.**
-    *   *Context:* Use error bars to show the previous year's value or a target. It’s cleaner than side-by-side bars.
+    *   *[[Context]]:* Use error bars to show the previous year's value or a target. It’s cleaner than side-by-side bars.
 *   **The Specialist Move:** **Small Multiples (Trellis).**
     *   *Scenario:* Comparing Sales by Product across 4 Regions.
     *   *Don't:* Use a Stacked Bar (hard to compare middle segments).
@@ -48,7 +48,7 @@ There are only 5 jobs data usually does:
 *   **The Specialist Move:** **Decomposition Tree.**
     *   *Why:* It allows the *user* to choose how to break down the composition (Ad-hoc analysis). "Let me break this down by Region... now by Product... now by Sales Rep."
 
-#### D. Correlation (Relationships)
+#### D. Correlation ([[Relationships]])
 *Goal: Does Spend affect Sales?*
 
 *   **The Standard:** **Scatter Plot.**
@@ -64,7 +64,7 @@ There are only 5 jobs data usually does:
 *   **The Standard:** **KPI Card.**
 *   **The Specialist Move:** **Bullet Chart (Custom Visual or Deneb).**
     *   *Anatomy:* A solid bar (Actual) inside a wider bar (Qualitative Range/Target) with a marker line (Goal).
-    *   *Why:* It packs a massive amount of context into a tiny footprint. (IBCS standard).
+    *   *Why:* It packs a massive amount of context into a tiny footprint. ([[IBCS]] standard).
 
 ---
 
@@ -104,7 +104,7 @@ Power BI released the **"New Card Visual"** (multi-card). It is a game changer.
 | **Hierarchy** | Pie Chart | **Decomposition Tree** | AI-driven exploration is superior to static slices. |
 | **Performance** | Gauge | **Bullet Chart** | Information density (IBCS standard). |
 | **KPIs** | Many Cards | **New Card (Multi)** | 1 Query vs. Many Queries (Performance). |
-| **Tables** | Native Table | **Matrix** | Allows grouping/collapsing (Drill-down). |
+| **[[Tables]]** | Native Table | **Matrix** | Allows grouping/collapsing (Drill-down). |
 
 ### Mnemonic: **"C.T.C"** (Context, Type, Clarity)
 

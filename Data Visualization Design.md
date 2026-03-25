@@ -17,7 +17,7 @@ Before a user consciously "reads" a chart, their brain processes visual signals 
 
 **Senior Application:**
 
-*   If the exact value matters (e.g., Financial Audit), use **Position** or **Length** (Bars/Tables).
+*   If the exact value matters (e.g., Financial Audit), use **Position** or **Length** (Bars/[[Tables]]).
 *   If only the pattern matters (e.g., Heatmap of server load), use **Color**.
 *   **Never** ask a user to compare Area (Bubble charts) to determine if Sales A is 5% larger than Sales B. The human eye cannot do it.
 
@@ -119,7 +119,7 @@ If you are asked to critique a visualization in an interview, use this checklist
 2.  **Cognitive Load:** Can I remove any ink (grids, borders, backgrounds) without losing meaning?
 3.  **Color:** Is color used to encode value/category, or just for decoration? (Remove decorative color).
 4.  **Comparability:** Are the scales synchronized?
-5.  **Context:** Are there annotations explaining *why* a spike happened? (e.g., "Black Friday Sale").
+5.  **[[Context]]:** Are there annotations explaining *why* a spike happened? (e.g., "Black Friday Sale").
 
 ### Mnemonic: **SCC**
 

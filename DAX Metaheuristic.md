@@ -1,9 +1,9 @@
 
-# 🧠 The DAX "Execution Loop" (Meta-Heuristic)
+# 🧠 The [[DAX]] "Execution Loop" (Meta-Heuristic)
 
-When I write or debug [[DAX]], I run this 4-step simulation in my head:
+When I write or debug [[DAX]], I run this 4-step [[Simulation|simulation]] in my head:
 
-### 1. The Environment: "What is the Incoming Filter Context?"
+### 1. The Environment: "What is the Incoming Filter [[Context]]?"
 
 **"What is the box I am standing in?"**
 *   Look at the Slicers (Year, Region).
@@ -28,7 +28,7 @@ When I write or debug [[DAX]], I run this 4-step simulation in my head:
 
 ### 4. The Logic: "The Operation & Transition"
 
-**"What is the math, and did I trigger Context Transition?"**
+**"What is the math, and did I trigger [[Context Transition]]?"**
 *   Apply the math: `SUM`, `RANKX`, `DIVIDE`.
 *   **The Senior Check:** "Did I wrap this in `CALCULATE`? If so, my Row Context just transformed into Filter Context."
 

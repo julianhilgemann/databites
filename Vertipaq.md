@@ -3,7 +3,7 @@
 
 ### 1. The Philosophy: "Columnar & Compressed"
 
-Most traditional databases (SQL Server, Oracle) are **Row-Stores**. Power BI (VertiPaq) is a **Column-Store**.
+Most traditional databases ([[SQL]] Server, Oracle) are **Row-Stores**. Power BI (VertiPaq) is a **Column-Store**.
 
 #### The Difference (The Phonebook Analogy)
 
@@ -26,12 +26,12 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
 2.  **Hash Encoding (Dictionary):**
     *   *Scenario:* You have a column with "Product A" appearing 1 million times.
     *   *Action:* It builds a dictionary: `Product A = 1`. It stores `1` a million times instead of the text string.
-    *   *Impact:* This is why **Cardinality** (number of unique values) is the enemy. A high-cardinality column (like a UUID or Timestamp) creates a massive dictionary, killing performance.
+    *   *Impact:* This is why **[[Cardinality]]** (number of unique values) is the enemy. A high-cardinality column (like a UUID or Timestamp) creates a massive dictionary, killing performance.
 
 3.  **Run-Length Encoding (RLE) - The Big One:**
     *   *Scenario:* You have sorted data: `Red, Red, Red, Red, Blue, Blue`.
     *   *Action:* VertiPaq stores: `(Red, 4), (Blue, 2)`.
-    *   *Impact:* **Sort Order Matters.** If your data is sorted well, RLE compresses millions of rows into bytes. This is why Star Schemas are faster than Flat Tables—dimension IDs repeat often (high RLE potential).
+    *   *Impact:* **Sort Order Matters.** If your data is sorted well, RLE compresses millions of rows into bytes. This is why Star Schemas are faster than Flat [[Tables]]—dimension IDs repeat often (high RLE potential).
 
 ### 3. VertiPaq vs. SQL (The Interview Answer)
 | Feature | SQL (Row Store) | VertiPaq (Column Store) |
@@ -39,21 +39,21 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
 | **Primary Goal** | Transactional integrity (ACID), retrieving records. | Analytical speed (Aggregations, Filtering). |
 | **Storage** | Disk-based (usually). | **In-Memory** (RAM). |
 | **Reading** | Reads full rows (Pages). | Reads specific columns only. |
-| **Joins** | Joins happen at query time (expensive). | Relationships are pre-indexed pointers (fast). |
+| **Joins** | Joins happen at query time (expensive). | [[Relationships]] are pre-indexed pointers (fast). |
 | **Weakness** | Slow at scanning millions of rows for sums. | Slow at retrieving "Detail Rows" (SELECT *) and high cardinality. |
 
 ### 🛑 The "Need-to-Know" for Modeling
 1.  **Cardinality is King:** The number of *unique* values in a column determines the model size.
     *   *Rule:* Split `DateTime` into `Date` and `Time`. `DateTime` has unique values every second (High Cardinality). `Date` only has 365 values per year (Low Cardinality).
 2.  **Wide Tables are Fine (mostly):** Because it's a column store, having 100 columns doesn't hurt performance *unless* you use them all in a visual. Unused columns just take up RAM, not CPU time during queries.
-3.  **Star Schema Optimization:** VertiPaq is optimized to filter small tables (Dimensions) and propagate those filters to big tables (Facts) via relationships. It hates filtering massive flat tables directly.
+3.  **[[Star Schema]] Optimization:** VertiPaq is optimized to filter small tables (Dimensions) and propagate those filters to big tables (Facts) via relationships. It hates filtering massive flat tables directly.
 
 ---
 
 # 🛠️ The "Outside the Box" Toolbelt
 *Mentioning these proves you move beyond the "File > New" beginner phase.*
 
-### 1. DAX Studio (The Mechanic)
+### 1. [[DAX]] Studio (The Mechanic)
 *   **What it is:** A tool to write, execute, and profile DAX queries.
 *   **Why use it:**
     *   **Server Timings:** Shows exactly how long the Formula Engine (DAX) vs. Storage Engine (VertiPaq) took.
@@ -64,9 +64,9 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
 ### 2. Tabular Editor 2 (Free) / 3 (Paid) (The Architect)
 *   **What it is:** A tool to edit the metadata (model.bim) directly without loading the data.
 *   **Why use it:**
-    *   **Calculation Groups:** The only way to create them (e.g., a "Time Intelligence" switch that applies YTD/YoY to *any* measure).
+    *   **[[Calculation Groups]]:** The only way to create them (e.g., a "[[Time Intelligence]]" switch that applies YTD/YoY to *any* measure).
     *   **Batch Editing:** Rename 50 measures or change formatting strings in 2 seconds using C# scripts.
-    *   **Version Control:** Easier to integrate with Git.
+    *   **Version Control:** Easier to integrate with [[git|Git]].
 *   *Interview Drop:* "I use Tabular Editor to manage Calculation Groups and to script repetitive measure creation."
 
 ### 3. Measure Killer (The Janitor)

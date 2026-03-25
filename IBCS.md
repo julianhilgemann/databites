@@ -14,7 +14,7 @@
 Charts should not just display data; they should tell a story.
 *   **The Rule:** Every chart or page must have a message.
 *   **Power BI Implementation:**
-    *   Use **Dynamic Titles** (via DAX) that state the insight (e.g., *"Revenue growing 5% vs PY"*), not just the content (*"Revenue by Year"*).
+    *   Use **Dynamic Titles** (via [[DAX]]) that state the insight (e.g., *"Revenue growing 5% vs PY"*), not just the content (*"Revenue by Year"*).
     *   **Action:** [[Dynamic Formatting]]
 
 ### 2. **U**nify (Standardize Notation)
@@ -29,12 +29,12 @@ This is the most recognizable part of IBCS. Use the same visual language across 
     *   **Variance (Bad):** Red.
 *   **Power BI Implementation:**
     *   Create a JSON Theme file that enforces these colors.
-    *   Use **Calculation Groups** or Field Parameters to ensure comparisons always use the correct colors (e.g., Cost increasing = Red, Revenue increasing = Green).
+    *   Use **[[Calculation Groups]]** or Field Parameters to ensure comparisons always use the correct colors (e.g., Cost increasing = Red, Revenue increasing = Green).
 
 ### 3. **C**ondense (Increase Density)
 
 Fit more information into less space without clutter.
-*   **The Rule:** High information density allows for context.
+*   **The Rule:** High information density allows for [[Context|context]].
 *   **Power BI Implementation:**
     *   Use **Small Multiples** (Trellis Charts) instead of 5 separate visuals or a slicer.
     *   Use **Sparklines** in table columns.
@@ -77,7 +77,7 @@ Data should flow logically.
 *   **Power BI Implementation:**
     *   **Top:** Executive Summary / Conclusion (BANs).
     *   **Middle:** Trends and Drivers (Bridge/Waterfall).
-    *   **Bottom:** Details and Data (Tables).
+    *   **Bottom:** Details and Data ([[Tables]]).
     *   Ensure **Drill-through** paths follow this logic.
 
 ---

@@ -1,5 +1,5 @@
 
-The key thing to understand is: **To DAX, the Filter Pane is just another source of Filter Context.** However, the *User Experience* implies a hierarchy that DAX doesn't strictly respect unless you code it carefully.
+The key thing to understand is: **To [[DAX]], the Filter Pane is just another source of Filter [[Context]].** However, the *User Experience* implies a hierarchy that DAX doesn't strictly respect unless you code it carefully.
 
 Here are the specific interactions to be aware of:
 
@@ -53,7 +53,7 @@ In the Filter Pane, you can filter by a column that is **not** in the visual its
     *   `ALL(Sales[Country])` removes the visual grouping.
     *   It *keeps* the `Sales[Year]` filter from the Pane.
 
-### 5. Measure Filters in the Pane (Context Transition)
+### 5. Measure Filters in the Pane ([[Context Transition]])
 
 You can drag a **Measure** into the Filter Pane (e.g., "Show items where [Total Sales] > 100").
 

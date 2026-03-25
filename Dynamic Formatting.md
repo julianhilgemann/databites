@@ -1,5 +1,5 @@
 
-### 1. Dynamic Titles (The "Context Awareness" Layer)
+### 1. Dynamic Titles (The "[[Context]] Awareness" Layer)
 
 **The Problem:** A chart shows "Sales by City." The user filters to "Berlin." The chart title still says "Sales by City."
 **The Goal:** The title should say "Sales for Berlin."
@@ -39,7 +39,7 @@ RETURN
 
 **The New Way (Feature):** **Dynamic Format Strings**.
 *   *Where:* In the Modeling tab, select the Measure $\to$ Dropdown "Format" $\to$ "Dynamic".
-*   *What:* It allows you to write a separate DAX expression *just for the format*, while keeping the result as a **Number**.
+*   *What:* It allows you to write a separate [[DAX]] expression *just for the format*, while keeping the result as a **Number**.
 
 #### Use Case: Currency Conversion
 User selects "EUR" or "USD" in a slicer.

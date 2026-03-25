@@ -47,7 +47,7 @@ Imagine a messy spreadsheet: **Orders Table**
 **Rule:** No Transitive Dependency. Columns shouldn't depend on *other* non-key columns.
 *   **Problem:** `CustomerCity` depends on `Customer`. It doesn't really depend on the `OrderID`. If Alice places a new order, her city is already known.
 *   **Action:** Move Customer data to a `Customer` table.
-*   **Result:** We now have 3 tables: `Orders`, `Customers`, `Suppliers`.
+*   **Result:** We now have 3 [[Tables|tables]]: `Orders`, `Customers`, `Suppliers`.
 
 ---
 
@@ -55,19 +55,19 @@ Imagine a messy spreadsheet: **Orders Table**
 
 In a technical interview, you must distinguish between **Application Design (OLTP)** and **Power BI Design (OLAP)**.
 
-| Feature | SQL / App Development (OLTP) | Power BI / Analytics (OLAP) |
+| Feature | [[SQL]] / App Development (OLTP) | Power BI / Analytics (OLAP) |
 | :--- | :--- | :--- |
 | **Goal** | Fast Writes (Insert/Update). | Fast Reads (Sum/Count). |
-| **Ideal Form** | **3NF (Third Normal Form).** | **Star Schema (Dimensional).** |
+| **Ideal Form** | **3NF (Third Normal Form).** | **[[Star Schema]] (Dimensional).** |
 | **Joins** | Loves them. Joins are fine. | Hates them. Joins are expensive. |
-| **Redundancy** | **Forbidden.** (Data integrity risk). | **Encouraged.** (VertiPaq compresses it). |
+| **Redundancy** | **Forbidden.** (Data integrity risk). | **Encouraged.** ([[Vertipaq|VertiPaq]] compresses it). |
 
 #### The "Snowflake" Problem
 
 If you import a strictly 3NF database into Power BI, you get a **Snowflake Schema**:
 *   `Sales` $\to$ `Product` $\to$ `SubCategory` $\to$ `Category`.
 *   **Power BI Verdict:** **Bad.**
-    *   To filter Sales by "Category", the filter has to jump through 3 relationships. This is slow.
+    *   To filter Sales by "Category", the filter has to jump through 3 [[Relationships|relationships]]. This is slow.
 
 #### The Power BI Solution: Denormalization
 

@@ -12,7 +12,7 @@ Here is the deep dive into **Row-Level Security (RLS)**.
 #### A. Static RLS (The Basic Way)
 
 You hardcode filters into Roles inside Power BI Desktop.
-*   **Setup:** Create a Role called "West Manager". Add DAX filter on `Dim_Geography`: `[Region] = "West"`.
+*   **Setup:** Create a Role called "West Manager". Add [[DAX]] filter on `Dim_Geography`: `[Region] = "West"`.
 *   **Pros:** Simple, quick for very small, non-changing requirements.
 *   **Cons:** Nightmare to maintain. If you have 50 regions, you need 50 Roles. You have to redeploy the PBIX file to add a new region.
 
@@ -38,7 +38,7 @@ This is the standard architectural pattern you should describe.
     Join `RLS_Users[RegionID]` to `Dim_Geography[RegionID]`.
 
 3.  **The Direction (Crucial):**
-    *   Relationships usually filter One-to-Many.
+    *   [[Relationships]] usually filter One-to-Many.
     *   Here, the Security Table filters the Dimension.
     *   You must check the box: **"Apply security filter in both directions"** (if the security table is hidden/disconnected) OR ensure the filter flows downhill to the Fact.
 
@@ -74,7 +74,7 @@ This is the standard architectural pattern you should describe.
 **Solution:** Flatten the hierarchy using `PATH`.
 
 1.  **Org Table:** Contains `EmployeeID` and `ManagerID`.
-2.  **Calculated Column:** `Path = PATH(EmployeeID, ManagerID)`
+2.  **[[Calculated Column]]:** `Path = PATH(EmployeeID, ManagerID)`
     *   *Result:* `101|105|200` (The chain of command).
 3.  **RLS DAX:**
     ```dax
@@ -90,7 +90,7 @@ This is the standard architectural pattern you should describe.
 
 **The Cousin of RLS.**
 *   **RLS:** Hides *Rows*. (Alice sees 10 rows, Bob sees 20).
-*   **OLS:** Hides *Columns* or *Tables*. (Alice sees the "Salary" column. Bob does not even know the "Salary" column exists—it is physically removed from the model for him).
+*   **OLS:** Hides *Columns* or *[[Tables]]*. (Alice sees the "Salary" column. Bob does not even know the "Salary" column exists—it is physically removed from the model for him).
 *   **How to implement:** You cannot do this in Power BI Desktop UI (as of late 2023). You must use **Tabular Editor** (External Tool).
 *   **Risk:** Visuals that use the hidden column will **break** (show an 'X' error) for the restricted user. You must handle this carefully.
 
@@ -127,7 +127,7 @@ This is the standard architectural pattern you should describe.
 | Logic Location | Method | Verdict |
 | :--- | :--- | :--- |
 | **Power BI Desktop** | Static Filters (Role = `[Country]="USA"`) | **Junior.** Hard to maintain. |
-| **Database (SQL)** | `Security` Table joined to Fact | **Senior.** Dynamic, centralized, scalable. |
+| **Database ([[SQL]])** | `Security` Table joined to Fact | **Senior.** Dynamic, centralized, scalable. |
 | **DAX Measures** | `IF( USERPRINCIPALNAME() = ..., [Sales], BLANK() )` | **Bad.** Doesn't secure the data, only the number. User can still see dimensions. |
 | **Data Source (DirectQuery)** | Single Sign-On (SSO) passing user to SQL Server | **Advanced.** The DB handles security. Power BI just passes the user identity. Good for compliance. |
 

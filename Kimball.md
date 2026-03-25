@@ -24,7 +24,7 @@ Kimball defined a rigid 4-step process to design any model. If you skip these in
     *   *Level 1:* One row per Line Item on an Invoice? (Finest grain).
     *   *Level 2:* One row per Order Header?
     *   *Level 3:* One row per Day per Store? (Aggregated).
-*   **Power BI:** **Atomic Grain is Best.** VertiPaq loves detail. Don't pre-aggregate (SUM) in SQL unless the data volume is petabytes. Load the lowest level of detail (Line Item) so users can slice by anything.
+*   **Power BI:** **Atomic Grain is Best.** [[Vertipaq|VertiPaq]] loves detail. Don't pre-aggregate (SUM) in [[SQL]] unless the data volume is petabytes. Load the lowest level of detail (Line Item) so users can slice by anything.
 
 ### Step 3: Identify the Dimensions
 
@@ -57,18 +57,18 @@ A single physical table used for multiple purposes.
 *   **Kimball Theory:** Use Views to create `Dim_OrderDate`, `Dim_ShipDate`, etc.
 *   **Power BI Practice:**
     *   *Option A (Physical):* Import the Date table 3 times. (Easier for users).
-    *   *Option B (Virtual):* Import Date once. Create one active relationship and two inactive ones. Use DAX `USERELATIONSHIP()` to activate the specific path when needed.
+    *   *Option B (Virtual):* Import Date once. Create one active relationship and two inactive ones. Use [[DAX]] `USERELATIONSHIP()` to activate the specific path when needed.
 
 ### C. Conformed Dimensions (The "Bus Architecture")
 
 This is how you prevent "Silos" of data.
 *   **Theory:** If "Customer" appears in the *Sales* Data Mart and the *Support* Data Mart, it must be the **exact same structure** (same Keys, same Names).
-*   **Power BI:** This is critical for **Cross-Report Drill Through** and **Composite Models**. If you want to compare Sales vs. Budget, both tables must share the exact same `Date` and `Product` dimension tables.
+*   **Power BI:** This is critical for **Cross-Report Drill Through** and **Composite Models**. If you want to compare Sales vs. Budget, both [[Tables|tables]] must share the exact same `Date` and `Product` dimension tables.
 
 ### D. Junk Dimensions
 
-*   **Theory:** You have 10 columns of low-cardinality flags (`Is_Verified`, `Has_Discount`, `Status_Code`, `Paid_Flag`).
-*   **Problem:** Don't put 10 tiny dimensions in your Star Schema (it looks messy). Don't leave them in the Fact (it creates width).
+*   **Theory:** You have 10 columns of low-[[Cardinality|cardinality]] flags (`Is_Verified`, `Has_Discount`, `Status_Code`, `Paid_Flag`).
+*   **Problem:** Don't put 10 tiny dimensions in your [[Star Schema]] (it looks messy). Don't leave them in the Fact (it creates width).
 *   **Solution:** Create one single "Junk Dimension" containing every unique *combination* of those flags, give each row a Key, and link it to the Fact.
 *   **Power BI:** Reduces model clutter significantly and improves compression.
 
@@ -112,12 +112,12 @@ How does the 1990s theory hold up in 2024?
 
 Modern Data Warehouses (Snowflake/BigQuery) are so fast that some engineers skip Kimball and just make "One Big Table."
 *   **In SQL:** This works fine.
-*   **In Power BI:** **Do not do this.** Power BI has a 10GB-100GB limit (usually). OBT is inefficient with memory. Kimball's normalization of text into Dimensions allows Power BI to compress data 10x-50x smaller than OBT.
+*   **In Power BI:** **Do not do this.** Power BI has a 10GB-100GB limit (usually). OBT is inefficient with memory. Kimball's [[Normalization|normalization]] of text into Dimensions allows Power BI to compress data 10x-50x smaller than OBT.
 
 ### Final Takeaway
 
 Think of **Ralph Kimball** as the original architect of Power BI's brain.
 If you prepare your data in SQL using **Kimball's Star Schema**, your Power BI reports will be:
-1.  **Fast** (Relationships work instantly).
+1.  **Fast** ([[Relationships]] work instantly).
 2.  **Simple** (DAX formulas are short).
 3.  **Accurate** (No orphan records or ambiguous joins).

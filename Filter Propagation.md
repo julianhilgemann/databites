@@ -14,7 +14,7 @@ By default, water flows from the Dimension to the Fact. It does **not** naturall
 
 Let's imagine a simple model.
 
-### 1. The Tables
+### 1. The [[Tables]]
 
 **Table A: `Dim_Customer` (The "One" Side)**
 | CustomerID | Name | City |
@@ -75,7 +75,7 @@ Let's imagine a simple model.
 
 # Scenario 3: The "Bi-Directional" Fix (Dangerous)
 
-You go to "Manage Relationships" and change the `Fact_Sales` <-> `Dim_Customer` relationship from **Single** to **Both**.
+You go to "Manage [[Relationships]]" and change the `Fact_Sales` <-> `Dim_Customer` relationship from **Single** to **Both**.
 
 1.  **Propagation:**
     *   Filter "Red Hat" $\to$ `Dim_Product`.
@@ -90,7 +90,7 @@ You go to "Manage Relationships" and change the `Fact_Sales` <-> `Dim_Customer` 
 
 ---
 
-# Scenario 4: The Best Practice (DAX Control)
+# Scenario 4: The Best Practice ([[DAX]] Control)
 
 Keep the relationship as **Single**. Use DAX to force the filter upstream *only when needed*.
 
@@ -140,7 +140,7 @@ If you filter on two columns from the *same* table, Power BI works differently t
     *   Filter 1: `Color = "Red"`.
     *   Filter 2: `Category = "Hat"`.
 *   **Auto-Exist:** The engine looks at the *existing combinations* in the table. It calculates the intersection immediately.
-*   **Risk:** If you have massive cardinality on one of those columns (like a UUID), this intersection calculation can crash the visual.
+*   **Risk:** If you have massive [[Cardinality|cardinality]] on one of those columns (like a UUID), this intersection calculation can crash the visual.
 
 ### 3. Expanded Tables (The Mental Model)
 In DAX, when you have a relationship, the "Many" side technically *contains* the "One" side.

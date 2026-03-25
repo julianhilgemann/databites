@@ -4,7 +4,7 @@ Time Intelligence **does not work** without a proper Date Table.
 
 *   **Rule 1:** Must be a contiguous range of dates (no gaps).
 *   **Rule 2:** Must cover the entire year (Jan 1 to Dec 31) even if sales started in March.
-*   **Rule 3:** **Mark as Date Table** in the model settings. This tells the engine to turn off auto-summarization on the Year column and creates the necessary internal metadata for DAX functions.
+*   **Rule 3:** **Mark as Date Table** in the model settings. This tells the engine to turn off auto-summarization on the Year column and creates the necessary internal metadata for [[DAX]] functions.
 
 ---
 
@@ -37,7 +37,7 @@ CALCULATE(
 ### 3. The "Universal" Pattern (Custom Logic)
 *Use this when standard DAX functions fail (e.g., 4-4-5 Retail Calendars, strange Fiscal Years, or strict control requirements).*
 
-**The Logic:** Stop using "Time Intelligence Functions" and start using **Filter Context Manipulation**.
+**The Logic:** Stop using "Time Intelligence Functions" and start using **Filter [[Context]] Manipulation**.
 
 #### A. Custom YTD (The "Filter/All" Pattern)
 This works on *any* calendar if you have a `Year` and `DayOfYear` column.
@@ -102,7 +102,7 @@ RETURN
 
 ---
 
-### 5. Calculation Groups (The Senior Architecture)
+### 5. [[Calculation Groups]] (The Senior Architecture)
 
 **The Problem:**
 You have measures: `Sales`, `Cost`, `Margin`, `Qty`.

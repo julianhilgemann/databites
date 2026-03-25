@@ -7,8 +7,8 @@
 These are the most important functions in the language.
 
 1.  **`CALCULATE( Expression, Filter1, Filter2... )`**
-    *   *Role:* The only function that changes Filter Context.
-    *   *Note:* Automatically performs Context Transition if the expression is a Measure.
+    *   *Role:* The only function that changes Filter [[Context]].
+    *   *Note:* Automatically performs [[Context Transition]] if the expression is a Measure.
 2.  **`FILTER( Table, Condition )`**
     *   *Role:* An iterator. Returns a table.
     *   *By Heart:* `FILTER( ALL(Table), ... )` is the standard pattern to keep the table size small.
@@ -38,7 +38,7 @@ These are the most important functions in the language.
     *   *Role:* Ranking logic.
     *   *Memorize:* `RANKX( ALL(Table), [Measure] )` is the standard pattern to rank against the whole group.
 
-### C. Table Manipulation (Virtual Tables)
+### C. Table Manipulation (Virtual [[Tables]])
 
 1.  **`ADDCOLUMNS( Table, "Name", Expression )`**
     *   *Role:* Adds calculated columns to a virtual table.
@@ -55,7 +55,7 @@ These are the most important functions in the language.
 7.  **`TREATAS( Table_Expression, Column_to_Filter )`**
     *   *Role:* Creates a **Virtual Relationship**. Connects two tables that are not physically connected in the model.
 
-### D. Time Intelligence
+### D. [[Time Intelligence]]
 
 1.  **`DATESYTD( Date_Column )`**
     *   *Role:* Calculates Year-to-Date.
@@ -88,7 +88,7 @@ These are the most important functions in the language.
 
 ---
 
-# 2. SQL (The Source)
+# 2. [[SQL]] (The Source)
 
 *You need to show you can prep data before it hits Power BI.*
 
@@ -119,7 +119,7 @@ These are the most important functions in the language.
 ### D. Transformation
 1.  **`CASE WHEN x THEN y ELSE z END`** (The SQL version of IF/SWITCH)
 2.  **`COALESCE(Col, 0)`** (Handle Nulls)
-3.  **`CAST(Col AS Type)` / `CONVERT`** (Fix data types)
+3.  **`CAST(Col AS Type)` / `CONVERT`** (Fix [[Data Types|data types]])
 4.  **`STRING_AGG` / `LISTAGG`** (Combine rows into a comma-separated list).
 
 ---
@@ -138,7 +138,7 @@ These are the most important functions in the language.
 
 ---
 
-# 4. Fabric / dbt Specifics (The Modern Stack)
+# 4. Fabric / [[dbt]] Specifics (The Modern Stack)
 
 1.  **`is_incremental()`** (Jinja macro for dbt)
     *   *Use:* `{% if is_incremental() %} WHERE date > (select max(date) from {{ this }}) {% endif %}`

@@ -1,18 +1,18 @@
 
-### 1. Data Modeling & Kimball (The Architecture)
+### 1. Data Modeling & [[Kimball]] (The Architecture)
 
 | Term | The "Specialist" Definition | The Interview Hook (Why it matters) |
 | :--- | :--- | :--- |
 | **Grain** | What a single row represents (e.g., "One line per order"). | "I always define the Grain first. If the grain mixes (Header vs Line), measures will double-count." |
-| **Star Schema** | Fact table in center, Dimensions surrounding. | "I prefer Star over Snowflake because the **VertiPaq** engine is optimized for single-hop relationships." |
+| **[[Star Schema]]** | Fact table in center, Dimensions surrounding. | "I prefer Star over Snowflake because the **[[Vertipaq|VertiPaq]]** engine is optimized for single-hop [[Relationships|relationships]]." |
 | **Surrogate Key** | An artificial integer key (1, 2, 3) used for joining. | "I hide natural keys (e.g., OrderID-String) and join on Integers to improve performance and save RAM." |
 | **Conformed Dimension** | A dimension (e.g., Customer) shared by multiple Facts. | "This allows us to slice Sales and Returns by the exact same attributes without ambiguity." |
-| **SCD Type 2** | Slowly Changing Dimension. Tracks history (New Row). | "I rely on the warehouse/dbt to handle Type 2 logic so Power BI just sees clean rows with a Surrogate Key." |
-| **Degenerate Dimension** | A dimension attribute stored in the Fact (e.g., Order #). | "It doesn't need its own table, but I check its **Cardinality** to ensure it doesn't bloat the model." |
+| **SCD Type 2** | Slowly Changing Dimension. Tracks history (New Row). | "I rely on the warehouse/[[dbt]] to handle Type 2 logic so Power BI just sees clean rows with a Surrogate Key." |
+| **Degenerate Dimension** | A dimension attribute stored in the Fact (e.g., Order #). | "It doesn't need its own table, but I check its **[[Cardinality]]** to ensure it doesn't bloat the model." |
 | **Bridge Table** | A table used to resolve Many-to-Many relationships. | "I avoid the native PBI Many-to-Many setting; a Bridge Table is transparent and predictable." |
-| **Referential Integrity** | Ensuring every Fact FK has a matching Dimension PK. | "If a match is missing, PBI creates a **(Blank)** row. I treat that Blank row as a high-priority data quality alert." |
+| **Referential Integrity** | Ensuring every Fact FK has a matching Dimension PK. | "If a match is missing, PBI creates a **(Blank)** row. I treat that Blank row as a high-[[Priority|priority]] data quality alert." |
 | **Junk Dimension** | Combining low-cardinality flags (Yes/No columns) into one table. | "Instead of cluttering the Fact with 10 flag columns, I create one Junk Dimension to reduce table width." |
-| **Role-Playing Dimension** | Using one physical table for multiple contexts (Order/Ship Date). | "I prefer using `USERELATIONSHIP` in DAX over importing the Date table 3 times, to keep the model clean." |
+| **Role-Playing Dimension** | Using one physical table for multiple contexts (Order/Ship Date). | "I prefer using `USERELATIONSHIP` in [[DAX]] over importing the Date table 3 times, to keep the model clean." |
 
 ---
 
@@ -20,14 +20,14 @@
 
 | Term | The "Specialist" Definition | The Interview Hook (Why it matters) |
 | :--- | :--- | :--- |
-| **Evaluation Context** | The environment a formula runs in (Row vs. Filter). | "Understanding this is the difference between a Junior and a Senior dev." |
-| **Row Context** | "The Finger." Iterating line-by-line. | "It iterates, it doesn't filter. Unless we use `CALCULATE` (Context Transition)." |
+| **Evaluation [[Context]]** | The environment a formula runs in (Row vs. Filter). | "Understanding this is the difference between a Junior and a Senior dev." |
+| **Row Context** | "The Finger." Iterating line-by-line. | "It iterates, it doesn't filter. Unless we use `CALCULATE` ([[Context Transition]])." |
 | **Filter Context** | "The Box." The active filters from slicers/visuals. | "Every measure starts here. `CALCULATE` is the only way to modify it." |
 | **Context Transition** | Turning Row Context into Filter Context. | "This is why we wrap expressions in `CALCULATE` inside iterators—to make sure the filter propagates." |
 | **Cardinality** | The number of *unique* values in a column. | "**High Cardinality** is the #1 driver of model size. I optimize by splitting DateTime into Date and Time." |
-| **Query Folding** | Pushing transformation logic back to SQL. | "I always check 'View Native Query' to ensure I haven't broken folding, which kills refresh speed." |
-| **VertiPaq** | The In-Memory Columnar Database engine of PBI. | "It compresses data by column. That's why wide tables are fine, but high unique values are bad." |
-| **Calculation Groups** | Dynamic measure switching logic. | "I use these to replace 20 individual Time Intelligence measures (YTD/MOM) with one Calculation Item." |
+| **[[Query Folding]]** | Pushing transformation logic back to [[SQL]]. | "I always check 'View Native Query' to ensure I haven't broken folding, which kills refresh speed." |
+| **VertiPaq** | The In-Memory Columnar Database engine of PBI. | "It compresses data by column. That's why wide [[Tables|tables]] are fine, but high unique values are bad." |
+| **[[Calculation Groups]]** | Dynamic measure switching logic. | "I use these to replace 20 individual [[Time Intelligence]] measures (YTD/MOM) with one Calculation Item." |
 | **Direct Lake** | Loading Parquet files from OneLake directly into PBI memory. | "It gives me Import-like speed with DirectQuery-like freshness, bypassing the legacy refresh process." |
 | **Iterator Functions** | Functions ending in X (`SUMX`, `FILTER`). | "I use these when math must happen **row-by-row** (Price * Qty) before aggregating, to avoid 'Average of Averages' errors." |
 
@@ -57,7 +57,7 @@
 | **Data-Ink Ratio** | The proportion of "Ink" used for data vs. decoration. | "I remove gridlines and borders to maximize the Data-Ink ratio. Clutter creates cognitive load." |
 | **Grid System** | A layout structure (usually 12 columns). | "I adhere to a strict 12-column grid and 8px spacing to ensure the dashboard feels professional and aligned." |
 | **Affordance** | Design cues that tell a user how to interact. | "I make sure buttons look clickable (shadows/hover effects) to provide good affordance." |
-| **IBCS** | International Business Communication Standards. | "I use standard notations—Solid bars for Actuals, Outline bars for Budget—so users instantly recognize the context." |
+| **[[IBCS]]** | International Business Communication Standards. | "I use standard notations—Solid bars for Actuals, Outline bars for Budget—so users instantly recognize the context." |
 
 ---
 
@@ -65,7 +65,7 @@
 
 | Term | The "Specialist" Definition | The Interview Hook (Why it matters) |
 | :--- | :--- | :--- |
-| **TMDL** | Tabular Model Definition Language (Text-based). | "I use TMDL to enable code-first development. It makes solving **Git Merge Conflicts** actually possible." |
+| **[[TMDL]]** | Tabular Model Definition Language (Text-based). | "I use TMDL to enable code-first development. It makes solving **[[git|Git]] Merge Conflicts** actually possible." |
 | **PBIP** | Power BI Project (Folder structure). | "I save as PBIP so I can track changes in individual files, rather than committing a binary blob (.pbix) to Git." |
 | **Golden Dataset** | Separating Data (Model) from Reporting (Thin Report). | "I never build reports inside the dataset file. I separate them to allow Self-Service without risking the Model integrity." |
 | **Deployment Pipelines** | Dev $\to$ Test $\to$ Prod lifecycle management. | "I strictly use pipelines to ensure we never edit reports directly in the Production workspace." |

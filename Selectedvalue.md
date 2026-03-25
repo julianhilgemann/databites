@@ -53,7 +53,7 @@ There are three functions that sound similar but act differently. Knowing the di
 #### C. `ISINSCOPE( Column )` (The Matrix/Hierarchy King)
 
 **Question:** "Is this column currently providing the **grouping** level in the visual?"
-*   **Context:** This was invented specifically for Matrix visuals and Hierarchies.
+*   **[[Context]]:** This was invented specifically for Matrix visuals and Hierarchies.
 
 **The "Ratio" Problem (The #1 Use Case):**
 Imagine a Matrix: **Year** $\to$ **Quarter** $\to$ **Month**.

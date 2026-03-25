@@ -1,6 +1,6 @@
 This is the "Hardcore Quant" explanation. If you use this, you will prove that you understand the mathematical foundations of data aggregation.
 
-We will map **DAX Context Transition** directly to the statistical concept of **Conditional Expectation** using a dataset as our "Discrete Density Function."
+We will map **[[DAX]] [[Context]] Transition** directly to the statistical concept of **Conditional Expectation** using a dataset as our "Discrete Density Function."
 
 ### The Dataset ($\Omega$)
 
@@ -25,7 +25,7 @@ Without a filter, you are calculating the expected value over the **marginal den
 $$E[Y] = \sum_{all} y_i \cdot P(y_i)$$
 
 *   **The Calculation:** $\frac{10 + 30 + 80}{3} = \mathbf{40}$
-*   **The Result:** If you put this in a Calculated Column without `CALCULATE`, **every row shows 40**.
+*   **The Result:** If you put this in a [[Calculated Column]] without `CALCULATE`, **every row shows 40**.
 *   **Math Meaning:** You ignored the fact that Row 1 is Category "A". You integrated over the entire domain.
 
 #### The DAX Code:

@@ -38,7 +38,7 @@ CALCULATE(
 
 ### 3. The Top 3 Use Cases (Interview Gold)
 
-#### Case A: Standard Time Intelligence
+#### Case A: Standard [[Time Intelligence]]
 Instead of writing `Sales YTD`, `Sales LY`, `Sales YoY`, you create a "Time Intel" group.
 
 *   **Item: Current** $\to$ `SELECTEDMEASURE()`
@@ -50,7 +50,7 @@ Instead of writing `Sales YTD`, `Sales LY`, `Sales YoY`, you create a "Time Inte
     RETURN DIVIDE(CurrentVal - PrevVal, PrevVal)
     ```
 
-#### Case B: Currency Conversion (Dynamic Formatting)
+#### Case B: Currency Conversion ([[Dynamic Formatting]])
 This is the **Superpower** of Calculation Groups. They can change the **Format String** dynamically.
 
 *   **Item: USD** $\to$ `SELECTEDMEASURE()` (Format: `$#,0.00`)
@@ -103,7 +103,7 @@ You don't want "YTD" applied to a measure like `[Margin %]` (Adding percentages 
     ```
 
 #### C. Tooltips
-Calculation Groups apply to **everything** in the visual, including Tooltips. Sometimes this breaks the tooltip context.
+Calculation Groups apply to **everything** in the visual, including Tooltips. Sometimes this breaks the tooltip [[Context|context]].
 *   **Fix:** You might need to exclude the tooltip measures using the logic above.
 
 ---
@@ -116,7 +116,7 @@ Calculation Groups apply to **everything** in the visual, including Tooltips. So
 2.  **Power BI Desktop (Model Explorer):**
     *   As of late 2023/2024, you can create them natively in the "Model" view.
     *   It is slower than Tabular Editor but easier for beginners.
-3.  **TMDL:**
+3.  **[[TMDL]]:**
     *   Calculation Groups are defined cleanly in text files. Very easy to copy-paste logic between projects.
 
 ---
@@ -134,4 +134,4 @@ Calculation Groups apply to **everything** in the visual, including Tooltips. So
 
 ### Mnemonic: **"Wrap and Map"**
 *   **Wrap:** It **Wraps** the existing measure in new logic (`CALCULATE`).
-*   **Map:** It **Maps** user selection (YTD) to DAX functions (`DATESYTD`).
+*   **Map:** It **Maps** user selection (YTD) to [[DAX]] functions (`DATESYTD`).

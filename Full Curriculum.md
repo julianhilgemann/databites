@@ -1,9 +1,9 @@
 
-## 1. Data Modeling & Kimball Architecture
+## 1. Data Modeling & [[Kimball]] Architecture
 ### A. Theoretical Foundations
 
-- [ ] **OLTP vs. OLAP**: Understand normalization (3NF) vs. denormalization.
-- [ ] **The Star Schema**: Central fact tables vs. surrounding dimension tables.
+- [ ] **OLTP vs. OLAP**: Understand [[Normalization|normalization]] (3NF) vs. denormalization.
+- [ ] **The [[Star Schema]]**: Central fact [[Tables|tables]] vs. surrounding dimension tables.
 - [ ] **The Snowflake Schema**: When to use it, why to generally avoid it in Power BI.
 - [ ] **The "Grain"**: Defining what a single row represents (e.g., "One row per line item per order").
 - [ ] **Conformed Dimensions**: Shared dimensions (Customer, Product) across multiple business processes.
@@ -33,9 +33,9 @@
 ### D. Advanced Modeling Patterns
 
 - [ ] **Date/Calendar Table**: Prerequisites (continuous dates, marked as Date Table).
-- [ ] **Role-Playing Dimensions**: Handling multiple relationships (Order Date vs. Ship Date) via active/inactive relationships.
+- [ ] **Role-Playing Dimensions**: Handling multiple [[Relationships|relationships]] (Order Date vs. Ship Date) via active/inactive relationships.
 - [ ] **Many-to-Many Handling**:
-    - [ ] Bridge Tables (The standard Kimball approach).
+    - [ ] [[Bridge Tables]] (The standard Kimball approach).
     - [ ] Bi-directional filtering (The risky Power BI approach).
 - [ ] **Bi-Directional Relationships**: Ambiguity risks and performance impact.
 
@@ -44,24 +44,24 @@
 ## 2. Power Query (M) & Data Transformation
 ### A. Core Concepts
 - [ ] **ETL Methodology**: Extract (Source), Transform (Power Query), Load (Model).
-- [ ] **Data Types**: Importance of explicit typing for engine optimization.
+- [ ] **[[Data Types]]**: Importance of explicit typing for engine optimization.
 - [ ] **Parameters**: Managing environments (Dev/Test/Prod) and dynamic paths.
 
 ### B. Performance & "The Pro Level"
-- [ ] **Query Folding**:
-    - [ ] Definition: Pushing transformations back to the SQL source.
+- [ ] **[[Query Folding]]**:
+    - [ ] Definition: Pushing transformations back to the [[SQL]] source.
     - [ ] Breaking Folding: Index columns, changing types after filtering.
     - [ ] Verification: "View Native Query" option.
 - [ ] **Incremental Refresh**: RangeStart and RangeEnd parameters.
 
 ---
 
-## 3. DAX & Semantic Layer
-### A. Evaluation Context (Crucial)
+## 3. [[DAX]] & Semantic Layer
+### A. Evaluation [[Context]] (Crucial)
 
 - [ ] **Row Context**: Concept of "Current Row" (Calculated columns, Iterators).
 - [ ] **Filter Context**: Active filters from visuals, slicers, and RLS.
-- [ ] **Context Transition**: How `CALCULATE` turns Row Context into Filter Context.
+- [ ] **[[Context Transition]]**: How `CALCULATE` turns Row Context into Filter Context.
 
 ### B. Core Syntax & Calculations
 
@@ -81,19 +81,19 @@
     - [ ] `USERELATIONSHIP` (Activate inactive relationships).
     - [ ] `CROSSFILTER` (Modify relationship direction).
 
-### D. Time Intelligence
+### D. [[Time Intelligence]]
 
 - [ ] **Standard Functions**: `TOTALYTD`, `SAMEPERIODLASTYEAR`, `DATEADD`.
 - [ ] **Custom Patterns**: Logic for 4-4-5 calendars or non-standard fiscal years.
 - [ ] **Semi-Additive Measures**: `LASTNONBLANK` (for opening/closing balances).
 
-### E. Advanced DAX Patterns
+### E. [[Advanced [[DAX Patterns]]]]
 
 - [ ] **Virtual Tables**: `SUMMARIZE`, `ADDCOLUMNS`, `CALCULATETABLE`.
 - [ ] **Ranking & Windows**: `RANKX`, `TOPN`.
 - [ ] **Variables (`VAR`/`RETURN`)**: For performance (cache result) and readability.
 - [ ] **Dynamic Logic**: `SWITCH(TRUE(), ...)` patterns.
-- [ ] **Calculation Groups**: Reducing measure proliferation (e.g., standard YTD calculation applied to any measure).
+- [ ] **[[Calculation Groups]]**: Reducing measure proliferation (e.g., standard YTD calculation applied to any measure).
 
 ---
 
@@ -117,7 +117,7 @@
 - [ ] **Preattentive Attributes**: Color, Size, Position, Orientation.
 - [ ] **Z-Pattern / F-Pattern**: How users scan a dashboard.
 - [ ] **Data-Ink Ratio**: Eliminating clutter (gridlines, borders).
-- [ ] **IBCS Standards**: (Nice to have) Standardized notation for business reports.
+- [ ] **[[IBCS]] Standards**: (Nice to have) Standardized notation for business reports.
 
 ### B. Power BI Specifics
 
@@ -131,14 +131,14 @@
 ## 6. Performance, Governance & Best Practices
 ### A. Optimization
 
-- [ ] **VertiPaq Engine**: Columnar storage principles.
-- [ ] **Cardinality**: Why high-cardinality columns (UUIDs, timestamps) bloat model size.
+- [ ] **[[Vertipaq|VertiPaq]] Engine**: Columnar storage principles.
+- [ ] **[[Cardinality]]**: Why high-cardinality columns (UUIDs, timestamps) bloat model size.
 - [ ] **Performance Analyzer**: Identifying bottlenecks (DAX vs. Visual vs. DirectQuery).
 - [ ] **DAX Studio**: Basics of Server Timings.
 
 ### B. Security
 
-- [ ] **Row Level Security (RLS)**:
+- [ ] **[[Row Level Security]] (RLS)**:
     - [ ] Static (Role-based).
     - [ ] Dynamic (`USERNAME()`, `USERPRINCIPALNAME()` combined with security tables).
     - [ ] Object Level Security (OLS) awareness.
@@ -152,7 +152,7 @@
 ---
 
 ## 7. Data Visualization Mastery
-### A. Chart Selection Strategy
+### A. [[Chart Selection]] Strategy
 
 - [ ] **Comparison & Ranking**:
     - [ ] **Bar vs. Column**: When to use horizontal (long labels) vs. vertical (time series/fewer categories).
@@ -216,7 +216,7 @@
 
 ---
 
-## 9. SQL & dbt (The Semantic Prep Layer)
+## 9. SQL & [[dbt]] (The Semantic Prep Layer)
 ### A. SQL for Data Modeling
 
 - [ ] **Data Cleaning Functions**:

@@ -3,7 +3,7 @@
 
 dbt does **not** extract or load data. It assumes the raw data is already in your Data Warehouse (Snowflake, BigQuery, Databricks, Postgres).
 *   **The Motto:** "Everything is a `SELECT` statement."
-*   **The Function:** It compiles your SQL code (mixed with Jinja templating) into raw SQL and runs it against the warehouse to create Tables and Views.
+*   **The Function:** It compiles your [[SQL]] code (mixed with Jinja templating) into raw SQL and runs it against the warehouse to create [[Tables]] and Views.
 *   **The Goal:** Bring Software Engineering best practices (Version Control, Testing, CI/CD, Documentation) to SQL.
 
 ---
@@ -46,7 +46,7 @@ Structuring a dbt project correctly is a sign of a Senior Engineer.
 
 *   **Input:** `{{ source() }}` (Raw Data).
 *   **Materialization:** View.
-*   **Tasks:** Rename columns to English, cast data types, basic cleanup (trim). **1-to-1 mapping** with source tables.
+*   **Tasks:** Rename columns to English, cast [[Data Types|data types]], basic cleanup (trim). **1-to-1 mapping** with source tables.
 
 #### Layer 2: Intermediate (`int_`)
 
@@ -58,7 +58,7 @@ Structuring a dbt project correctly is a sign of a Senior Engineer.
 
 *   **Input:** `{{ ref('int_...') }}`.
 *   **Materialization:** Table or Incremental.
-*   **Tasks:** Final polish. Star Schema readiness.
+*   **Tasks:** Final polish. [[Star Schema]] readiness.
     *   **Dimensions:** Wide tables, descriptive attributes.
     *   **Facts:** Narrow tables, keys and metrics.
 *   **Consumer:** Power BI reads from *here*.
@@ -74,7 +74,7 @@ Defined in `schema.yml`.
 1.  **Unique:** No duplicates in the ID column.
 2.  **Not Null:** No missing values.
 3.  **Accepted Values:** Status must be one of `['Open', 'Closed']`.
-4.  **Relationships:** Referential Integrity (Foreign Key check). Does `customer_id` in Sales exist in the Customer table?
+4.  **[[Relationships]]:** Referential Integrity (Foreign Key check). Does `customer_id` in Sales exist in the Customer table?
 
 #### B. Singular Tests (Custom)
 
@@ -107,7 +107,7 @@ Jinja is the templating language `{ ... }` inside SQL.
 
 ### 8. dbt Best Practices for Power BI
 
-1.  **Hide the Logic:** Power BI should simply do `SELECT * FROM fct_sales`. If you are doing heavy joins or `CASE WHEN` logic in Power Query or DAX, move it upstream to dbt.
+1.  **Hide the Logic:** Power BI should simply do `SELECT * FROM fct_sales`. If you are doing heavy joins or `CASE WHEN` logic in Power Query or [[DAX]], move it upstream to dbt.
 2.  **Surrogate Keys:** Generate your Integer Surrogate Keys in dbt using the `dbt_utils.generate_surrogate_key()` macro (usually hashes) or using `ROW_NUMBER()`.
 3.  **Documentation:** Use `dbt docs generate`. It reads the descriptions from your `.yml` files and creates a website showing the lineage and column definitions.
 4.  **One Big Table (OBT) vs Star Schema:**

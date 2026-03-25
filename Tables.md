@@ -3,14 +3,14 @@
 
 ### Definition
 
-A Calculated Table is a table created using DAX that is **computed during Data Refresh** and physically stored in the model.
+A Calculated Table is a table created using [[DAX]] that is **computed during Data Refresh** and physically stored in the model.
 
 *   **Storage:** Consumes RAM and Disk space.
 *   **Update Frequency:** Only updates when the dataset refreshes. It is **static** during user interaction (Slicers do NOT affect the content of a Calculated Table).
 
 ### Best Practice Use Cases
 
-You should generally avoid Calculated Tables and prefer Power Query (M) or SQL. However, use them for:
+You should generally avoid Calculated Tables and prefer Power Query (M) or [[SQL]]. However, use them for:
 
 1.  **Date Tables:** `Date = CALENDARAUTO()` (If you don't have a SQL Date dimension).
 2.  **Role-Playing / Clones:** If you need a separate "Manager" table but only have "Employees," you can do: `Manager = 'Employee'`.
@@ -51,11 +51,11 @@ ADDCOLUMNS(
     "Total Sales", [Total Sales]         -- Step 2: Math
 )
 ```
-*   **Why:** This preserves **Data Lineage** correctly and is highly optimized by the VertiPaq engine.
+*   **Why:** This preserves **Data Lineage** correctly and is highly optimized by the [[Vertipaq|VertiPaq]] engine.
 
 ### C. `SUMMARIZECOLUMNS` (The Modern Standard)
 
-*   **Context:** This is the function Power BI generates natively when you drag visuals onto the canvas. It is faster and more efficient.
+*   **[[Context]]:** This is the function Power BI generates natively when you drag visuals onto the canvas. It is faster and more efficient.
 *   **Limitation:** Historically, it had issues inside complex **Context Transitions** (measures).
 *   **Interview Verdict:** "For querying (DAX Query View), I use `SUMMARIZECOLUMNS`. For complex measure logic inside `CALCULATE`, I prefer the robustness of `ADDCOLUMNS(SUMMARIZE(...))`."
 
@@ -114,7 +114,7 @@ RETURN
 # Summary Checklist for the Interview
 
 1.  **"Calculated Tables are Static."**
-    (I try to do this upstream in SQL/dbt. I only use DAX tables for Date tables or Parameter generation).
+    (I try to do this upstream in SQL/[[dbt]]. I only use DAX tables for Date tables or Parameter generation).
 2.  **"Virtual Tables are Dynamic."**
     (This is my primary tool for 'Second Level' aggregations, like calculating the Average Daily Sales per Store).
 3.  **"The `ADDCOLUMNS` Pattern."**

@@ -6,7 +6,7 @@ At a senior level, design is not about making things "pretty." It is about **red
 ### 1. The Core Philosophy: "The 5-Second Rule"
 
 A user should be able to look at your dashboard and answer three questions within 5 seconds:
-1.  **What** am I looking at? (Title/Context)
+1.  **What** am I looking at? (Title/[[Context]])
 2.  **So What?** (Is it good or bad? - KPIs/BANs)
 3.  **Now What?** (Where do I click to investigate? - Navigation)
 
@@ -19,7 +19,7 @@ Western users scan screens in an **F-Pattern** (Top-Left to Top-Right, then down
 | :--- | :--- | :--- |
 | **Top Left** | **Logo & Title** | Keep it small. Don't waste prime real estate on a massive logo. |
 | **Top Row** | **BANs (Big Angry Numbers)** | The Headline KPIs. Current Year Sales, YOY Growth. Use **Red/Green** indicators here. |
-| **Middle** | **Context & Trends** | Line charts (Time Intelligence) and Bar charts (Categorical comparison). |
+| **Middle** | **Context & Trends** | Line charts ([[Time Intelligence]]) and Bar charts (Categorical comparison). |
 | **Bottom** | **Granularity** | Detailed Matrix or Table visuals. Users only look here if the top rows triggered a question. |
 | **Right/Left Edge**| **Slicers/Nav** | Use a collapsible "Filter Pane" or a standard sidebar to save canvas space. |
 
@@ -46,7 +46,7 @@ This is a classic UX concept that applies perfectly to Power BI Drill-throughs.
 
 > **"Overview first, zoom and filter, then details-on-demand."**
 
-1.  **Overview:** The Landing Page. High-level KPIs. No heavy tables.
+1.  **Overview:** The Landing Page. High-level KPIs. No heavy [[Tables|tables]].
 2.  **Zoom/Filter:** Cross-filtering interactions. Clicking a bar filters the rest of the page.
 3.  **Details:** **Drill-through**. Do not put a 10,000-row table on the main page. Use a "Right-click -> Drill through to Details" action to take the user to a separate granular page.
 
@@ -84,7 +84,7 @@ Ensuring the report is usable by everyone is a hallmark of a mature developer.
 
 ---
 
-### 8. IBCS (International Business Communication Standards)
+### 8. [[IBCS]] (International Business Communication Standards)
 
 If you want to impress a CFO or highly technical stakeholders, mention **IBCS**. It is a strict standard for financial reporting visuals.
 

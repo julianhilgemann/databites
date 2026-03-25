@@ -1,5 +1,5 @@
 
-Here are the **Top 5 SQL Patterns** for Analytics Engineers (dbt + Snowflake).
+Here are the **Top 5 [[SQL]] Patterns** for Analytics Engineers ([[dbt]] + Snowflake).
 
 ### 1. The "Top N" Per Group (Window Functions)
 
@@ -59,7 +59,7 @@ SELECT * FROM Deduped WHERE rn = 1
 ### 4. The "Bucketing" (CASE WHEN)
 
 *   **The Question:** "Group customers into 'High', 'Medium', and 'Low' value based on spend."
-*   **Why HSE asks:** This is the exact equivalent of the DAX `SWITCH` pattern we discussed, but done in the database (dbt).
+*   **Why HSE asks:** This is the exact equivalent of the [[DAX]] `SWITCH` pattern we discussed, but done in the database (dbt).
 *   **The Concept:** Conditional logic.
 
 **The Query:**

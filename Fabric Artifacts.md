@@ -6,14 +6,14 @@ These are the standard elements used for Business Intelligence.
 
 #### A. Semantic Model (Formerly "Dataset")
 **The Brain.**
-*   **What is it?** It is the container for the Tables, Relationships, and DAX Measures. It holds the logic.
+*   **What is it?** It is the container for the [[Tables]], [[Relationships]], and [[DAX]] Measures. It holds the logic.
 *   **Key Concept:** In the old days, every Report had its own Dataset. In the modern (Golden Dataset) approach, **One Semantic Model** feeds **Many Reports**.
 *   **Fabric Twist:** In Fabric, Semantic Models can use **Direct Lake** mode to read Parquet files directly from OneLake without importing them into RAM.
 
 #### B. Report (`.pbix`)
 **The Deep Dive.**
 *   **What is it?** A multi-page interactive file. This is where you slice, dice, cross-filter, and drill through.
-*   **Context:** Created in Power BI Desktop. It is connected to a single Semantic Model.
+*   **[[Context]]:** Created in Power BI Desktop. It is connected to a single Semantic Model.
 *   **User Goal:** "I need to analyze why sales dropped in March."
 
 #### C. Dashboard
@@ -44,7 +44,7 @@ These live "upstream" from Power BI.
 #### B. Warehouse
 **The Structured Storage.**
 *   **What is it?** A traditional relational database experience inside Fabric.
-*   **Engine:** Powered by **T-SQL**.
+*   **Engine:** Powered by **T-[[SQL]]**.
 *   **Use Case:** SQL Developers writing Stored Procedures, DDL, and DML. It feels like SQL Server.
 
 #### C. Dataflow Gen2

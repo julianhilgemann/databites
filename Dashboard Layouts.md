@@ -49,7 +49,7 @@ Users do not read dashboards; they **scan** them. The pattern depends on the den
 **The Behavior:** The eye moves from Top-Left to Top-Right, cuts diagonally to Bottom-Left, and finishes at Bottom-Right.
 
 **Layout Strategy:**
-1.  **Top-Left:** Logo / Title (Context).
+1.  **Top-Left:** Logo / Title ([[Context]]).
 2.  **Top-Right:** The Primary Interaction (Date Slicer or "Export" button).
 3.  **Center/Diagonal:** The "Hero" Chart (The main trend or insight).
 4.  **Bottom-Right:** The Call to Action (CTA) or "Drill-through" button.

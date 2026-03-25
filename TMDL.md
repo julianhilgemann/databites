@@ -3,7 +3,7 @@ Here is a deep dive into **TMDL (Tabular Model Definition Language)**.
 ### 1. What is TMDL?
 **TMDL** is a text-based grammar designed specifically to define Power BI (Tabular) data models.
 
-*   **The Old Way (TMSL/JSON):** A machine-readable format. Heavy use of brackets `{}`, commas, and quotes. DAX expressions were messy because you had to "escape" every quote (e.g., `\"Column\"`).
+*   **The Old Way (TMSL/JSON):** A machine-readable format. Heavy use of brackets `{}`, commas, and quotes. [[DAX]] expressions were messy because you had to "escape" every quote (e.g., `\"Column\"`).
 *   **The New Way (TMDL):** A human-readable format. It looks very similar to **YAML** or **Python**. It uses **indentation** to define structure.
 
 ---
@@ -102,9 +102,9 @@ When you save as `.pbip` with TMDL enabled, you get a `definition` folder:
     *   `Sales.tmdl`
     *   `Customer.tmdl`
     *   `Date.tmdl`
-3.  **`relationships.tmdl`**: (Optional) Sometimes relationships are defined inside the tables, sometimes separately depending on complexity.
+3.  **`relationships.tmdl`**: (Optional) Sometimes [[Relationships|relationships]] are defined inside the [[Tables|tables]], sometimes separately depending on complexity.
 
-**Why this wins in Git:**
+**Why this wins in [[git|Git]]:**
 
 *   **Conflict Resolution:** If Developer A edits `Sales.tmdl` and Developer B edits `Customer.tmdl`, Git merges them **automatically**. There is zero conflict.
 *   **Code Review:** When you open a Pull Request in DevOps, the reviewer sees exactly what changed:

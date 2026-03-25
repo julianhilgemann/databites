@@ -1,4 +1,4 @@
-Here is a comprehensive **Git Primer** specifically tailored for the modern Power BI developer using **[[TMDL]]** and **PBIP**.
+Here is a comprehensive **[[git|Git]] Primer** specifically tailored for the modern Power BI developer using **[[TMDL]]** and **PBIP**.
 
 ---
 
@@ -10,7 +10,7 @@ To understand why this is a big deal, you must understand the file formats.
     *   **Git Behavior:** Git treats it like a generic "blob." If you change one measure, Git sees the *entire file* as changed. You cannot merge work from two people; the last save wins.
 *   **New Way (`.pbip`):** A Project Folder.
     *   **Git Behavior:** It splits your report into human-readable text files.
-        *   **Dataset:** Saved as **TMDL** (Tabular Model Definition Language).
+        *   **Dataset:** Saved as **[[TMDL]]** (Tabular Model Definition Language).
         *   **Report:** Saved as **PBIR** (Power BI Enhanced Report Format).
     *   **Result:** If you change one measure, Git records a change to *only* that specific text file (e.g., `Sales.tmdl`). Two developers can work on the same model simultaneously.
 
@@ -63,7 +63,7 @@ Power BI Desktop automatically creates this file for you. **Never delete it.** I
 *   `localSettings.json`: Your personal machine settings (e.g., "Don't show this popup again").
 *   `.pbi/`: Internal temporary folders.
 
-**Implication:** When your colleague clones your repo, they get the **Model structure**, but **Empty Tables**. They must hit "Refresh" to pull data from SQL/Source.
+**Implication:** When your colleague clones your repo, they get the **Model structure**, but **Empty [[Tables]]**. They must hit "Refresh" to pull data from [[SQL]]/Source.
 
 ---
 

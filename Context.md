@@ -5,14 +5,14 @@
 Row context is the ability of the engine to know "which row I am currently looking at."
 
 **Where does it exist?**
-1.  **Calculated Columns:** By default. If you write `[Price] * [Quantity]` in a new column, DAX knows to grab the price *from this row* and quantity *from this row*.
+1.  **Calculated Columns:** By default. If you write `[Price] * [Quantity]` in a new column, [[DAX]] knows to grab the price *from this row* and quantity *from this row*.
 2.  **Iterator Functions:** Functions that loop (e.g., `SUMX`, `FILTER`).
 
 **The Hard Rule:**
 > **Row Context does NOT filter the data model.**
 
 **The Interview Trap:**
-*   **Scenario:** You are in a Calculated Column in the `Product` table. You write `SUM(Sales[Amount])`.
+*   **Scenario:** You are in a [[Calculated Column]] in the `Product` table. You write `SUM(Sales[Amount])`.
 *   **Result:** You get the **Grand Total** of all sales repeated on every single row.
 *   **Why?** You have a *Row Context* (you are on the "Red Hat" row), but you have no *Filter Context*. The `Sales` table doesn't know you want to filter by "Red Hat". It just sees "Sum everything."
 
@@ -21,7 +21,7 @@ Row context is the ability of the engine to know "which row I am currently looki
 ### 2. Filter Context ("The View")
 
 **Definition:**
-Filter context is the set of active filters currently applied to the data model. It restricts the tables before any math happens.
+Filter context is the set of active filters currently applied to the data model. It restricts the [[Tables|tables]] before any math happens.
 
 **Where does it come from?**
 1.  **Visuals:** Rows, Columns, Axis, Slicers.
@@ -33,7 +33,7 @@ It flows **downhill** (Relationship propagation).
 
 ---
 
-### 3. Context Transition ("The Magic Switch")
+### 3. [[Context Transition]] ("The Magic Switch")
 
 **Definition:**
 Context Transition is the process of transforming the **Row Context** (current row values) into an equivalent **Filter Context**.

@@ -37,7 +37,7 @@ Shift the conversation from **Outputs** (Charts/Exports) to **Outcomes** (Action
 *   **Best for:** Replacing legacy systems.
 *   **Technique:** Ask for their current "Excel Hell" spreadsheets.
 *   **What to look for:**
-    *   *Hardcoded adjustments:* (e.g., `+ 500` manually added to a total). This is hidden business logic you must migrate to dbt/DAX.
+    *   *Hardcoded adjustments:* (e.g., `+ 500` manually added to a total). This is hidden business logic you must migrate to [[dbt]]/[[DAX]].
     *   *Email Distribution Lists:* Who actually reads this?
 
 ---
@@ -46,7 +46,7 @@ Shift the conversation from **Outputs** (Charts/Exports) to **Outcomes** (Action
 
 A Senior Specialist does not just write "Build Dashboard" in Jira. You produce structured artifacts.
 
-### 1. The Bus Matrix (Kimball)
+### 1. The Bus Matrix ([[Kimball]])
 A grid mapping **Business Processes** (Rows) to **Dimensions** (Columns).
 *   **Why:** It proves you are thinking about the Enterprise Model, not just one report.
 *   **Example:**
@@ -90,7 +90,7 @@ Write your tickets (Jira/DevOps) using the Agile Syntax.
 **Scenario:** Stakeholder asks for something technically bad (e.g., "I want a 50-column table export").
 
 **The "Yes, And..." Pivot:**
-*   **Don't say:** "No, Power BI isn't for exporting tables."
+*   **Don't say:** "No, Power BI isn't for exporting [[Tables|tables]]."
 *   **Do say:** "I understand you need the granular data for reconciliation. **However**, Power BI works best as an aggregated analytical tool. How about we build a high-level exception report that **highlights only the rows that are wrong**, and then we provide a 'Drill-to-Detail' button that gives you the export for just those rows?"
 
 **Scenario:** Scope Creep.

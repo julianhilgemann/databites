@@ -16,7 +16,7 @@ VAR LastYearSales = CALCULATE( [Total Sales], SAMEPERIODLASTYEAR( 'Dim_Date'[Dat
 RETURN
     DIVIDE( CurrentSales - LastYearSales, LastYearSales, 0 )
 ```
-*   **Key Concept:** Time Intelligence functions (`SAMEPERIODLASTYEAR`) rely on a proper Date Table marked as a "Date Table."
+*   **Key Concept:** [[Time Intelligence]] functions (`SAMEPERIODLASTYEAR`) rely on a proper Date Table marked as a "Date Table."
 
 ---
 
@@ -44,7 +44,7 @@ VAR CurrentRunningTotal =
 RETURN
     DIVIDE( CurrentRunningTotal, TotalSalesAll )
 ```
-*   **Key Concept:** Using `ALL` to break out of the filter context to see the "Whole," then using `FILTER` to rebuild the running total.
+*   **Key Concept:** Using `ALL` to break out of the filter [[Context|context]] to see the "Whole," then using `FILTER` to rebuild the running total.
 
 ---
 
@@ -67,7 +67,7 @@ COUNTROWS(
     )
 )
 ```
-*   **Key Concept:** Virtual Tables (`VALUES`) and iterating to check history.
+*   **Key Concept:** Virtual [[Tables]] (`VALUES`) and iterating to check history.
 
 ---
 

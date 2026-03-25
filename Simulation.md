@@ -15,7 +15,7 @@ These questions are categorized by domain and graded by difficulty. Use this to 
     2.  Create shared **Conformed Dimensions** (Date, Product).
     3.  Link Sales to Date on `DateID`.
     4.  Link Budget to Date on `MonthID` (or `FirstDayOfMonth`).
-    5.  **Alternative:** Use **DAX `TREATAS`** (Virtual Relationship) if physical relationships are messy.
+    5.  **Alternative:** Use **[[DAX]] `TREATAS`** (Virtual Relationship) if physical [[Relationships|relationships]] are messy.
 
 #### Q2: "I have a requirement to filter Sales by 'SalesPerson'. However, one Order can be split among 3 Salespeople. How do you build this?"
 *   **Difficulty:** Senior
@@ -29,10 +29,10 @@ These questions are categorized by domain and graded by difficulty. Use this to 
 
 #### Q3: "Why shouldn't I just load one massive flat table (OBT) into Power BI? It works in Excel."
 *   **Difficulty:** Basic (but requires a technical "Why").
-*   **What they are testing:** Knowledge of the VertiPaq Engine.
+*   **What they are testing:** Knowledge of the [[Vertipaq|VertiPaq]] Engine.
 *   **The Specialist Answer:**
     1.  **Compression:** VertiPaq uses Dictionary Encoding. Repeating string values ("Customer Name") 10 million times bloats the model size in RAM.
-    2.  **Performance:** Star Schema allows the engine to filter small dimension tables first, then propagate IDs to the Fact (efficient). OBT forces the engine to scan massive columns for simple filters.
+    2.  **Performance:** [[Star Schema]] allows the engine to filter small dimension [[Tables|tables]] first, then propagate IDs to the Fact (efficient). OBT forces the engine to scan massive columns for simple filters.
     3.  **Usability:** A Star Schema is easier for users to navigate (Fields pane organization) compared to a flat table with 200 columns.
 
 ---
@@ -42,7 +42,7 @@ These questions are categorized by domain and graded by difficulty. Use this to 
 
 #### Q4: "Explain what happens when I put the measure `[Total Sales]` inside a `FILTER` function."
 *   **Difficulty:** Senior
-*   **What they are testing:** Context Transition.
+*   **What they are testing:** [[[[Context]] Transition]].
 *   **The Specialist Answer:**
     1.  `FILTER` is an iterator. It creates a **Row Context**.
     2.  Because `[Total Sales]` is a measure, it has a hidden `CALCULATE` wrapped around it.
@@ -59,7 +59,7 @@ These questions are categorized by domain and graded by difficulty. Use this to 
     3.  **Common Fixes:**
         *   Are we using `FILTER(Table)` instead of `KEEPFILTERS` or `FILTER(ALL(Column))`?
         *   Are there unnecessary **Context Transitions**?
-        *   Can we move logic upstream to SQL?
+        *   Can we move logic upstream to [[SQL]]?
         *   Are we using **Bi-Directional** relationships?
 
 #### Q6: "How do you handle 'Totals' in a Matrix visual that don't add up correctly?"
@@ -71,12 +71,12 @@ These questions are categorized by domain and graded by difficulty. Use this to 
 
 ---
 
-### Phase 3: Engineering & Modern Stack (Fabric/Git)
+### Phase 3: Engineering & Modern Stack (Fabric/[[git|Git]])
 *The "Differentiation" Stage.*
 
 #### Q7: "We have multiple developers working on the same PBI file. We keep overwriting each other's work. How do you solve this?"
 *   **Difficulty:** Senior
-*   **What they are testing:** PBIP, TMDL, and Git.
+*   **What they are testing:** PBIP, [[TMDL]], and Git.
 *   **The Specialist Answer:**
     1.  Stop saving as `.pbix`. Save as **Power BI Project (.pbip)**.
     2.  Enable **TMDL** to store the model definition as text (YAML-like) instead of JSON.
@@ -91,7 +91,7 @@ These questions are categorized by domain and graded by difficulty. Use this to 
     *   **DirectQuery:** Translates DAX into SQL queries sent to the source. **Slow** (Translation layer + Network latency). Good for real-time.
     *   **Direct Lake:** A Fabric feature. The Power BI engine reads the **Parquet files** (Delta Lake) directly from OneLake into memory. **Fast** (Import-like speed) but without the need to "Refresh" the dataset.
 
-#### Q9: "Explain Query Folding. Why is it non-negotiable?"
+#### Q9: "Explain [[Query Folding]]. Why is it non-negotiable?"
 *   **Difficulty:** Core Competency.
 *   **What they are testing:** Power Query efficiency.
 *   **The Specialist Answer:**

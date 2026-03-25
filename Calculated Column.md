@@ -11,7 +11,7 @@ Here are the specific best practices for when you *do* need to create them.
 
 ### 1. The `SWITCH( TRUE() )` Pattern
 
-**Context:** Creating categorical groups based on logic (e.g., "High Value", "Low Value").
+**[[Context]]:** Creating categorical groups based on logic (e.g., "High Value", "Low Value").
 **The Old Way:** Nested `IF` statements. Hard to read, prone to bracket errors.
 **The Best Practice:** Use `SWITCH` with `TRUE()` as the first argument.
 
@@ -34,7 +34,7 @@ SWITCH( TRUE(),
 
 **Context:** Grouping continuous numbers (Age, Price) into buckets (0-10, 10-20) for histograms.
 **The GUI Way:** Right-click column $\to$ "New Group." (Creates a hidden internal logic).
-**The Best Practice:** Use `FLOOR` logic in DAX. It gives you explicit control.
+**The Best Practice:** Use `FLOOR` logic in [[DAX]]. It gives you explicit control.
 
 ```dax
 -- Creates bins: 0, 10, 20, 30...
@@ -58,7 +58,7 @@ Is High Value = IF( Sales[Amount] > 1000, "Yes", "No" )
 -- GOOD (1 bit storage, instant filtering)
 Is High Value = Sales[Amount] > 1000
 ```
-*   **Performance:** A Boolean column is the most efficient storage type in the VertiPaq engine.
+*   **Performance:** A Boolean column is the most efficient storage type in the [[Vertipaq|VertiPaq]] engine.
 *   **Usability:** In the visual, you can rename True/False to "Yes/No" in the format pane if the user insists, but keep the model clean.
 
 ---
@@ -78,7 +78,7 @@ Is High Value = Sales[Amount] > 1000
 
 ---
 
-### 5. String Concatenation (The Cardinality Killer)
+### 5. String Concatenation (The [[Cardinality]] Killer)
 
 **Context:** Creating a composite key or a "Full Name" column.
 **The Trap:** `FullName = [FirstName] & " " & [LastName]`

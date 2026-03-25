@@ -1,6 +1,6 @@
 
 ### 1. The Core Concept (The Elevator Pitch)
-**Query Folding** is the ability of the Power Query (Mashup) Engine to convert your M code transformations into a **single native SQL statement** and execute it on the source server.
+**Query Folding** is the ability of the Power Query (Mashup) Engine to convert your M code transformations into a **single native [[SQL]] statement** and execute it on the source server.
 
 *   **Scenario:** You import a 100-million-row table but filter it to "Last 7 Days."
 *   **With Folding:** Power BI sends `SELECT * FROM Table WHERE Date > '2025-01-01'` to the SQL Server. The server returns only the small slice of data.
@@ -36,10 +36,10 @@ You need to memorize these. These are the transformations that force the engine 
     *   `Capitalize Each Word` (SQL generally doesn't have a `PROPER()` function).
     *   `Split Column by Delimiter` (sometimes breaks depending on the driver).
     *   Buffer functions (`Table.Buffer`).
-4.  **Changing Data Types:** Doing this *too early* can prevent folding if the target type doesn't map cleanly to a SQL type.
+4.  **Changing [[Data Types]]:** Doing this *too early* can prevent folding if the target type doesn't map cleanly to a SQL type.
 
 **The Golden Rule:** **"Push transformations upstream."**
-If you need an Index or a Merge that breaks folding, do it in a SQL View or dbt model *before* Power BI touches it.
+If you need an Index or a Merge that breaks folding, do it in a SQL View or [[dbt]] model *before* Power BI touches it.
 
 ---
 

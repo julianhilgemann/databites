@@ -4,11 +4,11 @@ As of **December 2025**, the Power BI and Fabric ecosystem has undergone massive
 
 Microsoft has released **two** distinct types of UDFs. It is critical not to confuse them, as they serve different layers of the stack.
 
-*   **DAX User-Defined Functions (Preview - Sep 2025):**
+*   **[[DAX]] User-Defined Functions (Preview - Sep 2025):**
     *   **What they are:** You can finally define your own reusable functions in DAX, similar to how you would in Excel or programming languages.
     *   **Syntax:** uses the `DEFINE FUNCTION` keyword.
-    *   **Use Case:** Instead of rewriting a complex "Tax Calculation" or "Time Intelligence" logic inside 50 different measures, you write it once as a Function. You then call `CalculateTax([Sales])` inside your measures.
-    *   **Location:** These are authored in the **DAX Query View** or **TMDL View**.
+    *   **Use Case:** Instead of rewriting a complex "Tax Calculation" or "[[Time Intelligence]]" logic inside 50 different measures, you write it once as a Function. You then call `CalculateTax([Sales])` inside your measures.
+    *   **Location:** These are authored in the **DAX Query View** or **[[TMDL]] View**.
 
 *   **Fabric User Data Functions (GA - Sep 2025):**
     *   **What they are:** These are **Python/PySpark** functions designed for the Fabric engineering layer.
@@ -21,9 +21,9 @@ Microsoft has released **two** distinct types of UDFs. It is critical not to con
 *   **The Change:** Power BI Desktop now has a dedicated **"TMDL View"** tab on the left sidebar (alongside Report, Table, and Model views).
 *   **What is TMDL?** *Tabular Model Definition Language*. It is a human-readable, YAML-like syntax for defining your data model.
 *   **Capabilities:**
-    *   **Code-First Modeling:** You can create measures, calculated columns, and relationships by typing code instead of clicking menus.
+    *   **Code-First Modeling:** You can create measures, calculated columns, and [[Relationships|relationships]] by typing code instead of clicking menus.
     *   **Bulk Edits:** You can copy-paste a block of 50 measures, do a "Find & Replace" (e.g., change "Sum" to "Average"), and apply it instantly.
-    *   **Git Integration:** Because TMDL is text-based, it resolves merge conflicts much cleaner than the old JSON format.
+    *   **[[git|Git]] Integration:** Because TMDL is text-based, it resolves merge conflicts much cleaner than the old JSON format.
 *   **VS Code Extension:** There is now a generally available VS Code extension for TMDL that includes semantic highlighting and IntelliSense if you prefer editing outside Desktop.
 
 ### 3. DAX Editor in Desktop (DAX Query View)

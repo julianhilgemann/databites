@@ -1,5 +1,5 @@
 
-### 1. Virtual Tables: The "Average of Sums" Pattern
+### 1. Virtual [[Tables]]: The "Average of Sums" Pattern
 
 This is the most common advanced pattern.
 *   **The Problem:** You want the "Average Sales per Customer."
@@ -61,7 +61,7 @@ RETURN
 
 ### 3. RANKX (Ranking Correctly)
 
-**The Problem:** `RANKX` often returns "1" for every row if you don't manage the context.
+**The Problem:** `RANKX` often returns "1" for every row if you don't manage the [[Context|context]].
 **The Rule:** You must rank against **All** items, not just the **Current** item.
 
 ```dax
@@ -82,9 +82,9 @@ IF(
 
 ---
 
-### 4. Window Functions (The "New" DAX)
+### 4. Window Functions (The "New" [[DAX]])
 
-Released in late 2022/2023, these functions (`WINDOW`, `OFFSET`, `INDEX`) allow SQL-style windowing. They are faster and cleaner than the old `FILTER` methods.
+Released in late 2022/2023, these functions (`WINDOW`, `OFFSET`, `INDEX`) allow [[SQL]]-style windowing. They are faster and cleaner than the old `FILTER` methods.
 
 #### A. Running Total (The Modern Way)
 **Old Way:** `CALCULATE( [Sales], FILTER( ALL('Date'), 'Date'[Date] <= MAX('Date'[Date]) ) )` (Quadratic complexity, slow).
@@ -121,7 +121,7 @@ CALCULATE(
 
 ---
 
-### 5. TREATAS (Virtual Relationships)
+### 5. TREATAS (Virtual [[Relationships]])
 
 **The Scenario:**
 *   **Fact:** Sales (Daily).

@@ -5,7 +5,7 @@ This is the **#1 SQL Interview Question**.
 You write SQL from top to bottom (`SELECT` first), but the database engine executes it in a completely different order.
 
 ### The Order
-1.  **FROM / JOIN** (Load the Tables)
+1.  **FROM / JOIN** (Load the [[Tables]])
 2.  **WHERE** (Filter Rows)
 3.  **GROUP BY** (Aggregate)
 4.  **HAVING** (Filter Aggregations)
@@ -95,7 +95,7 @@ SQL logic uses **Three-Valued Logic** (True, False, Unknown).
 
 *   **The Trap:** `WHERE column = NULL` will **always** fail. Nothing is "equal" to Null, not even another Null.
 *   **The Fix:** `WHERE column IS NULL`.
-*   **The Function:** `COALESCE(Column, 0)` -> Returns the first non-null value (similar to `IFNULL` or DAX `COALESCE`).
+*   **The Function:** `COALESCE(Column, 0)` -> Returns the first non-null value (similar to `IFNULL` or [[DAX]] `COALESCE`).
 *   **Aggregation:** `SUM(Column)` ignores NULLs automatically. `COUNT(Column)` ignores NULLs. `COUNT(*)` counts rows regardless of NULLs.
 
 ---

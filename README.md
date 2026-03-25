@@ -1,6 +1,6 @@
 # Databites
 
-An Obsidian knowledge repository for all things data, including Power BI, DAX, SQL, and data modeling.
+An Obsidian knowledge repository for all things data, including Power BI, [[DAX]], [[SQL]], and data modeling.
 
 ## Getting Started
 
@@ -10,7 +10,7 @@ To navigate the knowledge base, start with the **[Index](_INDEX.md)**.
 
 - Interview Prep & Strategy
 - Architecture & Data Modeling
-- Modern Engineering Stack (Fabric/Git)
+- Modern Engineering Stack (Fabric/[[git|Git]])
 - Power Query & SQL
 - DAX & The Semantic Engine
 - Visualization & User Experience

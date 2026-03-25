@@ -3,7 +3,7 @@
 
 **Status:** The new game-changer (GA in 2024).
 
-*   **The Concept:** Writing DAX calculations that execute **on the visual grid** (Client-Side), rather than in the data model (Server-Side). It works like Excel formulas (A1 + B1).
+*   **The Concept:** Writing [[DAX]] calculations that execute **on the visual grid** (Client-Side), rather than in the data model (Server-Side). It works like Excel formulas (A1 + B1).
 *   **The Syntax:** It introduces functions like `PREVIOUS()`, `NEXT()`, `RUNNINGSUM()`, and `MOVINGAVERAGE()`.
 *   **The "Old Way":** Writing complex DAX window functions (`OFFSET`, `WINDOW`, `CALCULATE`) just to compare a row to the row above it.
 *   **The Senior Use Case:**
@@ -14,7 +14,7 @@
 
 ### 2. Drill Through (The "Microscope")
 
-**The Concept:** Moving from a Summary Page to a Detail Page, carrying the context (filters) with you.
+**The Concept:** Moving from a Summary Page to a Detail Page, carrying the [[Context|context]] (filters) with you.
 
 #### A. Standard Drill Through
 *   **Action:** Right-click a bar $\to$ "Drill through" $\to$ "Details Page."
@@ -28,7 +28,7 @@
 #### C. Cross-Report Drill Through (The Enterprise Move)
 *   **Scenario:** You have a "Summary Dashboard" (Dataset A) and a "Granular Transaction Report" (Dataset B).
 *   **Action:** Clicking a KPI in Report A opens Report B filtered to that context.
-*   **Requirement:** Tables must share the same schema names or be defined in the settings.
+*   **Requirement:** [[Tables]] must share the same schema names or be defined in the settings.
 
 ---
 
@@ -80,7 +80,7 @@
 
 *   **Setup:** Enable "Personalize Visuals" in the Report Settings.
 *   **The UX:** User sees a small icon on the chart header. They can swap "Bar Chart" to "Table" or change "Sales" to "Profit."
-*   **Governance:** You can use **Perspectives** (in TMDL) to limit *what* fields they can see when they personalize. (e.g., Don't let them see the raw cost columns).
+*   **Governance:** You can use **Perspectives** (in [[TMDL]]) to limit *what* fields they can see when they personalize. (e.g., Don't let them see the raw cost columns).
 *   **Interview Hook:** *"I enable Personalize Visuals to reduce 'Ad-Hoc' change requests. If a manager wants to see a chart as a table, they can do it themselves, and I can focus on new features."*
 
 ---

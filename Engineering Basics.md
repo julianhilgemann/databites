@@ -3,13 +3,13 @@
 
 ## 1. ACID (The "Bank Vault" Standard)
 
-**Context:** Relational Databases (SQL Server, Oracle, PostgreSQL).
+**[[Context]]:** Relational Databases ([[SQL]] Server, Oracle, PostgreSQL).
 Used for **Transactions** (OLTP). If you transfer money, you want ACID.
 
 | Letter | Concept | Definition | Mnemonic / Helper |
 | :--- | :--- | :--- | :--- |
 | **A** | **Atomicity** | **"All or Nothing."** The transaction happens completely, or it doesn't happen at all. No half-finished updates. | **A**tom = **A**ll or nothing.<br>*(Like an atomic bomb, you can't half-explode it).* |
-| **C** | **Consistency** | **"Follow the Rules."** The data must meet all validation rules (Constraints, Data Types) before and after the transaction. | **C**orrectness.<br>*(The referee ensures the game follows the rules).* |
+| **C** | **Consistency** | **"Follow the Rules."** The data must meet all validation rules (Constraints, [[Data Types]]) before and after the transaction. | **C**orrectness.<br>*(The referee ensures the game follows the rules).* |
 | **I** | **Isolation** | **"Don't Peek."** One transaction cannot see another transaction until it is finished. | **I**nvisible.<br>*(What happens in Vegas stays in Vegas until you leave).* |
 | **D** | **Durability** | **"Written in Stone."** Once the system says "Success," the data is saved forever, even if the power goes out immediately after. | **D**isk.<br>*(If it's not on the Disk, it didn't happen).* |
 
@@ -54,7 +54,7 @@ The single most important distinction for modeling.
 | Acronym | Name | Role | Mnemonic | Power BI Relation |
 | :--- | :--- | :--- | :--- | :--- |
 | **OLTP** | Online **Transaction** Processing | **Writing.** fast, small updates. (e.g., The Checkout Register). Highly Normalized (3NF). | **T** = **T**iny updates.<br>**T** = **T**ransactions. | **The Source.** Power BI sucks at querying OLTP directly (too many joins). |
-| **OLAP** | Online **Analytical** Processing | **Reading.** Heavy aggregations. (e.g., The Monthly Report). Denormalized (Star Schema). | **A** = **A**nalysis.<br>**A** = **A**ggregations. | **The Destination.** Power BI *is* an OLAP engine. |
+| **OLAP** | Online **Analytical** Processing | **Reading.** Heavy aggregations. (e.g., The Monthly Report). Denormalized ([[Star Schema]]). | **A** = **A**nalysis.<br>**A** = **A**ggregations. | **The Destination.** Power BI *is* an OLAP engine. |
 
 ---
 
