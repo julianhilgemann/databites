@@ -1,0 +1,13 @@
+# Obsidian metadata
+.obsidian/workspace
+.obsidian/workspace.json
+.obsidian/cache/
+.obsidian/indexed
+.obsidian/backups/
+
+# OS metadata
+.DS_Store
+
+# Temporary files
+*.tmp
+~$*
