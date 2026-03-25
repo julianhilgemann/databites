@@ -44,7 +44,7 @@ Here is the hierarchy of [[Context]] Modifiers, from "Nuclear" to "Surgical."
 
 **Mechanism:** "Ignore the breakdown *inside* the visual, but keep the filters from the *outside*."
 
-*   **Behavior:** It restores the context to what it was at the "top" of the visual, before the row/axis split the data.
+*   **Behavior:** It restores the [[Context|context]] to what it was at the "top" of the visual, before the row/axis split the data.
 *   **Mental Model:** "Give me the total for everything visible in this chart."
 *   **Use Case:** Calculating **"% of Grand Total"** inside a matrix or chart.
 

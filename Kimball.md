@@ -63,7 +63,7 @@ A single physical table used for multiple purposes.
 
 This is how you prevent "Silos" of data.
 *   **Theory:** If "Customer" appears in the *Sales* Data Mart and the *Support* Data Mart, it must be the **exact same structure** (same Keys, same Names).
-*   **Power BI:** This is critical for **Cross-Report Drill Through** and **Composite Models**. If you want to compare Sales vs. Budget, both [[Tables|tables]] must share the exact same `Date` and `Product` dimension tables.
+*   **Power BI:** This is critical for **Cross-Report Drill Through** and **[[Composite Models]]**. If you want to compare Sales vs. Budget, both [[Tables|tables]] must share the exact same `Date` and `Product` dimension [[Tables|tables]].
 
 ### D. Junk Dimensions
 
@@ -85,8 +85,8 @@ Kimball identifies three distinct patterns. Mixing these in one Power BI table i
 
 ### 2. Periodic Snapshot Fact
 
-*   **Definition:** One row per period. (e.g., Use SQL to capture the Inventory Level *every night* at midnight).
-*   **Power BI:** Essential for "Stock on Hand" or "Account Balance" reporting. You cannot sum these over time (Inventory on Jan 1 + Jan 2 $\neq$ Total Inventory). You must use `LASTNONBLANK` or `AVERAGE` in DAX.
+*   **Definition:** One row per period. (e.g., Use [[SQL]] to capture the Inventory Level *every night* at midnight).
+*   **Power BI:** Essential for "Stock on Hand" or "Account Balance" reporting. You cannot sum these over time (Inventory on Jan 1 + Jan 2 $\neq$ Total Inventory). You must use `LASTNONBLANK` or `AVERAGE` in [[DAX]].
 
 ### 3. Accumulating Snapshot Fact
 
@@ -101,9 +101,9 @@ How does the 1990s theory hold up in 2024?
 
 | Kimball Rule | Modern Data Engineering / Power BI Reality |
 | :--- | :--- |
-| **"Star Schema is King"** | **TRUE.** VertiPaq is essentially a Star Schema engine. |
+| **"[[Star Schema]] is King"** | **TRUE.** [[Vertipaq|VertiPaq]] is essentially a Star Schema engine. |
 | **"Surrogate Keys (Integers)"** | **TRUE.** Mandatory for performance in Power BI. |
-| **"ETL at Night"** | **PARTIAL.** Power BI allows incremental refresh, but the logic of preparing clean dimensions remains the same. |
+| **"ETL at Night"** | **PARTIAL.** Power BI allows [[Incremental Refresh|incremental refresh]], but the logic of preparing clean dimensions remains the same. |
 | **"One Version of the Truth"** | **TRUE.** Handled via "Shared Datasets" (One Power BI Dataset used by 20 reports). |
 | **"Avoid Snowflakes"** | **TRUE.** Power BI prefers denormalized Dimensions over Snowflakes for speed and simplicity. |
 | **"Null Handling"** | **TRUE.** Kimball says "No Nulls in Keys." Power BI agrees (replace with `-1 / Unknown`). |

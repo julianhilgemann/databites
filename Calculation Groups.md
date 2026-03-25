@@ -71,7 +71,7 @@ You want a chart where the user can switch between "Revenue" and "Units Sold" wi
 ### 4. Advanced: Ordering & Precedence
 
 What happens if you have **Two** Calculation Groups applied to the same visual?
-*   Group 1: **Time Intelligence** (YTD).
+*   Group 1: **[[Time Intelligence]]** (YTD).
 *   Group 2: **Currency** (Convert to EUR).
 
 Does it convert to EUR, then do YTD? Or do YTD, then convert to EUR?

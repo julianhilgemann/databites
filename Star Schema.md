@@ -1,7 +1,7 @@
 
 ## Part 1: The Theory (The [[Kimball]] Methodology)
 
-The Star Schema is a mature modeling technique (popularized by Ralph Kimball) designed for reading data (Analytics), not writing data (Transaction Processing).
+The Star Schema is a mature modeling technique (popularized by Ralph [[Kimball]]) designed for reading data (Analytics), not writing data (Transaction Processing).
 
 ### 1. The Structure
 
@@ -51,7 +51,7 @@ This is the physics of Power BI.
     *   **Power BI Reality:** **Bad.**
         *   It forces the engine to traverse multiple [[Relationships|relationships]] (hops) to get to the data.
         *   It complicates [[DAX]] logic.
-        *   **Best Practice:** Denormalize! Collapse the snowflake. Put `Category` and `SubCategory` directly into the `Product` table. VertiPaq compression makes the storage cost of this redundancy negligible.
+        *   **Best Practice:** Denormalize! Collapse the snowflake. Put `Category` and `SubCategory` directly into the `Product` table. [[Vertipaq|VertiPaq]] compression makes the storage cost of this redundancy negligible.
 
 ### 3. Star Schema vs. OBT (One Big Table)
 
@@ -65,7 +65,7 @@ This is the physics of Power BI.
 
 ## Part 3: Modeling Rules & Best Practices
 
-### 1. Relationships: Always 1-to-Many
+### 1. [[Relationships]]: Always 1-to-Many
 *   **Config:** `*:1` (Many-to-One).
 *   **Direction:** **Single** (Filters flow from Dim to Fact).
 *   **Avoid:** **Bi-directional (Both)** filtering.
@@ -83,7 +83,7 @@ This is the physics of Power BI.
 ### 4. The "Date" Dimension
 Power BI requires a dedicated Date Dimension for [[Time Intelligence]] functions (`SAMEPERIODLASTYEAR`, `TOTALYTD`).
 *   **Do not** rely on the Date column inside the Fact table.
-*   **Do not** use Power BI's "Auto Date/Time" feature (it creates hidden, bloated tables).
+*   **Do not** use Power BI's "Auto Date/Time" feature (it creates hidden, bloated [[Tables|tables]]).
 *   **Do:** Connect a standard Calendar table to your Fact table on `DateKey`.
 
 ---
@@ -100,7 +100,7 @@ Real-world projects often have multiple processes (e.g., *Sales* and *Budget*). 
 1.  **Shared Dimensions (Conformed Dimensions):** Use the *same* `Date` table and `Product` table for both Facts.
 2.  **Granularity Matching:**
     *   Connect `Date[DateID]` to `Sales[DateID]`.
-    *   Connect `Date[MonthID]` to `Budget[MonthID]` (or use DAX to handle the grain mismatch).
+    *   Connect `Date[MonthID]` to `Budget[MonthID]` (or use [[DAX]] to handle the grain mismatch).
 3.  **Never join Fact to Fact:** Never try to connect *Sales* directly to *Budget*. Always go through the shared Dimensions.
 
 ---
@@ -114,13 +114,13 @@ Real-world projects often have multiple processes (e.g., *Sales* and *Budget*). 
 | **Filter Direction** | **Single** (Dim $\to$ Fact) | Prevents ambiguity and circular logic loops. |
 | **Key Type** | **Integer** (Surrogate) | Minimum RAM usage; fastest joins. |
 | **Columns in Fact** | **FKs + Metrics** | Keep the table "Narrow" for compression. |
-| **Columns in Dim** | **Attributes** | Keep the table "Wide" for filtering context. |
+| **Columns in Dim** | **Attributes** | Keep the table "Wide" for filtering [[Context|context]]. |
 | **Snowflaking** | **Collapse it** | Reduces join hops; simplifies the model. |
 | **Null Handling** | **Replace with -1** | Prevents the "(Blank)" member; ensures referential integrity. |
 
 ### Final Engineering Thought
 **"Push logic upstream."**
 If you are writing complex DAX to [[Bridge Tables|bridge tables]] or clean up data, you have a modeling problem.
-*   Join tables in SQL/Power Query.
+*   Join tables in [[SQL]]/Power Query.
 *   Clean columns in SQL/Power Query.
 *   Let the Model simply *exist* as a clean Star Schema so DAX can focus on math, not structural fixes.

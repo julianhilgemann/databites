@@ -32,7 +32,7 @@ SWITCH( TRUE(),
 
 ### 2. Binning (The Mathematical Approach)
 
-**Context:** Grouping continuous numbers (Age, Price) into buckets (0-10, 10-20) for histograms.
+**[[Context]]:** Grouping continuous numbers (Age, Price) into buckets (0-10, 10-20) for histograms.
 **The GUI Way:** Right-click column $\to$ "New Group." (Creates a hidden internal logic).
 **The Best Practice:** Use `FLOOR` logic in [[DAX]]. It gives you explicit control.
 
@@ -83,8 +83,8 @@ Is High Value = Sales[Amount] > 1000
 **Context:** Creating a composite key or a "Full Name" column.
 **The Trap:** `FullName = [FirstName] & " " & [LastName]`
 **The Best Practice:**
-1.  **Do it in Power Query (ETL):** The compression happens *during* load. If you do it in DAX, the engine stores the two original columns AND the uncompressed new column in RAM.
-2.  **Avoid High Cardinality:** If you combine `[OrderID]` (1 million rows) with `[LineID]`, you create a column with 1 million unique text strings. This effectively disables the compression engine.
+1.  **Do it in Power Query (ETL):** The compression happens *during* load. If you do it in [[DAX]], the engine stores the two original columns AND the uncompressed new column in RAM.
+2.  **Avoid High [[Cardinality]]:** If you combine `[OrderID]` (1 million rows) with `[LineID]`, you create a column with 1 million unique text strings. This effectively disables the compression engine.
 
 ---
 

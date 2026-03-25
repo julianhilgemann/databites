@@ -79,7 +79,7 @@ Power BI allows you to just drag a line between two "Many" [[Tables|tables]].
 
 ### 5. Performance Optimization (`CROSSFILTER`)
 
-Bi-Directional relationships are expensive (they disable ambiguity checks and can slow down the model).
+Bi-Directional [[Relationships|relationships]] are expensive (they disable ambiguity checks and can slow down the model).
 
 **Best Practice:**
 1.  Keep the relationship between Bridge and Fact as **Single Direction** (Fact $\to$ Bridge) in the Model View.
@@ -111,7 +111,7 @@ CALCULATE(
 ### Summary Checklist
 
 1.  **"I model Bridges in the ETL."**
-    (Don't try to create them using DAX Calculated Tables. Do it in SQL).
+    (Don't try to create them using [[DAX]] Calculated [[Tables]]. Do it in [[SQL]]).
 2.  **"I watch out for Ambiguity."**
     (Bridge tables introduce multiple paths between tables. I carefully check my "Filter Direction" arrows).
 3.  **"I handle Weights."**

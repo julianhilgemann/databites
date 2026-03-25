@@ -122,6 +122,6 @@ You don't need to memorize the code character-for-character. Just memorize the *
 If they ask: *"How would you calculate New Customer Acquisition?"*
 
 **You say:**
-*"I would iterate through the list of customers active in the current period using `VALUES`, and then use `CALCULATE` to check if their `MIN(OrderDate)` (their first purchase) falls within the current date context. If it does, they are New."*
+*"I would iterate through the list of customers active in the current period using `VALUES`, and then use `CALCULATE` to check if their `MIN(OrderDate)` (their first purchase) falls within the current date [[Context|context]]. If it does, they are New."*
 
 That sentence alone gets you the job. Code can be Googled. Logic cannot.

@@ -34,7 +34,7 @@ This is a visual cue that tells a stakeholder you are experienced.
 
 *   **Measures:** Always use brackets only. `[Total Sales]`
 *   **Columns:** Always include the table name. `Sales[Amount]`
-*   **Why?** When reading code, you immediately know if [[[[Context]] Transition|context transition]] is happening.
+*   **Why?** When reading code, you immediately know if [[[[Context]] Transition|[[[[Context]] Transition|context transition]]]] is happening.
     *   `CALCULATE( ... , Sales[Color] = "Red")` -> Filtering a **Column**.
     *   `CALCULATE( ... , [Total Sales] > 100)` -> Filtering a **Measure** (Triggers Context Transition).
 
@@ -62,7 +62,7 @@ CALCULATE( [Total Sales], FILTER( Sales, Sales[Color] = "Red" ) )
 -- GOOD
 CALCULATE( [Total Sales], KEEPFILTERS( Sales[Color] = "Red" ) )
 ```
-**Why:** This only touches the `Color` column dictionary. It is exponentially faster on wide tables.
+**Why:** This only touches the `Color` column dictionary. It is exponentially faster on wide [[Tables|tables]].
 
 ---
 
@@ -122,8 +122,8 @@ If they ask: **"How do you optimize a slow report?"**
 Your answer should be this workflow:
 
 1.  **"Performance Analyzer:** I run this first to see if it's the [[DAX]] query or the Visual rendering."
-2.  **"DAX Studio:** I copy the query there to check the Server Timings."
+2.  **"[[DAX]] Studio:** I copy the query there to check the Server Timings."
 3.  **"Variables:** I check if the code is calculating the same thing multiple times."
 4.  **"Iterators:** I check if `FILTER` is being used on a whole table instead of a column."
-5.  **"[[Cardinality]]:** I check if we are filtering on high-cardinality columns (GUIDs) causing expensive joins."
+5.  **"[[Cardinality]]:** I check if we are filtering on high-[[Cardinality|cardinality]] columns (GUIDs) causing expensive joins."
 6.  **"Weak [[Relationships]]:** I check if Bi-directional filters are causing ambiguity."

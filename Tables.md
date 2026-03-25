@@ -12,7 +12,7 @@ A Calculated Table is a table created using [[DAX]] that is **computed during Da
 
 You should generally avoid Calculated Tables and prefer Power Query (M) or [[SQL]]. However, use them for:
 
-1.  **Date Tables:** `Date = CALENDARAUTO()` (If you don't have a SQL Date dimension).
+1.  **Date Tables:** `Date = CALENDARAUTO()` (If you don't have a [[SQL]] Date dimension).
 2.  **Role-Playing / Clones:** If you need a separate "Manager" table but only have "Employees," you can do: `Manager = 'Employee'`.
 3.  **Parameter Tables:** Creating disconnected tables for "What-If" analysis.
     ```dax
@@ -56,8 +56,8 @@ ADDCOLUMNS(
 ### C. `SUMMARIZECOLUMNS` (The Modern Standard)
 
 *   **[[Context]]:** This is the function Power BI generates natively when you drag visuals onto the canvas. It is faster and more efficient.
-*   **Limitation:** Historically, it had issues inside complex **Context Transitions** (measures).
-*   **Final Verdict:** "For querying (DAX Query View), I use `SUMMARIZECOLUMNS`. For complex measure logic inside `CALCULATE`, I prefer the robustness of `ADDCOLUMNS(SUMMARIZE(...))`."
+*   **Limitation:** Historically, it had issues inside complex **[[Context]] Transitions** (measures).
+*   **Final Verdict:** "For querying ([[DAX]] Query View), I use `SUMMARIZECOLUMNS`. For complex measure logic inside `CALCULATE`, I prefer the robustness of `ADDCOLUMNS(SUMMARIZE(...))`."
 
 ---
 

@@ -26,7 +26,7 @@ If you know these cold, you pass. If you get asked anything else, you pivot to l
 
 
 The Holy Trinity**
-*   **Concept:** `CALCULATE` changes [[Context|context]]. `ALL` removes context. `DIVIDE` prevents errors.
+*   **Concept:** `CALCULATE` changes [[Context|context]]. `ALL` removes [[Context|context]]. `DIVIDE` prevents errors.
 *   **The Drill:** Write this pattern on paper 10 times until you stop hesitating.
 
 ```dax

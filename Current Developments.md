@@ -5,7 +5,7 @@ As of **December 2025**, the Power BI and Fabric ecosystem has undergone massive
 Microsoft has released **two** distinct types of UDFs. It is critical not to confuse them, as they serve different layers of the stack.
 
 *   **[[DAX]] User-Defined Functions (Preview - Sep 2025):**
-    *   **What they are:** You can finally define your own reusable functions in DAX, similar to how you would in Excel or programming languages.
+    *   **What they are:** You can finally define your own reusable functions in [[DAX]], similar to how you would in Excel or programming languages.
     *   **Syntax:** uses the `DEFINE FUNCTION` keyword.
     *   **Use Case:** Instead of rewriting a complex "Tax Calculation" or "[[Time Intelligence]]" logic inside 50 different measures, you write it once as a Function. You then call `CalculateTax([Sales])` inside your measures.
     *   **Location:** These are authored in the **DAX Query View** or **[[TMDL]] View**.
@@ -15,7 +15,7 @@ Microsoft has released **two** distinct types of UDFs. It is critical not to con
     *   **Use Case:** Data Engineers write a cleaning function (e.g., `standardize_address()`) in Python. This function is saved as a native Fabric item and can be called from **Notebooks**, **Pipelines**, and even invoked via API.
     *   **Why it matters:** It stops the "copy-pasting code between notebooks" anti-pattern.
 
-### 2. TMDL Editor in Power BI Desktop
+### 2. [[TMDL]] Editor in Power BI Desktop
 **Status:** Public Preview (Launched Jan 2025)
 
 *   **The Change:** Power BI Desktop now has a dedicated **"TMDL View"** tab on the left sidebar (alongside Report, Table, and Model views).
@@ -49,7 +49,7 @@ This is the biggest change to the file format in Power BI's history.
     *   **Old Way:** All report visuals were trapped in one massive, unreadable `report.json` file.
     *   **New Way (PBIR):** Every visual, page, and bookmark gets its **own separate file** in a structured folder system.
 *   **Why it matters:**
-    *   **Source Control:** If two developers edit different pages, Git can merge them automatically.
+    *   **Source Control:** If two developers edit different pages, [[git|Git]] can merge them automatically.
     *   **Programmatic Generation:** You can write a script (Python/PowerShell) to generate reports automatically by creating these small JSON files.
 
 ### Summary of the "New Workflow"

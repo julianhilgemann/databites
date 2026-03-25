@@ -13,7 +13,7 @@ Used for **Transactions** (OLTP). If you transfer money, you want ACID.
 | **I** | **Isolation** | **"Don't Peek."** One transaction cannot see another transaction until it is finished. | **I**nvisible.<br>*(What happens in Vegas stays in Vegas until you leave).* |
 | **D** | **Durability** | **"Written in Stone."** Once the system says "Success," the data is saved forever, even if the power goes out immediately after. | **D**isk.<br>*(If it's not on the Disk, it didn't happen).* |
 
-*   **Power BI Context:** Power BI relies on ACID sources to ensure that when it imports data, it isn't importing "half-written" records. However, during a refresh, Power BI does *not* offer ACID compliance for the report viewers (users might see a report update while they are looking at it).
+*   **Power BI [[Context]]:** Power BI relies on ACID sources to ensure that when it imports data, it isn't importing "half-written" records. However, during a refresh, Power BI does *not* offer ACID compliance for the report viewers (users might see a report update while they are looking at it).
 
 ---
 
@@ -41,7 +41,7 @@ Used for massive scale where speed is more important than perfection.
 *   **P - Partition Tolerance:** The system works even if the network cable between servers is cut.
 
 **The Mnemonics:**
-*   **CA (SQL Server):** "I want the truth (C) and uptime (A), but I can't handle a network cut (P)." -> *Standard Relational DB.*
+*   **CA ([[SQL]] Server):** "I want the truth (C) and uptime (A), but I can't handle a network cut (P)." -> *Standard Relational DB.*
 *   **CP (Banking/Finance):** "I want the truth (C) and I can handle a network cut (P), but the system might go down (A) to protect the data." -> *Strict ATMs.*
 *   **AP (Social Media):** "I want uptime (A) and I can handle a network cut (P), but the data might be old (C)." -> *Twitter/Facebook feeds.*
 
@@ -107,5 +107,5 @@ The single most important distinction for modeling.
 
 1.  **Source:** Is it **OLTP** (SQL)? If so, it follows **ACID**.
 2.  **Pipeline:** Are we doing **ETL** (Power Query) or **ELT** (SQL Views)?
-3.  **Model:** Convert the relational data into **OLAP** (Star Schema).
+3.  **Model:** Convert the relational data into **OLAP** ([[Star Schema]]).
 4.  **Expectations:** If the source is **BASE** (NoSQL), warn the users about Eventual Consistency.

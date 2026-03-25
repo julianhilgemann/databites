@@ -19,21 +19,21 @@ These questions are categorized by domain and graded by difficulty. Use this to 
 
 #### Q2: "I have a requirement to filter Sales by 'SalesPerson'. However, one Order can be split among 3 Salespeople. How do you build this?"
 *   **Difficulty:** Senior
-*   **What they are testing:** Many-to-Many relationships.
+*   **What they are testing:** Many-to-Many [[Relationships|relationships]].
 *   **The Specialist Answer:**
     1.  Reject the "Native Many-to-Many" relationship setting (Ambiguity risk).
     2.  Build a **Bridge Table** (`Bridge_SalesPerson`) containing `OrderID` and `SalesPersonID`.
     3.  Set relationship: `Dim` $\to$ `Bridge` (1:*) and `Bridge` $\to$ `Fact` (1:*).
-    4.  **Critical:** Explain that the relationship from Bridge to Fact requires **Bi-Directional** filtering (or `CROSSFILTER` in DAX) to propagate.
+    4.  **Critical:** Explain that the relationship from Bridge to Fact requires **Bi-Directional** filtering (or `CROSSFILTER` in [[DAX]]) to propagate.
     5.  Mention **Allocation/Weighting** logic if the revenue shouldn't be double-counted.
 
 #### Q3: "Why shouldn't I just load one massive flat table (OBT) into Power BI? It works in Excel."
 *   **Difficulty:** Basic (but requires a technical "Why").
 *   **What they are testing:** Knowledge of the [[Vertipaq|VertiPaq]] Engine.
 *   **The Specialist Answer:**
-    1.  **Compression:** VertiPaq uses Dictionary Encoding. Repeating string values ("Customer Name") 10 million times bloats the model size in RAM.
+    1.  **Compression:** [[Vertipaq|VertiPaq]] uses Dictionary Encoding. Repeating string values ("Customer Name") 10 million times bloats the model size in RAM.
     2.  **Performance:** [[Star Schema]] allows the engine to filter small dimension [[Tables|tables]] first, then propagate IDs to the Fact (efficient). OBT forces the engine to scan massive columns for simple filters.
-    3.  **Usability:** A Star Schema is easier for users to navigate (Fields pane organization) compared to a flat table with 200 columns.
+    3.  **Usability:** A [[Star Schema]] is easier for users to navigate (Fields pane organization) compared to a flat table with 200 columns.
 
 ---
 
@@ -44,9 +44,9 @@ These questions are categorized by domain and graded by difficulty. Use this to 
 *   **Difficulty:** Senior
 *   **What they are testing:** [[[[Context]] Transition]].
 *   **The Specialist Answer:**
-    1.  `FILTER` is an iterator. It creates a **Row Context**.
+    1.  `FILTER` is an iterator. It creates a **Row [[Context]]**.
     2.  Because `[Total Sales]` is a measure, it has a hidden `CALCULATE` wrapped around it.
-    3.  This triggers **Context Transition**.
+    3.  This triggers **[[Context Transition]]**.
     4.  The current row in the iteration is transformed into a **Filter Context**.
     5.  The measure calculates Sales *specifically for that row*.
 
@@ -76,10 +76,10 @@ These questions are categorized by domain and graded by difficulty. Use this to 
 
 #### Q7: "We have multiple developers working on the same PBI file. We keep overwriting each other's work. How do you solve this?"
 *   **Difficulty:** Senior
-*   **What they are testing:** PBIP, [[TMDL]], and Git.
+*   **What they are testing:** PBIP, [[TMDL]], and [[git|Git]].
 *   **The Specialist Answer:**
     1.  Stop saving as `.pbix`. Save as **Power BI Project (.pbip)**.
-    2.  Enable **TMDL** to store the model definition as text (YAML-like) instead of JSON.
+    2.  Enable **[[TMDL]]** to store the model definition as text (YAML-like) instead of JSON.
     3.  Use **Git** (Azure DevOps/GitHub). Create a repo.
     4.  Implement a **Branching Strategy**: Developers work on `feature/branches` and create Pull Requests (PRs) to merge into `main`.
     5.  TMDL allows us to resolve merge conflicts line-by-line.
@@ -88,7 +88,7 @@ These questions are categorized by domain and graded by difficulty. Use this to 
 *   **Difficulty:** Senior (Fabric specific).
 *   **What they are testing:** Knowledge of the latest tech.
 *   **The Specialist Answer:**
-    *   **DirectQuery:** Translates DAX into SQL queries sent to the source. **Slow** (Translation layer + Network latency). Good for real-time.
+    *   **DirectQuery:** Translates DAX into [[SQL]] queries sent to the source. **Slow** (Translation layer + Network latency). Good for real-time.
     *   **Direct Lake:** A Fabric feature. The Power BI engine reads the **Parquet files** (Delta Lake) directly from OneLake into memory. **Fast** (Import-like speed) but without the need to "Refresh" the dataset.
 
 #### Q9: "Explain [[Query Folding]]. Why is it non-negotiable?"
@@ -97,7 +97,7 @@ These questions are categorized by domain and graded by difficulty. Use this to 
 *   **The Specialist Answer:**
     1.  **Definition:** Power Query translating M steps into a single SQL statement.
     2.  **Why:** If it breaks, the mashup engine pulls **all raw data** into local RAM to process it. This fails on large datasets (Timeout/OOM).
-    3.  **Criticality:** **Incremental Refresh** *requires* folding to dynamically inject `RangeStart` and `RangeEnd` parameters into the SQL `WHERE` clause.
+    3.  **Criticality:** **[[Incremental Refresh]]** *requires* folding to dynamically inject `RangeStart` and `RangeEnd` parameters into the SQL `WHERE` clause.
 
 ---
 

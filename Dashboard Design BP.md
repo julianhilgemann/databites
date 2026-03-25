@@ -19,7 +19,7 @@ Western users scan screens in an **F-Pattern** (Top-Left to Top-Right, then down
 | :--- | :--- | :--- |
 | **Top Left** | **Logo & Title** | Keep it small. Don't waste prime real estate on a massive logo. |
 | **Top Row** | **BANs (Big Angry Numbers)** | The Headline KPIs. Current Year Sales, YOY Growth. Use **Red/Green** indicators here. |
-| **Middle** | **Context & Trends** | Line charts ([[Time Intelligence]]) and Bar charts (Categorical comparison). |
+| **Middle** | **[[Context]] & Trends** | Line charts ([[Time Intelligence]]) and Bar charts (Categorical comparison). |
 | **Bottom** | **Granularity** | Detailed Matrix or Table visuals. Users only look here if the top rows triggered a question. |
 | **Right/Left Edge**| **Slicers/Nav** | Use a collapsible "Filter Pane" or a standard sidebar to save canvas space. |
 
@@ -86,7 +86,7 @@ Ensuring the report is usable by everyone is a hallmark of a mature developer.
 
 ### 8. [[IBCS]] (International Business Communication Standards)
 
-If you want to impress a CFO or highly technical stakeholders, mention **IBCS**. It is a strict standard for financial reporting visuals.
+If you want to impress a CFO or highly technical stakeholders, mention **[[IBCS]]**. It is a strict standard for financial reporting visuals.
 
 *   **Scenario:** Comparing Actuals vs. Budget.
 *   **IBCS Rule:**

@@ -140,7 +140,7 @@ CALCULATE(
     )
 )
 ```
-**Pro Tip:** *"I use `TREATAS` to handle mismatched granularities, like comparing Daily Sales vs Monthly Targets, without creating messy Many-to-Many physical relationships."*
+**Pro Tip:** *"I use `TREATAS` to handle mismatched granularities, like comparing Daily Sales vs Monthly Targets, without creating messy Many-to-Many physical [[Relationships|relationships]]."*
 
 ---
 
@@ -169,9 +169,9 @@ SUMX(
 
 | Pattern | Usage | The "Pro" Move |
 | :--- | :--- | :--- |
-| **Virtual Tables** | Complex Aggregations. | `ADDCOLUMNS` + `VALUES`. Never `SUMMARIZE` for math. |
+| **Virtual [[Tables]]** | Complex Aggregations. | `ADDCOLUMNS` + `VALUES`. Never `SUMMARIZE` for math. |
 | **Segmentation** | Dynamic Grouping. | Disconnected Table + `FILTER` logic. |
-| **Rank** | Top N logic. | `ALL(Column)` to remove context; `Dense` for ties. |
+| **Rank** | Top N logic. | `ALL(Column)` to remove [[Context|context]]; `Dense` for ties. |
 | **Windowing** | Running Totals / Moving Avg. | Use `WINDOW` / `OFFSET`. Much faster than legacy `FILTER`. |
 | **Data Lineage** | Mismatched Grains. | `TREATAS` to creating virtual joins. |
 

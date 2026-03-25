@@ -95,7 +95,7 @@ When you open a blank canvas, reach for one of these standard archetypes.
 
 ### 2. The "Bento Box" (Modular Layout)
 
-*   **Structure:** The canvas is divided into distinct rectangular containers (like a Japanese Bento box). Each box holds one metric and its context (e.g., A KPI + A sparkline + A % change).
+*   **Structure:** The canvas is divided into distinct rectangular containers (like a Japanese Bento box). Each box holds one metric and its [[Context|context]] (e.g., A KPI + A sparkline + A % change).
 *   **Pros:** Highly organized. Great for "Scorecards" where metrics aren't necessarily related (e.g., HR Stats vs. Finance Stats).
 *   **Cons:** Can feel disconnected if not grouped correctly.
 

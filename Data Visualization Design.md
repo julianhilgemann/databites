@@ -125,4 +125,4 @@ If you are asked to critique a visualization in a professional setting, use this
 
 *   **S - Simple:** Remove clutter (Data-Ink Ratio).
 *   **C - Clear:** Use the right chart for the data relationship (Gestalt).
-*   **C - Context:** Use active titles and annotations to explain the "Why".
+*   **C - [[Context]]:** Use active titles and annotations to explain the "Why".

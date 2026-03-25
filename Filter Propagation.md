@@ -86,13 +86,13 @@ You go to "Manage [[Relationships]]" and change the `Fact_Sales` <-> `Dim_Custom
 
 **Status:** ⚠️ **Technically works, but dangerous.**
 *   **Performance:** You just doubled the work the engine has to do.
-*   **Ambiguity:** If you have multiple fact tables (e.g., Sales and Budget), enabling "Both" can create "Circular Dependency" errors where the engine doesn't know which path to take.
+*   **Ambiguity:** If you have multiple fact [[Tables|tables]] (e.g., Sales and Budget), enabling "Both" can create "Circular Dependency" errors where the engine doesn't know which path to take.
 
 ---
 
 # Scenario 4: The Best Practice ([[DAX]] Control)
 
-Keep the relationship as **Single**. Use DAX to force the filter upstream *only when needed*.
+Keep the relationship as **Single**. Use [[DAX]] to force the filter upstream *only when needed*.
 
 ### The DAX Solution: `CROSSFILTER`
 

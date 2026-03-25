@@ -7,7 +7,7 @@ Here is a comprehensive **[[git|Git]] Primer** specifically tailored for the mod
 To understand why this is a big deal, you must understand the file formats.
 
 *   **Old Way (`.pbix`):** A zipped binary file.
-    *   **Git Behavior:** Git treats it like a generic "blob." If you change one measure, Git sees the *entire file* as changed. You cannot merge work from two people; the last save wins.
+    *   **[[git|Git]] Behavior:** Git treats it like a generic "blob." If you change one measure, Git sees the *entire file* as changed. You cannot merge work from two people; the last save wins.
 *   **New Way (`.pbip`):** A Project Folder.
     *   **Git Behavior:** It splits your report into human-readable text files.
         *   **Dataset:** Saved as **[[TMDL]]** (Tabular Model Definition Language).
@@ -22,7 +22,7 @@ As of late 2024/2025, these features are becoming standard, but ensure they are 
 
 1.  **Power BI Desktop:** File $\to$ Options $\to$ Preview Features.
     *   Check **Power BI Project (.pbip) save option**.
-    *   Check **Store semantic model using TMDL format**.
+    *   Check **Store semantic model using [[TMDL]] format**.
     *   Check **Store reports using enhanced metadata format (PBIR)**.
 2.  **VS Code:** Install **Visual Studio Code**. This is your new "Command Center."
 3.  **Extensions:** Install the **TMDL** extension for VS Code (for syntax highlighting).

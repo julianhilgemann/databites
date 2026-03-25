@@ -36,13 +36,13 @@ It flows **downhill** (Relationship propagation).
 ### 3. [[Context Transition]] ("The Magic Switch")
 
 **Definition:**
-Context Transition is the process of transforming the **Row Context** (current row values) into an equivalent **Filter Context**.
+[[Context Transition]] is the process of transforming the **Row Context** (current row values) into an equivalent **Filter Context**.
 
 **The Trigger:**
 The function **`CALCULATE`** (and `CALCULATETABLE`).
 
 **Revisiting the Warning:**
-*   **Scenario:** You are in a Calculated Column in `Product`.
+*   **Scenario:** You are in a [[Calculated Column]] in `Product`.
 *   **Code:** `CALCULATE( SUM(Sales[Amount]) )`.
 *   **Result:** You get the correct sales amount **for that specific product**.
 *   **What happened?**

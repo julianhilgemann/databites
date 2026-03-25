@@ -10,7 +10,7 @@ This is the **Heart of [[DAX]]**. If you master this, you master the language.
 
 When the engine sees `CALCULATE( [Sales], Filter1, Filter2 )`, it follows this strict 4-step process. **Memorize this.**
 
-1.  **Snapshot:** It takes a snapshot of the *existing* Filter Context (from slicers/visuals).
+1.  **Snapshot:** It takes a snapshot of the *existing* Filter [[Context]] (from slicers/visuals).
 2.  **Transition:** If a **Row Context** exists (e.g., inside `SUMX` or a [[Calculated Column]]), it creates a new Filter Context from the current row ([[Context Transition]]).
 3.  **Modification:** It evaluates the Modifier functions (`ALL`, `REMOVEFILTERS`, `KEEPFILTERS`, `USERELATIONSHIP`).
     *   *Crucial:* These remove or alter filters *before* new ones are added.
@@ -21,13 +21,13 @@ When the engine sees `CALCULATE( [Sales], Filter1, Filter2 )`, it follows this s
 
 ---
 
-# Part 2: Context Transition (The Magic)
+# Part 2: [[Context Transition]] (The Magic)
 
 ### What is it?
 **Context Transition** is the process where the engine takes the **current row** (Row Context) and transforms every value in that row into a **Filter Context**.
 
 ### The "Hidden" Rule
-Anytime you call a **Measure** inside DAX, it is automatically wrapped in a hidden `CALCULATE()`.
+Anytime you call a **Measure** inside [[DAX]], it is automatically wrapped in a hidden `CALCULATE()`.
 
 ### The Visual Example
 
@@ -37,7 +37,7 @@ Imagine a table `Product`:
 | 1 | Red | 10 |
 | 2 | Blue | 20 |
 
-**Scenario A: Calculated Column WITHOUT Transition**
+**Scenario A: [[Calculated Column]] WITHOUT Transition**
 
 Formula: `Col = SUM(Sales[Amount])`
 *   **Context:** Row Context (I am on Row 1).

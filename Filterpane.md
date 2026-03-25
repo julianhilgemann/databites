@@ -1,11 +1,11 @@
 
-The key thing to understand is: **To [[DAX]], the Filter Pane is just another source of Filter [[Context]].** However, the *User Experience* implies a hierarchy that DAX doesn't strictly respect unless you code it carefully.
+The key thing to understand is: **To [[DAX]], the Filter Pane is just another source of Filter [[Context]].** However, the *User Experience* implies a hierarchy that [[DAX]] doesn't strictly respect unless you code it carefully.
 
 Here are the specific interactions to be aware of:
 
 ### 1. The "Bully" Problem (Overwriting the Filter Pane)
 
-**Context:** Users treat the Filter Pane as a "Hard Rule." If they set the Page Filter to `Year = 2024`, they expect *everything* on the page to be 2024.
+**[[Context]]:** Users treat the Filter Pane as a "Hard Rule." If they set the Page Filter to `Year = 2024`, they expect *everything* on the page to be 2024.
 
 **The Trap:** Standard `CALCULATE` predicates overwrite the Filter Pane.
 
@@ -59,7 +59,7 @@ You can drag a **Measure** into the Filter Pane (e.g., "Show items where [Total 
 
 *   **Mechanism:** This forces the engine to iterate through every single dimension combination in the visual, run the measure, check the result, and then filter.
 *   **Performance Warning:** This is extremely expensive (slow).
-*   **DAX Interaction:** If your DAX measure inside the visual *also* does complex Context Transition, having a Measure Filter in the pane adds a second layer of iteration. This is a common cause of "Resource Exceeded" errors.
+*   **DAX Interaction:** If your DAX measure inside the visual *also* does complex [[Context Transition]], having a Measure Filter in the pane adds a second layer of iteration. This is a common cause of "Resource Exceeded" errors.
 
 ### Summary Checklist
 

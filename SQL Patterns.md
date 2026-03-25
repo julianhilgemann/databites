@@ -35,7 +35,7 @@ SELECT
     (Total_Sales - LAG(Total_Sales) OVER (ORDER BY Order_Date)) as Daily_Change
 FROM Daily_Sales_Table
 ```
-*   **The Logic:** "I use `LAG` to peek at the previous row's value so I can calculate growth purely in SQL before it even hits PowerBI."
+*   **The Logic:** "I use `LAG` to peek at the previous row's value so I can calculate growth purely in [[SQL]] before it even hits PowerBI."
 
 ### 3. The "Cleaner" (Deduplication)
 
@@ -59,7 +59,7 @@ SELECT * FROM Deduped WHERE rn = 1
 ### 4. The "Bucketing" (CASE WHEN)
 
 *   **The Question:** "Group customers into 'High', 'Medium', and 'Low' value based on spend."
-*   **Why HSE asks:** This is the exact equivalent of the [[DAX]] `SWITCH` pattern we discussed, but done in the database (dbt).
+*   **Why HSE asks:** This is the exact equivalent of the [[DAX]] `SWITCH` pattern we discussed, but done in the database ([[dbt]]).
 *   **The Concept:** Conditional logic.
 
 **The Query:**

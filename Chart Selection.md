@@ -32,7 +32,7 @@ There are only 5 jobs data usually does:
 
 *   **The Standard:** **Line Chart.**
 *   **The "Pro" Move:** **Line Chart + Forecast.**
-    *   *Context:* Enable the "Analytics Pane" features to show a trend line or a forecast confidence interval.
+    *   *[[Context]]:* Enable the "Analytics Pane" features to show a trend line or a forecast confidence interval.
 *   **The Specialist Move:** **Deneb / Vega-Lite.**
     *   *Scenario:* You need highly customized Step-Charts or "Slope Charts" (Start vs End only) that Power BI native visuals struggle with.
     *   *Pro Tip:* "For complex time-series where I need specific annotations or conditional markers, I use **Deneb** to write custom JSON specifications."
@@ -102,7 +102,7 @@ Power BI released the **"New Card Visual"** (multi-card). It is a game changer.
 | **Compare Categories** | Column Chart | **Bar Chart (Horizontal)** | Better for reading labels. |
 | **Trend** | Line Chart | **Line + Small Multiples** | Avoids "Spaghetti charts" (too many overlapping lines). |
 | **Hierarchy** | Pie Chart | **Decomposition Tree** | AI-driven exploration is superior to static slices. |
-| **Performance** | Gauge | **Bullet Chart** | Information density (IBCS standard). |
+| **Performance** | Gauge | **Bullet Chart** | Information density ([[IBCS]] standard). |
 | **KPIs** | Many Cards | **New Card (Multi)** | 1 Query vs. Many Queries (Performance). |
 | **[[Tables]]** | Native Table | **Matrix** | Allows grouping/collapsing (Drill-down). |
 

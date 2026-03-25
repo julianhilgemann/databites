@@ -74,7 +74,7 @@ If you import a strictly 3NF database into Power BI, you get a **Snowflake Schem
 You take the 3NF data and "Denormalize" the Dimensions.
 *   **Action:** Merge `Category`, `SubCategory`, and `Product` into **One Wide Product Table**.
 *   **Result:** Yes, the word "Clothing" (Category) is repeated 10,000 times in the Product table.
-*   **Why it's okay:** Power BI's engine (VertiPaq) stores that column as a dictionary. It only stores the word "Clothing" once and uses pointers. It is highly optimized for this.
+*   **Why it's okay:** Power BI's engine ([[Vertipaq|VertiPaq]]) stores that column as a dictionary. It only stores the word "Clothing" once and uses pointers. It is highly optimized for this.
 
 ---
 
@@ -87,10 +87,10 @@ Stakeholder: *"Our source database is highly normalized. How do you handle that 
 1.  **"I respect normalization in the Fact Table."**
     *   The Fact table should stay narrow (Keys + Metrics). I don't want customer names in the Fact table (that's too much redundancy/bloat).
 2.  **"I denormalize the Dimensions."**
-    *   I will use Power Query (or SQL Views) to join `City`, `State`, and `Country` into a single `Dim_Geography` table.
+    *   I will use Power Query (or [[SQL]] Views) to join `City`, `State`, and `Country` into a single `Dim_Geography` table.
     *   I will join `Product`, `SubCat`, and `Cat` into a single `Dim_Product` table.
-3.  **"The Goal is a Star Schema."**
-    *   I want fewer tables with fewer hops (relationships), even if that means the Dimension tables are "wide" and contain repeated text values.
+3.  **"The Goal is a [[Star Schema]]."**
+    *   I want fewer [[Tables|tables]] with fewer hops ([[Relationships|relationships]]), even if that means the Dimension tables are "wide" and contain repeated text values.
 
 ### 5. Quick Glossary
 

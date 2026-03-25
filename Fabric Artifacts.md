@@ -27,7 +27,7 @@ These are the standard elements used for Business Intelligence.
 **The Tracker.**
 *   **What is it?** A specific artifact for tracking Goals against Targets.
 *   **Features:** It creates a history trend (sparkline) automatically. You can set "Check-in" owners.
-*   **Context:** It allows you to say "Revenue is at 80% of Target" and tracks that progress day-over-day.
+*   **[[Context]]:** It allows you to say "Revenue is at 80% of Target" and tracks that progress day-over-day.
 
 ---
 
@@ -39,13 +39,13 @@ These live "upstream" from Power BI.
 **The Flexible Storage.**
 *   **What is it?** A storage location for big data. It stores data as files (Parquet/Delta).
 *   **Engine:** Powered by **Spark**.
-*   **Use Case:** Data Engineers use Python/Notebooks to clean data here. It handles unstructured data (images) and structured data (tables).
+*   **Use Case:** Data Engineers use Python/Notebooks to clean data here. It handles unstructured data (images) and structured data ([[Tables|tables]]).
 
 #### B. Warehouse
 **The Structured Storage.**
 *   **What is it?** A traditional relational database experience inside Fabric.
 *   **Engine:** Powered by **T-[[SQL]]**.
-*   **Use Case:** SQL Developers writing Stored Procedures, DDL, and DML. It feels like SQL Server.
+*   **Use Case:** [[SQL]] Developers writing Stored Procedures, DDL, and DML. It feels like SQL Server.
 
 #### C. Dataflow Gen2
 **The Low-Code ETL.**

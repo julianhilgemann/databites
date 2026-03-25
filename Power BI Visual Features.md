@@ -5,7 +5,7 @@
 
 *   **The Concept:** Writing [[DAX]] calculations that execute **on the visual grid** (Client-Side), rather than in the data model (Server-Side). It works like Excel formulas (A1 + B1).
 *   **The Syntax:** It introduces functions like `PREVIOUS()`, `NEXT()`, `RUNNINGSUM()`, and `MOVINGAVERAGE()`.
-*   **The "Old Way":** Writing complex DAX window functions (`OFFSET`, `WINDOW`, `CALCULATE`) just to compare a row to the row above it.
+*   **The "Old Way":** Writing complex [[DAX]] window functions (`OFFSET`, `WINDOW`, `CALCULATE`) just to compare a row to the row above it.
 *   **The Senior Use Case:**
     *   "I use Visual Calcs for **Matrix-specific math** (e.g., 'Row 1 vs Row 2'). This keeps my Semantic Model clean. I don't want to pollute the enterprise model with niche measures that only apply to one specific table visual."
 *   **The Risk:** If you hide columns in the visual, the calculation might break. It is dependent on the visual layout.
@@ -27,7 +27,7 @@
 
 #### C. Cross-Report Drill Through (The Enterprise Move)
 *   **Scenario:** You have a "Summary Dashboard" (Dataset A) and a "Granular Transaction Report" (Dataset B).
-*   **Action:** Clicking a KPI in Report A opens Report B filtered to that context.
+*   **Action:** Clicking a KPI in Report A opens Report B filtered to that [[Context|context]].
 *   **Requirement:** [[Tables]] must share the same schema names or be defined in the settings.
 
 ---

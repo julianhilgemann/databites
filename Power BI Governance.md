@@ -69,7 +69,7 @@ How do you prevent a developer from breaking the CEO's report?
     1.  Work in Dev.
     2.  Click "Deploy" to push metadata to Test.
     3.  App is published *only* from the **Prod** workspace.
-*   **Parameter Rules:** You can configure rules so `[Dev]` points to the [[SQL]] Dev DB, and `[Prod]` automatically switches to point to the SQL Prod DB.
+*   **Parameter Rules:** You can configure rules so `[Dev]` points to the [[SQL]] Dev DB, and `[Prod]` automatically switches to point to the [[SQL]] Prod DB.
 
 #### B. Separation of "Golden Datasets"
 

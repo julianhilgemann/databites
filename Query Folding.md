@@ -3,7 +3,7 @@
 **Query Folding** is the ability of the Power Query (Mashup) Engine to convert your M code transformations into a **single native [[SQL]] statement** and execute it on the source server.
 
 *   **Scenario:** You import a 100-million-row table but filter it to "Last 7 Days."
-*   **With Folding:** Power BI sends `SELECT * FROM Table WHERE Date > '2025-01-01'` to the SQL Server. The server returns only the small slice of data.
+*   **With Folding:** Power BI sends `SELECT * FROM Table WHERE Date > '2025-01-01'` to the [[SQL]] Server. The server returns only the small slice of data.
 *   **Without Folding:** Power BI downloads all 100 million rows, stores them in local temp memory, and *then* filters them. This kills performance and often causes timeout errors.
 
 ---
@@ -69,7 +69,7 @@ in
 
 ### 5. Why it is Non-Negotiable
 
-#### A. Incremental Refresh
+#### A. [[Incremental Refresh]]
 Incremental Refresh **requires** Query Folding.
 Power BI needs to dynamically inject `WHERE Date >= RangeStart AND Date < RangeEnd` into the SQL query. If it can't fold, it can't create the partitions, and it downloads the whole table every time.
 

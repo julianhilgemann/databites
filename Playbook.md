@@ -42,6 +42,6 @@
 
 *Ask these to show you are looking at the big picture.*
 
-1.  "Are we currently using **[[TMDL]]** and **Git Integration** for the models, or are we still managing binary `.pbix` files?"
+1.  "Are we currently using **[[TMDL]]** and **[[git|Git]] Integration** for the models, or are we still managing binary `.pbix` files?"
 2.  "How mature is the **Fabric** adoption? Are we looking to utilize **Direct Lake** to reduce the refresh latency for the operations team?"
 3.  "Is there an established **Design System** or JSON Theme file, or will I be helping to define the visual identity for the reporting suite?"

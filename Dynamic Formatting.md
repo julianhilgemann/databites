@@ -28,7 +28,7 @@ RETURN
         CONCATENATEX( VALUES('Dim_Geography'[City]), 'Dim_Geography'[City], ", " )
     )
 ```
-**Pro Tip:** *"I prioritize context in my reports. If a user prints a PDF, the slicers might not be visible. The Dynamic Title ensures the context is baked into the visual."*
+**Pro Tip:** *"I prioritize [[Context|context]] in my reports. If a user prints a PDF, the slicers might not be visible. The Dynamic Title ensures the context is baked into the visual."*
 
 ---
 
@@ -92,7 +92,7 @@ You can add columns to the Field Parameter table to group options (e.g., "Financ
 *   *Problem:* If you change your brand colors, you have to edit 50 charts manually.
 
 **The Senior Way:** **"Field Value"** Formatting.
-You create a specific DAX measure that returns a Hex Code.
+You create a specific [[DAX]] measure that returns a Hex Code.
 
 #### Pattern: The "Brand Color" Measure
 ```dax

@@ -21,7 +21,7 @@ You hardcode filters into Roles inside Power BI Desktop.
 You create **one single Role** that dynamically filters data based on who is logged in.
 *   **Setup:**
     1.  You need a table in your model (e.g., `Security_Table`) mapping Emails to Dimensions (Region/Department).
-    2.  You use the DAX function `USERPRINCIPALNAME()` to compare the logged-in user against that table.
+    2.  You use the [[DAX]] function `USERPRINCIPALNAME()` to compare the logged-in user against that table.
 *   **Pros:** scalable. To add a user, you just insert a row in the database/Excel source. No PBIX redeployment needed.
 
 ---
@@ -63,7 +63,7 @@ This is the standard architectural pattern you should describe.
 | :--- | :--- | :--- |
 | **`USERPRINCIPALNAME()`** | Returns the User's Email (UPN) (e.g., `alice@company.com`). | **ALWAYS USE THIS.** It matches the Power BI Service login ID (Entra ID/Azure AD). |
 | **`USERNAME()`** | Returns `DOMAIN\User`. | Avoid in cloud scenarios. It behaves differently in Desktop vs. Service. |
-| **`LOOKUPVALUE()`** | Finds a value in an unconnected table. | Use this if you cannot use physical relationships for security (e.g., complex many-to-many security logic). |
+| **`LOOKUPVALUE()`** | Finds a value in an unconnected table. | Use this if you cannot use physical [[Relationships|relationships]] for security (e.g., complex many-to-many security logic). |
 | **`PATHCONTAINS()`** | Checks parent-child hierarchies. | Essential for **HR Hierarchies** (Manager sees their team + their team's team). |
 
 ---
@@ -129,7 +129,7 @@ This is the standard architectural pattern you should describe.
 | **Power BI Desktop** | Static Filters (Role = `[Country]="USA"`) | **Junior.** Hard to maintain. |
 | **Database ([[SQL]])** | `Security` Table joined to Fact | **Senior.** Dynamic, centralized, scalable. |
 | **DAX Measures** | `IF( USERPRINCIPALNAME() = ..., [Sales], BLANK() )` | **Bad.** Doesn't secure the data, only the number. User can still see dimensions. |
-| **Data Source (DirectQuery)** | Single Sign-On (SSO) passing user to SQL Server | **Advanced.** The DB handles security. Power BI just passes the user identity. Good for compliance. |
+| **Data Source (DirectQuery)** | Single Sign-On (SSO) passing user to [[SQL]] Server | **Advanced.** The DB handles security. Power BI just passes the user identity. Good for compliance. |
 
 ### Mnemonic for RLS
 **"UPN to the Bridge"**

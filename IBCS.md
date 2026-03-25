@@ -49,7 +49,7 @@ Avoid misleading the user.
     *   **Scaling:** If Chart A shows \$1M and Chart B shows \$100k, they cannot be the same size unless the scaling is synchronized.
 *   **Power BI Implementation:**
     *   Use "Auto" axis carefully.
-    *   If comparing side-by-side charts, hard-code the Axis Max to be the same using a DAX measure.
+    *   If comparing side-by-side charts, hard-code the Axis Max to be the same using a [[DAX]] measure.
 
 ### 5. **E**xpress (Choose Proper Visualization)
 

@@ -3,7 +3,7 @@
 
 dbt does **not** extract or load data. It assumes the raw data is already in your Data Warehouse (Snowflake, BigQuery, Databricks, Postgres).
 *   **The Motto:** "Everything is a `SELECT` statement."
-*   **The Function:** It compiles your [[SQL]] code (mixed with Jinja templating) into raw SQL and runs it against the warehouse to create [[Tables]] and Views.
+*   **The Function:** It compiles your [[SQL]] code (mixed with Jinja templating) into raw [[SQL]] and runs it against the warehouse to create [[Tables]] and Views.
 *   **The Goal:** Bring Software Engineering best practices (Version Control, Testing, CI/CD, Documentation) to SQL.
 
 ---
@@ -15,7 +15,7 @@ This is the **#1 Core dbt Topic**. You define these in the `dbt_project.yml` or 
 | Materialization | SQL Equivalent | Behavior | Best Use Case |
 | :--- | :--- | :--- | :--- |
 | **View** | `CREATE VIEW AS...` | Virtual. No data stored. Runs every time you query it. | **Staging Layer (`stg_`).** Lightweight transformations. |
-| **Table** | `CREATE TABLE AS...` | Physical storage. Drops the table and rebuilds it entirely every run. | **Dimension Tables (`dim_`).** When data volume is manageable and read speed matters. |
+| **Table** | `CREATE TABLE AS...` | Physical storage. Drops the table and rebuilds it entirely every run. | **Dimension [[Tables]] (`dim_`).** When data volume is manageable and read speed matters. |
 | **Incremental** | `MERGE` / `INSERT` | **The Complex One.** Only adds/updates rows that have changed since the last run. | **Fact Tables (`fct_`).** Massive event logs where rebuilding the whole table takes too long. |
 | **Ephemeral** | `WITH alias AS...` | **The Ghost.** Does not exist in the DB. It is injected as a CTE into downstream models. | **Reusable Logic.** Code snippets used in multiple models to avoid cluttering the warehouse. |
 
@@ -110,7 +110,7 @@ Jinja is the templating language `{ ... }` inside SQL.
 1.  **Hide the Logic:** Power BI should simply do `SELECT * FROM fct_sales`. If you are doing heavy joins or `CASE WHEN` logic in Power Query or [[DAX]], move it upstream to dbt.
 2.  **Surrogate Keys:** Generate your Integer Surrogate Keys in dbt using the `dbt_utils.generate_surrogate_key()` macro (usually hashes) or using `ROW_NUMBER()`.
 3.  **Documentation:** Use `dbt docs generate`. It reads the descriptions from your `.yml` files and creates a website showing the lineage and column definitions.
-4.  **One Big Table (OBT) vs Star Schema:**
+4.  **One Big Table (OBT) vs [[Star Schema]]:**
     *   dbt can build both.
     *   *Best Practice:* Build the Star Schema (`dim` and `fct`) for Power BI.
     *   If Data Scientists need a flat dataframe, create a separate OBT model that joins the Star Schema together for them.

@@ -11,8 +11,8 @@ To navigate the knowledge base, start with the **[Index](_INDEX.md)**.
 - Core Strategy & Preparation
 - Architecture & Data Modeling
 - Modern Engineering Stack (Fabric/[[git|Git]])
-- Power Query & SQL
-- DAX & The Semantic Engine
+- Power Query & [[SQL]]
+- [[DAX]] & The Semantic Engine
 - Visualization & User Experience
 - Governance & Soft Skills
 

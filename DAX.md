@@ -21,7 +21,7 @@ These are the most important functions in the language.
 6.  **`KEEPFILTERS( Expression )`**
     *   *Role:* Forces `CALCULATE` to intersect (AND) with existing contexts instead of overwriting them.
 7.  **`REMOVEFILTERS( Table_or_Column )`**
-    *   *Role:* Readable alias for `ALL()`. Use this when you don't need to return a table, just clear the context.
+    *   *Role:* Readable alias for `ALL()`. Use this when you don't need to return a table, just clear the [[Context|context]].
 
 ### B. Aggregators & Iterators
 
@@ -51,7 +51,7 @@ These are the most important functions in the language.
 5.  **`CROSSJOIN( Table1, Table2 )`**
     *   *Role:* Cartesian product.
 6.  **`UNION( Table1, Table2 )`**
-    *   *Role:* Stacks tables vertically.
+    *   *Role:* Stacks [[Tables|tables]] vertically.
 7.  **`TREATAS( Table_Expression, Column_to_Filter )`**
     *   *Role:* Creates a **Virtual Relationship**. Connects two tables that are not physically connected in the model.
 
@@ -114,7 +114,7 @@ These are the most important functions in the language.
 2.  **`RANK()` / `DENSE_RANK()`**
     *   *Use:* Leaderboards.
 3.  **`LAG(Col, 1)` / `LEAD(Col, 1)`**
-    *   *Use:* Previous row value (for Month-over-Month logic in SQL).
+    *   *Use:* Previous row value (for Month-over-Month logic in [[SQL]]).
 
 ### D. Transformation
 1.  **`CASE WHEN x THEN y ELSE z END`** (The SQL version of IF/SWITCH)
@@ -140,7 +140,7 @@ These are the most important functions in the language.
 
 # 4. Fabric / [[dbt]] Specifics (The Modern Stack)
 
-1.  **`is_incremental()`** (Jinja macro for dbt)
+1.  **`is_incremental()`** (Jinja macro for [[dbt]])
     *   *Use:* `{% if is_incremental() %} WHERE date > (select max(date) from {{ this }}) {% endif %}`
 2.  **`ref('model_name')`** (Jinja)
     *   *Use:* Referencing other tables in dbt.

@@ -30,7 +30,7 @@ When I write or debug [[DAX]], I run this 4-step [[Simulation|simulation]] in my
 
 **"What is the math, and did I trigger [[Context Transition]]?"**
 *   Apply the math: `SUM`, `RANKX`, `DIVIDE`.
-*   **The Senior Check:** "Did I wrap this in `CALCULATE`? If so, my Row Context just transformed into Filter Context."
+*   **The Senior Check:** "Did I wrap this in `CALCULATE`? If so, my Row [[Context]] just transformed into Filter Context."
 
 ---
 
@@ -52,13 +52,13 @@ When I write or debug [[DAX]], I run this 4-step [[Simulation|simulation]] in my
 
 # 🔥 The "Pro Tip"
 
-When they ask **"How do you troubleshoot complex DAX?"** or **"How do you write measures?"**, use this script. It frames you as an Architect who thinks before typing.
+When they ask **"How do you troubleshoot complex [[DAX]]?"** or **"How do you write measures?"**, use this script. It frames you as an Architect who thinks before typing.
 
-> **"I don't just guess syntax. I run a 4-step simulation in my head:**
+> **"I don't just guess syntax. I run a 4-step [[Simulation|simulation]] in my head:**
 > 
 > 1.  **First, I define the 'Incoming Filter Context'** from the visual.
 > 2.  **Second, I decide the Scope:** Do I need to respect those filters, or use `CALCULATE` to remove/modify them (like for a `% of Total`)?
 > 3.  **Third, I define the Granularity:** Do I need a Virtual Table to aggregate at a specific grain (like 'Per Customer')?
 > 4.  **Finally, I apply the Math.**
 >
-> This mental model allows me to catch issues like **Context Transition** bugs or **Granularity Mismatches** before I even write the code."
+> This mental model allows me to catch issues like **[[Context Transition]]** bugs or **Granularity Mismatches** before I even write the code."

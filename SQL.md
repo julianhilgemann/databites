@@ -50,7 +50,7 @@ This distinction is critical for data manipulation.
 
 | Join Type | Description | Handling of Unmatched Rows |
 | :--- | :--- | :--- |
-| **INNER JOIN** | **Intersection.** Only rows that exist in BOTH tables. | Unmatched rows are dropped. |
+| **INNER JOIN** | **Intersection.** Only rows that exist in BOTH [[Tables|tables]]. | Unmatched rows are dropped. |
 | **LEFT JOIN** | **Master List.** All rows from Left table, matching rows from Right. | Unmatched Right rows become `NULL`. |
 | **RIGHT JOIN** | Inverse of Left. Rarely used (just swap table order and use Left). | Unmatched Left rows become `NULL`. |
 | **FULL OUTER JOIN**| **Union.** All rows from Both tables. | Lots of `NULLs` on both sides. |

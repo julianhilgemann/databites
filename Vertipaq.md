@@ -7,7 +7,7 @@ Most traditional databases ([[SQL]] Server, Oracle) are **Row-Stores**. Power BI
 
 #### The Difference (The Phonebook Analogy)
 
-*   **SQL (Row-Store):** Imagine a phonebook. To find everyone named "Smith," you have to scan every single line (Name, Address, Number) on every page to check the name. It reads the *whole row*.
+*   **[[SQL]] (Row-Store):** Imagine a phonebook. To find everyone named "Smith," you have to scan every single line (Name, Address, Number) on every page to check the name. It reads the *whole row*.
     *   *Great for:* "Give me all details for Customer ID 123."
     *   *Bad for:* "Sum the Sales Amount for the whole year."
 *   **VertiPaq (Column-Store):** Imagine taking that phonebook and ripping the pages apart. You glue all the "First Names" into one long strip. All the "Phone Numbers" into another.
@@ -26,7 +26,7 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
 2.  **Hash Encoding (Dictionary):**
     *   *Scenario:* You have a column with "Product A" appearing 1 million times.
     *   *Action:* It builds a dictionary: `Product A = 1`. It stores `1` a million times instead of the text string.
-    *   *Impact:* This is why **[[Cardinality]]** (number of unique values) is the enemy. A high-cardinality column (like a UUID or Timestamp) creates a massive dictionary, killing performance.
+    *   *Impact:* This is why **[[Cardinality]]** (number of unique values) is the enemy. A high-[[Cardinality|cardinality]] column (like a UUID or Timestamp) creates a massive dictionary, killing performance.
 
 3.  **Run-Length Encoding (RLE) - The Big One:**
     *   *Scenario:* You have sorted data: `Red, Red, Red, Red, Blue, Blue`.
@@ -45,8 +45,8 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
 ### 🛑 The "Need-to-Know" for Modeling
 1.  **Cardinality is King:** The number of *unique* values in a column determines the model size.
     *   *Rule:* Split `DateTime` into `Date` and `Time`. `DateTime` has unique values every second (High Cardinality). `Date` only has 365 values per year (Low Cardinality).
-2.  **Wide Tables are Fine (mostly):** Because it's a column store, having 100 columns doesn't hurt performance *unless* you use them all in a visual. Unused columns just take up RAM, not CPU time during queries.
-3.  **[[Star Schema]] Optimization:** VertiPaq is optimized to filter small tables (Dimensions) and propagate those filters to big tables (Facts) via relationships. It hates filtering massive flat tables directly.
+2.  **Wide [[Tables]] are Fine (mostly):** Because it's a column store, having 100 columns doesn't hurt performance *unless* you use them all in a visual. Unused columns just take up RAM, not CPU time during queries.
+3.  **[[Star Schema]] Optimization:** VertiPaq is optimized to filter small tables (Dimensions) and propagate those filters to big tables (Facts) via [[Relationships|relationships]]. It hates filtering massive flat tables directly.
 
 ---
 
@@ -54,7 +54,7 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
 *Mentioning these proves you move beyond the "File > New" beginner phase.*
 
 ### 1. [[DAX]] Studio (The Mechanic)
-*   **What it is:** A tool to write, execute, and profile DAX queries.
+*   **What it is:** A tool to write, execute, and profile [[DAX]] queries.
 *   **Why use it:**
     *   **Server Timings:** Shows exactly how long the Formula Engine (DAX) vs. Storage Engine (VertiPaq) took.
     *   **Formatting:** One-click "Format DAX" to clean up messy code.
@@ -67,7 +67,7 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
     *   **[[Calculation Groups]]:** The only way to create them (e.g., a "[[Time Intelligence]]" switch that applies YTD/YoY to *any* measure).
     *   **Batch Editing:** Rename 50 measures or change formatting strings in 2 seconds using C# scripts.
     *   **Version Control:** Easier to integrate with [[git|Git]].
-*   *Pro Tip:* "I use Tabular Editor to manage Calculation Groups and to script repetitive measure creation."
+*   *Pro Tip:* "I use Tabular Editor to manage [[Calculation Groups]] and to script repetitive measure creation."
 
 ### 3. Measure Killer (The Janitor)
 *   **What it is:** Scans your report and model to find **unused** columns and measures.
@@ -94,5 +94,5 @@ VertiPaq doesn't just store columns; it aggressively compresses them using three
 *   **What it is:** A schema compare tool (Diff tool).
 *   **Why use it:**
     *   **Deployments:** Comparing the "Dev" file to the "Prod" dataset and pushing *only* the changes (e.g., just the new measure, not the data).
-    *   Prevents overwriting incremental refresh partitions.
+    *   Prevents overwriting [[Incremental Refresh|incremental refresh]] partitions.
 *   *Pro Tip:* "I use ALM Toolkit to perform safe metadata-only deployments to production."

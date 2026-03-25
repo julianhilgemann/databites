@@ -35,7 +35,7 @@ CALCULATE(
 ---
 
 ### 3. The "Universal" Pattern (Custom Logic)
-*Use this when standard DAX functions fail (e.g., 4-4-5 Retail Calendars, strange Fiscal Years, or strict control requirements).*
+*Use this when standard [[DAX]] functions fail (e.g., 4-4-5 Retail Calendars, strange Fiscal Years, or strict control requirements).*
 
 **The Logic:** Stop using "Time Intelligence Functions" and start using **Filter [[Context]] Manipulation**.
 
@@ -161,7 +161,7 @@ CALCULATE(
 | **Standard Reporting** | `TOTALYTD`, `SAMEPERIODLASTYEAR` | Fast, standard, works for 90% of cases. |
 | **Retail / 4-4-5** | **Filter Manipulation** (`ALL`, `FILTER`) | Native functions fail on non-Gregorian calendars. |
 | **Day Alignment** | **Week Index Offset** | Ensures Monday compares to Monday. |
-| **Measure Bloat** | **Calculation Groups** | Reduces 100 measures down to 5 base measures + 1 Calc Group. |
+| **Measure Bloat** | **[[Calculation Groups]]** | Reduces 100 measures down to 5 base measures + 1 Calc Group. |
 | **Lagging Data** | **Fair Comparison Logic** | Prevents comparing "Full Month" LY vs "Half Month" TY. |
 
 ### Mnemonic: **"Standard, Custom, Group"**

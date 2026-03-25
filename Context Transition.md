@@ -17,7 +17,7 @@ Let $Y$ be the Value (the Random Variable).
 ---
 
 ### 1. The Math: Unconditional Expectation ($E[Y]$)
-*This is **Row Context** without Transition.*
+*This is **Row [[Context]]** without Transition.*
 
 You are standing at Row 1 ($x_1=A, y_1=10$). You ask for the Mean (Average).
 Without a filter, you are calculating the expected value over the **marginal density** of $Y$ (the whole population).
@@ -28,7 +28,7 @@ $$E[Y] = \sum_{all} y_i \cdot P(y_i)$$
 *   **The Result:** If you put this in a [[Calculated Column]] without `CALCULATE`, **every row shows 40**.
 *   **Math Meaning:** You ignored the fact that Row 1 is Category "A". You integrated over the entire domain.
 
-#### The DAX Code:
+#### The [[DAX]] Code:
 ```dax
 'Table'[Unconditional_Mean] = AVERAGE( 'Table'[Value] )
 // Result: 40, 40, 40

@@ -25,12 +25,14 @@
 - [ ] **Ecosystem**: [[Fabric Artifacts]] (Lakehouse, Warehouse, Pipelines).
 - [ ] **Updates**: [[Current Developments]] (Latest features in 2024/2025).
 - [ ] **Transformation**: [[dbt]] (Staging, Marts, Snapshots).
+- [ ] **Automation**: [[Power BI REST APIs]] (Scanner APIs, Service Principals).
 
 ## 4. Power Query & [[SQL]]
 *Upstream data preparation.*
 
 - [ ] **Performance**: [[Query Folding]] (The #1 concept).
-- [ ] **Database Logic**: [[SQL]] & [[Data Types]] (SQL vs DAX).
+- [ ] **Advanced ETL**: [[Advanced Power Query]] (M Language, Custom Functions).
+- [ ] **Database Logic**: [[SQL]] & [[Data Types]] ([[SQL]] vs [[DAX]]).
 
 ## 5. DAX & The Semantic Engine
 *The mechanics of the calculation engine.*
@@ -43,6 +45,7 @@
 - [ ] **Complexity**: [[Advanced DAX Patterns]] (RankX, Windowing).
 - [ ] **Coding Standards**: [[DAX Best Practice]] (Variables, Formatting).
 - [ ] **Calculated Columns**: [[Calculated Column]]
+- [ ] **Enterprise Scale**: [[Incremental Refresh]] & [[Composite Models]].
 
 ## 6. Visualization & User Experience
 *The "Product" layer.*
@@ -53,6 +56,7 @@
 - [ ] **Interactivity**: [[Power BI Visual Features]] (Drill-through, Bookmarks).
 - [ ] **UI Controls**: [[Filterpane]] & [[Slicermods]] (Field Parameters).
 - [ ] **UX Polish**: [[Dynamic Formatting]] (Conditional logic).
+- [ ] **Enterprise Reporting**: [[Paginated Reports]] (Report Builder).
 
 ## 7. Governance & Soft Skills
 *Managing the environment and the stakeholders.*

@@ -9,31 +9,31 @@
 | **Conformed Dimension** | A dimension (e.g., Customer) shared by multiple Facts. | "This allows us to slice Sales and Returns by the exact same attributes without ambiguity." |
 | **SCD Type 2** | Slowly Changing Dimension. Tracks history (New Row). | "I rely on the warehouse/[[dbt]] to handle Type 2 logic so Power BI just sees clean rows with a Surrogate Key." |
 | **Degenerate Dimension** | A dimension attribute stored in the Fact (e.g., Order #). | "It doesn't need its own table, but I check its **[[Cardinality]]** to ensure it doesn't bloat the model." |
-| **Bridge Table** | A table used to resolve Many-to-Many relationships. | "I avoid the native PBI Many-to-Many setting; a Bridge Table is transparent and predictable." |
+| **Bridge Table** | A table used to resolve Many-to-Many [[Relationships|relationships]]. | "I avoid the native PBI Many-to-Many setting; a Bridge Table is transparent and predictable." |
 | **Referential Integrity** | Ensuring every Fact FK has a matching Dimension PK. | "If a match is missing, PBI creates a **(Blank)** row. I treat that Blank row as a high-[[Priority|priority]] data quality alert." |
-| **Junk Dimension** | Combining low-cardinality flags (Yes/No columns) into one table. | "Instead of cluttering the Fact with 10 flag columns, I create one Junk Dimension to reduce table width." |
+| **Junk Dimension** | Combining low-[[Cardinality|cardinality]] flags (Yes/No columns) into one table. | "Instead of cluttering the Fact with 10 flag columns, I create one Junk Dimension to reduce table width." |
 | **Role-Playing Dimension** | Using one physical table for multiple contexts (Order/Ship Date). | "I prefer using `USERELATIONSHIP` in [[DAX]] over importing the Date table 3 times, to keep the model clean." |
 
 ---
 
-### 2. Power BI Engine & DAX (The Mechanics)
+### 2. Power BI Engine & [[DAX]] (The Mechanics)
 
 | Term | The "Specialist" Definition | The Pro Tip (Why it matters) |
 | :--- | :--- | :--- |
 | **Evaluation [[Context]]** | The environment a formula runs in (Row vs. Filter). | "Understanding this is the difference between a Junior and a Senior dev." |
-| **Row Context** | "The Finger." Iterating line-by-line. | "It iterates, it doesn't filter. Unless we use `CALCULATE` ([[Context Transition]])." |
+| **Row [[Context]]** | "The Finger." Iterating line-by-line. | "It iterates, it doesn't filter. Unless we use `CALCULATE` ([[Context Transition]])." |
 | **Filter Context** | "The Box." The active filters from slicers/visuals. | "Every measure starts here. `CALCULATE` is the only way to modify it." |
-| **Context Transition** | Turning Row Context into Filter Context. | "This is why we wrap expressions in `CALCULATE` inside iterators—to make sure the filter propagates." |
+| **[[Context Transition]]** | Turning Row Context into Filter Context. | "This is why we wrap expressions in `CALCULATE` inside iterators—to make sure the filter propagates." |
 | **Cardinality** | The number of *unique* values in a column. | "**High Cardinality** is the #1 driver of model size. I optimize by splitting DateTime into Date and Time." |
 | **[[Query Folding]]** | Pushing transformation logic back to [[SQL]]. | "I always check 'View Native Query' to ensure I haven't broken folding, which kills refresh speed." |
-| **VertiPaq** | The In-Memory Columnar Database engine of PBI. | "It compresses data by column. That's why wide [[Tables|tables]] are fine, but high unique values are bad." |
+| **[[Vertipaq|VertiPaq]]** | The In-Memory Columnar Database engine of PBI. | "It compresses data by column. That's why wide [[Tables|tables]] are fine, but high unique values are bad." |
 | **[[Calculation Groups]]** | Dynamic measure switching logic. | "I use these to replace 20 individual [[Time Intelligence]] measures (YTD/MOM) with one Calculation Item." |
 | **Direct Lake** | Loading Parquet files from OneLake directly into PBI memory. | "It gives me Import-like speed with DirectQuery-like freshness, bypassing the legacy refresh process." |
 | **Iterator Functions** | Functions ending in X (`SUMX`, `FILTER`). | "I use these when math must happen **row-by-row** (Price * Qty) before aggregating, to avoid 'Average of Averages' errors." |
 
 ---
 
-### 3. SQL / Backend / dbt (The Pipeline)
+### 3. [[SQL]] / Backend / [[dbt]] (The Pipeline)
 
 | Term | The "Specialist" Definition | The Pro Tip (Why it matters) |
 | :--- | :--- | :--- |
@@ -42,7 +42,7 @@
 | **Window Function** | `RANK()`, `LAG()`, `ROW_NUMBER()` `OVER...` | "I prefer calculating complex ranks or previous-row logic in SQL window functions before PBI loads it." |
 | **Materialized View** | A view that is physically stored/cached. | "If the SQL query is too slow for DirectQuery, I materialize the view to speed up the read." |
 | **ACID** | Atomicity, Consistency, Isolation, Durability. | "For transactional integrity in the source, I rely on ACID. For analytics, I accept eventual consistency." |
-| **dbt Materialization** | How dbt saves the model (View, Table, Incremental). | "I use **Incremental** models for massive Fact tables to only process the delta (new rows) and save compute." |
+| **dbt Materialization** | How dbt saves the model (View, Table, Incremental). | "I use **Incremental** models for massive Fact [[Tables|tables]] to only process the delta (new rows) and save compute." |
 | **Predicate Pushdown** | The database optimizing a query by filtering early. | "I write clean DAX to ensure Power BI can push the `WHERE` clause down to the SQL Source (Folding)." |
 
 ---
@@ -65,8 +65,8 @@
 
 | Term | The "Specialist" Definition | The Pro Tip (Why it matters) |
 | :--- | :--- | :--- |
-| **[[TMDL]]** | Tabular Model Definition Language (Text-based). | "I use TMDL to enable code-first development. It makes solving **[[git|Git]] Merge Conflicts** actually possible." |
-| **PBIP** | Power BI Project (Folder structure). | "I save as PBIP so I can track changes in individual files, rather than committing a binary blob (.pbix) to Git." |
+| **[[TMDL]]** | Tabular Model Definition Language (Text-based). | "I use [[TMDL]] to enable code-first development. It makes solving **[[git|Git]] Merge Conflicts** actually possible." |
+| **PBIP** | Power BI Project (Folder structure). | "I save as PBIP so I can track changes in individual files, rather than committing a binary blob (.pbix) to [[git|Git]]." |
 | **Golden Dataset** | Separating Data (Model) from Reporting (Thin Report). | "I never build reports inside the dataset file. I separate them to allow Self-Service without risking the Model integrity." |
 | **Deployment Pipelines** | Dev $\to$ Test $\to$ Prod lifecycle management. | "I strictly use pipelines to ensure we never edit reports directly in the Production workspace." |
 | **Endorsement** | Promoted vs. Certified content. | "I limit Certification rights to the CoE team so users know exactly which data is trusted." |

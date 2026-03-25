@@ -7,12 +7,12 @@
 
 *   **⚡ Focus Chapters:**
     *   **Chapter 1:** *Data Warehousing, Business Intelligence, and Dimensional Modeling Primer* (Understand the "Why").
-    *   **Chapter 2:** *Kimball Dimensional Modeling Techniques Overview* (The Definitions: Grain, Fact, Dimension, SCD, Bus Matrix).
+    *   **Chapter 2:** *[[Kimball]] Dimensional Modeling Techniques Overview* (The Definitions: Grain, Fact, Dimension, SCD, Bus Matrix).
     *   **Chapter 6:** *Order Management* (The classic "Sales" example you will likely use on a whiteboard).
 
 ## 2. Power BI & [[DAX]] (The Engine)
 
-**Book:** ***The Definitive Guide to DAX***
+**Book:** ***The Definitive Guide to [[DAX]]***
 **Author:** Marco Russo & Alberto Ferrari (The "SQLBI" Guys)
 **Why:** They wrote the documentation that Microsoft uses. Owning this book signals you are serious about the *engine*, not just the tool.
 
@@ -25,7 +25,7 @@
 
 **Book:** ***Storytelling with Data***
 **Author:** Cole Nussbaumer Knaflic
-**Why:** It moves you from "making charts" to "communicating insights." It creates the "Clean UI" vocabulary (clutter, preattentive attributes) that impresses stakeholders.
+**Why:** It moves you from "making charts" to "communicating insights." It creates the "Clean UI" [[Vocabulary|vocabulary]] (clutter, preattentive attributes) that impresses stakeholders.
 
 *   **⚡ Focus Chapters:**
     *   **Chapter 3:** *Clutter is your enemy* (Data-Ink Ratio, removing borders/gridlines).
@@ -33,7 +33,7 @@
 
 ## 4. [[SQL]] (The Foundation)
 
-**Book:** ***T-SQL Fundamentals***
+**Book:** ***T-[[SQL]] Fundamentals***
 **Author:** Itzik Ben-Gan
 **Why:** Ben-Gan teaches SQL as **Set Theory**, not just code. This "Set-based thinking" is the perfect mental bridge to understanding DAX.
 
@@ -48,7 +48,7 @@
 **Why:** It explains the "Modern Data Stack" (ELT vs ETL). Even if you don't code Python, understanding the lifecycle (Generation → Ingestion → Transformation → Serving) proves you are an Architect.
 
 *   **⚡ Focus Chapters:**
-    *   **Chapter 7:** *Transformation* (The role of dbt, modeling in the warehouse, and data quality).
+    *   **Chapter 7:** *Transformation* (The role of [[dbt]], modeling in the warehouse, and data quality).
 
 ---
 

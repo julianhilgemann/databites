@@ -32,7 +32,7 @@ table Customer
 
 #### B. The Measure Definition (The Best Part)
 
-This is the killer feature. In JSON, writing DAX was painful. In TMDL, **DAX looks like DAX**.
+This is the killer feature. In JSON, writing [[DAX]] was painful. In TMDL, **DAX looks like DAX**.
 
 ```yaml
     measure 'Total Sales' = SUM(Sales[Amount])
@@ -106,7 +106,7 @@ When you save as `.pbip` with TMDL enabled, you get a `definition` folder:
 
 **Why this wins in [[git|Git]]:**
 
-*   **Conflict Resolution:** If Developer A edits `Sales.tmdl` and Developer B edits `Customer.tmdl`, Git merges them **automatically**. There is zero conflict.
+*   **Conflict Resolution:** If Developer A edits `Sales.tmdl` and Developer B edits `Customer.tmdl`, [[git|Git]] merges them **automatically**. There is zero conflict.
 *   **Code Review:** When you open a Pull Request in DevOps, the reviewer sees exactly what changed:
     *   `+ measure 'New KPI' = ...`
     *   They don't see 5,000 lines of JSON noise.
@@ -174,7 +174,7 @@ If asked about **TMDL**, hit these points to sound like an expert:
 1.  **"It enables true Code-First Development."**
     (I can write a script to generate a TMDL file to build a standard Date table for every new project automatically).
 2.  **"It solves the Git Merge Nightmare."**
-    (Because it splits tables into separate files, my team can work in parallel without overwriting each other).
+    (Because it splits [[Tables|tables]] into separate files, my team can work in parallel without overwriting each other).
 3.  **"It makes Diffing easier."**
     (I can clearly see that a measure formula changed from `SUM` to `AVERAGE` in the Pull Request, without decoding JSON escape characters).
 4.  **"I use it for Bulk Refactoring."**

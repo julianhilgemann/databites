@@ -3,7 +3,7 @@
 ### A. Theoretical Foundations
 
 - [ ] **OLTP vs. OLAP**: Understand [[Normalization|normalization]] (3NF) vs. denormalization.
-- [ ] **The [[Star Schema]]**: Central fact [[Tables|tables]] vs. surrounding dimension tables.
+- [ ] **The [[Star Schema]]**: Central fact [[Tables|tables]] vs. surrounding dimension [[Tables|tables]].
 - [ ] **The Snowflake Schema**: When to use it, why to generally avoid it in Power BI.
 - [ ] **The "Grain"**: Defining what a single row represents (e.g., "One row per line item per order").
 - [ ] **Conformed Dimensions**: Shared dimensions (Customer, Product) across multiple business processes.
@@ -33,9 +33,9 @@
 ### D. Advanced Modeling Patterns
 
 - [ ] **Date/Calendar Table**: Prerequisites (continuous dates, marked as Date Table).
-- [ ] **Role-Playing Dimensions**: Handling multiple [[Relationships|relationships]] (Order Date vs. Ship Date) via active/inactive relationships.
+- [ ] **Role-Playing Dimensions**: Handling multiple [[Relationships|relationships]] (Order Date vs. Ship Date) via active/inactive [[Relationships|relationships]].
 - [ ] **Many-to-Many Handling**:
-    - [ ] [[Bridge Tables]] (The standard Kimball approach).
+    - [ ] [[Bridge Tables]] (The standard [[Kimball]] approach).
     - [ ] Bi-directional filtering (The risky Power BI approach).
 - [ ] **Bi-Directional Relationships**: Ambiguity risks and performance impact.
 
@@ -52,14 +52,14 @@
     - [ ] Definition: Pushing transformations back to the [[SQL]] source.
     - [ ] Breaking Folding: Index columns, changing types after filtering.
     - [ ] Verification: "View Native Query" option.
-- [ ] **Incremental Refresh**: RangeStart and RangeEnd parameters.
+- [ ] **[[Incremental Refresh]]**: RangeStart and RangeEnd parameters.
 
 ---
 
 ## 3. [[DAX]] & Semantic Layer
 ### A. Evaluation [[Context]] (Crucial)
 
-- [ ] **Row Context**: Concept of "Current Row" (Calculated columns, Iterators).
+- [ ] **Row [[Context]]**: Concept of "Current Row" (Calculated columns, Iterators).
 - [ ] **Filter Context**: Active filters from visuals, slicers, and RLS.
 - [ ] **[[Context Transition]]**: How `CALCULATE` turns Row Context into Filter Context.
 
@@ -97,7 +97,7 @@
 
 ---
 
-## 4. SQL (Data Validation & Prep)
+## 4. [[SQL]] (Data Validation & Prep)
 ### A. Basic Retrieval
 
 - [ ] **Joins**: INNER, LEFT, RIGHT, FULL OUTER (and how they affect row counts).
@@ -132,8 +132,8 @@
 ### A. Optimization
 
 - [ ] **[[Vertipaq|VertiPaq]] Engine**: Columnar storage principles.
-- [ ] **[[Cardinality]]**: Why high-cardinality columns (UUIDs, timestamps) bloat model size.
-- [ ] **Performance Analyzer**: Identifying bottlenecks (DAX vs. Visual vs. DirectQuery).
+- [ ] **[[Cardinality]]**: Why high-[[Cardinality|cardinality]] columns (UUIDs, timestamps) bloat model size.
+- [ ] **Performance Analyzer**: Identifying bottlenecks ([[DAX]] vs. Visual vs. DirectQuery).
 - [ ] **DAX Studio**: Basics of Server Timings.
 
 ### B. Security
@@ -145,7 +145,7 @@
 
 ### C. Enterprise Features
 
-- [ ] **Composite Models**: Mixing DirectQuery and Import modes.
+- [ ] **[[Composite Models]]**: Mixing DirectQuery and Import modes.
 - [ ] **Aggregations**: Pre-summarizing data for DirectQuery performance.
 - [ ] **Deployment Pipelines**: Dev -> Test -> Prod workflow.
 
@@ -221,7 +221,7 @@
 
 - [ ] **Data Cleaning Functions**:
     - [ ] `COALESCE()`: Handling NULLs before they hit Power BI.
-    - [ ] `CAST()` / `CONVERT()`: Fixing data types explicitely.
+    - [ ] `CAST()` / `CONVERT()`: Fixing [[Data Types|data types]] explicitely.
     - [ ] String manip: `TRIM()`, `UPPER()`, `LEFT()`, `CONCAT()`.
 - [ ] **Logic Handling**:
     - [ ] `CASE WHEN`: Creating buckets/segments (e.g., "High", "Medium", "Low") at the source.
@@ -230,14 +230,14 @@
 - [ ] **Set Operations**:
     - [ ] `UNION ALL` vs `UNION`: Stacking historical files (Performance implications).
 
-### B. dbt (Data Build Tool) Concepts
+### B. [[dbt]] (Data Build Tool) Concepts
 
 - [ ] **The "T" in ELT**: Understanding dbt does transformation, not extraction/load.
 - [ ] **Project Structure**:
     - [ ] **Sources**: Defining raw data connections.
     - [ ] **Staging (stg)**: 1:1 with source, renaming columns to snake_case, basic casting.
     - [ ] **Intermediate (int)**: Complex logic, joins, business rules.
-    - [ ] **Marts (fct/dim)**: The final Star Schema tables ready for Power BI import.
+    - [ ] **Marts (fct/dim)**: The final [[Star Schema]] tables ready for Power BI import.
 - [ ] **Materialization Strategies**:
     - [ ] `view`: Virtual, calculated on run.
     - [ ] `table`: Physically stored, replaced on run.
