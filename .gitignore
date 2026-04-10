@@ -11,3 +11,13 @@
 # Temporary files
 *.tmp
 ~$*
+
+# Quartz specific overrides
+node_modules
+public
+prof
+tsconfig.tsbuildinfo
+.quartz-cache
+private/
+.replit
+replit.nix
